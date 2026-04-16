@@ -1,0 +1,64 @@
+# ==========================================
+# FLUXmark 项目专用 .gitignore
+# 自动忽略 图片、模型、输出、数据集、大文件
+# ==========================================
+
+# 1. 所有图片文件（完全不上传）
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
+*.webp
+*.tiff
+*.svg
+
+# 2. 模型权重 / 缓存文件（完全不上传）
+*.bin
+*.pth
+*.pt
+*.ckpt
+*.safetensors
+*.h5
+*.hdf5
+*.onnx
+*.pkl
+*.pickle
+*.npy
+*.npz
+
+# 3. 输出结果、实验文件夹（你的热力图、结果都忽略）
+output/
+result/
+pic/
+watermark_extra/
+runs/
+logs/
+checkpoints/
+models/
+
+# 4. 数据集 / 大文件
+data/
+dataset/
+datasets/
+*.zip
+*.rar
+*.tar
+*.gz
+*.7z
+
+# 5. Python 虚拟环境
+venv/
+env/
+attackenv/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+
+# 6. 系统 / IDE 垃圾文件
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.tmp
