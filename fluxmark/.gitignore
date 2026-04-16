@@ -1,0 +1,23 @@
+# 虚拟环境
+attackenv/
+venv/
+env/
+fluxenv/
+
+# 缓存、构建文件
+__pycache__/
+*.pyc
+*.log
+
+# 大模型、数据集
+*.bin
+*.pth
+*.h5
+*.zip
+*.tar
+*.rar
+
+# 图片
+*.png
+# 水印
+*.npy

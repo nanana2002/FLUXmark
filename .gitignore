@@ -62,6 +62,5 @@ __pycache__/
 .vscode/
 *.swp
 *.tmp
-fluxmark/
 model/
 hf_cache/

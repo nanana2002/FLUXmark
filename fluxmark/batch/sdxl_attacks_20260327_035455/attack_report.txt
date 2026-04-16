@@ -1,0 +1,49 @@
+SDXL InstructPix2Pix 语义攻击测试报告
+============================================================
+
+原始图像: /data/daiyina/project_flux/pic/img_000.png
+生成时间: 20260327_035455
+攻击数量: 14
+
+1. change the text to 'goodbye world'
+   输出: ./sdxl_attacks_20260327_035455/img_000_text_goodbye.png
+
+2. change the text to 'fake image'
+   输出: ./sdxl_attacks_20260327_035455/img_000_text_fake.png
+
+3. remove the text from the sign
+   输出: ./sdxl_attacks_20260327_035455/img_000_text_removed.png
+
+4. change the text to 'hello mars'
+   输出: ./sdxl_attacks_20260327_035455/img_000_text_mars.png
+
+5. make the cat look angry
+   输出: ./sdxl_attacks_20260327_035455/img_000_expr_angry.png
+
+6. make the cat smile happily
+   输出: ./sdxl_attacks_20260327_035455/img_000_expr_happy.png
+
+7. make the cat look sad
+   输出: ./sdxl_attacks_20260327_035455/img_000_expr_sad.png
+
+8. make the cat look surprised
+   输出: ./sdxl_attacks_20260327_035455/img_000_expr_surprised.png
+
+9. turn it into an oil painting
+   输出: ./sdxl_attacks_20260327_035455/img_000_style_oil.png
+
+10. make it look like a cartoon
+   输出: ./sdxl_attacks_20260327_035455/img_000_style_cartoon.png
+
+11. convert to watercolor style
+   输出: ./sdxl_attacks_20260327_035455/img_000_style_watercolor.png
+
+12. make it a pencil sketch
+   输出: ./sdxl_attacks_20260327_035455/img_000_style_sketch.png
+
+13. change text to 'stolen' and make it oil painting
+   输出: ./sdxl_attacks_20260327_035455/img_000_combo_text_oil.png
+
+14. make the cat angry and convert to cartoon style
+   输出: ./sdxl_attacks_20260327_035455/img_000_combo_angry_cartoon.png
+

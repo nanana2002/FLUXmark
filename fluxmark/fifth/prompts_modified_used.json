@@ -1,0 +1,1606 @@
+{
+  "experiment_name": "OrthoFlow_Topic_0327_HighPerf",
+  "timestamp": "2026-04-07T20:15:03.354340",
+  "description": "\u5b9e\u9645\u4f7f\u7528\u7684\u8bed\u4e49\u4fee\u6539prompts\uff08\u6765\u81eaprompts_modified.json\u6216\u9ed8\u8ba4\uff09",
+  "modified_prompts": {
+    "wm_000": {
+      "sdedit_0.3": {
+        "original_prompt": "A frisbee in the air",
+        "modified_prompt": "[sdedit_regeneration] A frisbee in the air (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_001": {
+      "sdedit_0.3": {
+        "original_prompt": "A teddy bear on the bed",
+        "modified_prompt": "[sdedit_regeneration] A teddy bear on the bed (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_002": {
+      "sdedit_0.3": {
+        "original_prompt": "A vintage train station in winter, steam locomotive, nostalgic atmosphere",
+        "modified_prompt": "[sdedit_regeneration] A vintage train station in winter, steam locomotive, nostalgic atmosphere (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_003": {
+      "sdedit_0.3": {
+        "original_prompt": "A ballerina dancing in an abandoned theater, dust particles, atmospheric lighting",
+        "modified_prompt": "[sdedit_regeneration] A ballerina dancing in an abandoned theater, dust particles, atmospheric lighting (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_004": {
+      "sdedit_0.3": {
+        "original_prompt": "A deep space nebula with stars, cosmic colors, astronomy photography style",
+        "modified_prompt": "[sdedit_regeneration] A deep space nebula with stars, cosmic colors, astronomy photography style (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_005": {
+      "sdedit_0.3": {
+        "original_prompt": "A motorcycle parked on the sidewalk",
+        "modified_prompt": "[sdedit_regeneration] A motorcycle parked on the sidewalk (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_006": {
+      "sdedit_0.3": {
+        "original_prompt": "A jellyfish floating in deep blue ocean, ethereal, underwater photography",
+        "modified_prompt": "[sdedit_regeneration] A jellyfish floating in deep blue ocean, ethereal, underwater photography (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_007": {
+      "sdedit_0.3": {
+        "original_prompt": "A mermaid sitting on a rock, ocean waves, sunset lighting, fantasy illustration",
+        "modified_prompt": "[sdedit_regeneration] A mermaid sitting on a rock, ocean waves, sunset lighting, fantasy illustration (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_008": {
+      "sdedit_0.3": {
+        "original_prompt": "A northern lights display over snowy mountains, vibrant colors, nature photography style",
+        "modified_prompt": "[sdedit_regeneration] A northern lights display over snowy mountains, vibrant colors, nature photography style (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_009": {
+      "sdedit_0.3": {
+        "original_prompt": "A cup of coffee on a saucer",
+        "modified_prompt": "[sdedit_regeneration] A cup of coffee on a saucer (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_010": {
+      "sdedit_0.3": {
+        "original_prompt": "A snowy village with Christmas lights, festive winter scene, cozy holiday vibes",
+        "modified_prompt": "[sdedit_regeneration] A snowy village with Christmas lights, festive winter scene, cozy holiday vibes (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_011": {
+      "sdedit_0.3": {
+        "original_prompt": "A charming European street cafe, rainy day, impressionist style, cozy atmosphere",
+        "modified_prompt": "[sdedit_regeneration] A charming European street cafe, rainy day, impressionist style, cozy atmosphere (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_012": {
+      "sdedit_0.3": {
+        "original_prompt": "A cell phone on the table",
+        "modified_prompt": "[sdedit_regeneration] A cell phone on the table (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_013": {
+      "sdedit_0.3": {
+        "original_prompt": "A pizza in a box",
+        "modified_prompt": "[sdedit_regeneration] A pizza in a box (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_014": {
+      "sdedit_0.3": {
+        "original_prompt": "A chef preparing a meal",
+        "modified_prompt": "[sdedit_regeneration] A chef preparing a meal (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_015": {
+      "sdedit_0.3": {
+        "original_prompt": "A teacher in the classroom",
+        "modified_prompt": "[sdedit_regeneration] A teacher in the classroom (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_016": {
+      "sdedit_0.3": {
+        "original_prompt": "A cow standing in a field",
+        "modified_prompt": "[sdedit_regeneration] A cow standing in a field (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_017": {
+      "sdedit_0.3": {
+        "original_prompt": "A volcanic eruption at night, lava flow, dramatic natural phenomenon",
+        "modified_prompt": "[sdedit_regeneration] A volcanic eruption at night, lava flow, dramatic natural phenomenon (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_018": {
+      "sdedit_0.3": {
+        "original_prompt": "A cake on a stand",
+        "modified_prompt": "[sdedit_regeneration] A cake on a stand (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_019": {
+      "sdedit_0.3": {
+        "original_prompt": "A truck carrying goods on the highway",
+        "modified_prompt": "[sdedit_regeneration] A truck carrying goods on the highway (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_020": {
+      "sdedit_0.3": {
+        "original_prompt": "A post-apocalyptic city overgrown with nature, atmospheric, moody lighting, concept art",
+        "modified_prompt": "[sdedit_regeneration] A post-apocalyptic city overgrown with nature, atmospheric, moody lighting, concept art (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_021": {
+      "sdedit_0.3": {
+        "original_prompt": "A chef plating gourmet food in restaurant kitchen, professional culinary photography",
+        "modified_prompt": "[sdedit_regeneration] A chef plating gourmet food in restaurant kitchen, professional culinary photography (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_022": {
+      "sdedit_0.3": {
+        "original_prompt": "A carrot in the ground",
+        "modified_prompt": "[sdedit_regeneration] A carrot in the ground (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_023": {
+      "sdedit_0.3": {
+        "original_prompt": "A dining table set for dinner",
+        "modified_prompt": "[sdedit_regeneration] A dining table set for dinner (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_024": {
+      "sdedit_0.3": {
+        "original_prompt": "A fire hydrant on the sidewalk",
+        "modified_prompt": "[sdedit_regeneration] A fire hydrant on the sidewalk (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_025": {
+      "sdedit_0.3": {
+        "original_prompt": "A fork on a napkin",
+        "modified_prompt": "[sdedit_regeneration] A fork on a napkin (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_026": {
+      "sdedit_0.3": {
+        "original_prompt": "A vintage photography darkroom, film development, analog process",
+        "modified_prompt": "[sdedit_regeneration] A vintage photography darkroom, film development, analog process (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_027": {
+      "sdedit_0.3": {
+        "original_prompt": "A car parked on the street",
+        "modified_prompt": "[sdedit_regeneration] A car parked on the street (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_028": {
+      "sdedit_0.3": {
+        "original_prompt": "A donut on a plate",
+        "modified_prompt": "[sdedit_regeneration] A donut on a plate (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_029": {
+      "sdedit_0.3": {
+        "original_prompt": "A desert oasis at sunset, palm trees, caravan of camels, adventure scene",
+        "modified_prompt": "[sdedit_regeneration] A desert oasis at sunset, palm trees, caravan of camels, adventure scene (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_030": {
+      "sdedit_0.3": {
+        "original_prompt": "An oven in the kitchen",
+        "modified_prompt": "[sdedit_regeneration] An oven in the kitchen (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_031": {
+      "sdedit_0.3": {
+        "original_prompt": "A coffee shop interior with books, cozy corner, warm lighting, lifestyle photography",
+        "modified_prompt": "[sdedit_regeneration] A coffee shop interior with books, cozy corner, warm lighting, lifestyle photography (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_032": {
+      "sdedit_0.3": {
+        "original_prompt": "A knife on a cutting board",
+        "modified_prompt": "[sdedit_regeneration] A knife on a cutting board (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_033": {
+      "sdedit_0.3": {
+        "original_prompt": "A horse grazing in a meadow",
+        "modified_prompt": "[sdedit_regeneration] A horse grazing in a meadow (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_034": {
+      "sdedit_0.3": {
+        "original_prompt": "A train traveling through the countryside",
+        "modified_prompt": "[sdedit_regeneration] A train traveling through the countryside (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_035": {
+      "sdedit_0.3": {
+        "original_prompt": "A wine glass on the table",
+        "modified_prompt": "[sdedit_regeneration] A wine glass on the table (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_036": {
+      "sdedit_0.3": {
+        "original_prompt": "A bench in the park",
+        "modified_prompt": "[sdedit_regeneration] A bench in the park (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_037": {
+      "sdedit_0.3": {
+        "original_prompt": "A chair at the desk",
+        "modified_prompt": "[sdedit_regeneration] A chair at the desk (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_038": {
+      "sdedit_0.3": {
+        "original_prompt": "A skateboard on the ramp",
+        "modified_prompt": "[sdedit_regeneration] A skateboard on the ramp (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_039": {
+      "sdedit_0.3": {
+        "original_prompt": "A musician playing the guitar",
+        "modified_prompt": "[sdedit_regeneration] A musician playing the guitar (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_040": {
+      "sdedit_0.3": {
+        "original_prompt": "A fisherman by the river",
+        "modified_prompt": "[sdedit_regeneration] A fisherman by the river (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_041": {
+      "sdedit_0.3": {
+        "original_prompt": "A serene Japanese garden with cherry blossoms, soft lighting, watercolor style, peaceful atmosphere",
+        "modified_prompt": "[sdedit_regeneration] A serene Japanese garden with cherry blossoms, soft lighting, watercolor style, peaceful atmosphere (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_042": {
+      "sdedit_0.3": {
+        "original_prompt": "A sports ball on the field",
+        "modified_prompt": "[sdedit_regeneration] A sports ball on the field (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_043": {
+      "sdedit_0.3": {
+        "original_prompt": "A haunted forest with twisted trees, foggy, horror movie atmosphere",
+        "modified_prompt": "[sdedit_regeneration] A haunted forest with twisted trees, foggy, horror movie atmosphere (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_044": {
+      "sdedit_0.3": {
+        "original_prompt": "A doctor in the hospital",
+        "modified_prompt": "[sdedit_regeneration] A doctor in the hospital (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_045": {
+      "sdedit_0.3": {
+        "original_prompt": "A circus performance with acrobats, dramatic lighting, entertainment",
+        "modified_prompt": "[sdedit_regeneration] A circus performance with acrobats, dramatic lighting, entertainment (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_046": {
+      "sdedit_0.3": {
+        "original_prompt": "A bowl of fruit on the table",
+        "modified_prompt": "[sdedit_regeneration] A bowl of fruit on the table (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_047": {
+      "sdedit_0.3": {
+        "original_prompt": "A toaster on the counter",
+        "modified_prompt": "[sdedit_regeneration] A toaster on the counter (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_048": {
+      "sdedit_0.3": {
+        "original_prompt": "A futuristic sports car in a showroom, sleek design, professional photography lighting",
+        "modified_prompt": "[sdedit_regeneration] A futuristic sports car in a showroom, sleek design, professional photography lighting (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_049": {
+      "sdedit_0.3": {
+        "original_prompt": "A coral reef with diverse marine life, underwater ecosystem, conservation theme",
+        "modified_prompt": "[sdedit_regeneration] A coral reef with diverse marine life, underwater ecosystem, conservation theme (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_050": {
+      "sdedit_0.3": {
+        "original_prompt": "A lighthouse on a rocky cliff, stormy seas, dramatic weather, cinematic",
+        "modified_prompt": "[sdedit_regeneration] A lighthouse on a rocky cliff, stormy seas, dramatic weather, cinematic (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_051": {
+      "sdedit_0.3": {
+        "original_prompt": "A spoon in a bowl",
+        "modified_prompt": "[sdedit_regeneration] A spoon in a bowl (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_052": {
+      "sdedit_0.3": {
+        "original_prompt": "A mech robot in urban combat, detailed mechanical design, sci-fi action",
+        "modified_prompt": "[sdedit_regeneration] A mech robot in urban combat, detailed mechanical design, sci-fi action (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_053": {
+      "sdedit_0.3": {
+        "original_prompt": "A potted plant on the shelf",
+        "modified_prompt": "[sdedit_regeneration] A potted plant on the shelf (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_054": {
+      "sdedit_0.3": {
+        "original_prompt": "A sheep in a green pasture",
+        "modified_prompt": "[sdedit_regeneration] A sheep in a green pasture (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_055": {
+      "sdedit_0.3": {
+        "original_prompt": "A space station orbiting a distant planet, stars in background, sci-fi concept art",
+        "modified_prompt": "[sdedit_regeneration] A space station orbiting a distant planet, stars in background, sci-fi concept art (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_056": {
+      "sdedit_0.3": {
+        "original_prompt": "A chef's table dining experience, gourmet food, exclusive restaurant",
+        "modified_prompt": "[sdedit_regeneration] A chef's table dining experience, gourmet food, exclusive restaurant (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_057": {
+      "sdedit_0.3": {
+        "original_prompt": "A child playing in the playground",
+        "modified_prompt": "[sdedit_regeneration] A child playing in the playground (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_058": {
+      "sdedit_0.3": {
+        "original_prompt": "A crystal cave with glowing gems, underground exploration, fantasy environment",
+        "modified_prompt": "[sdedit_regeneration] A crystal cave with glowing gems, underground exploration, fantasy environment (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_059": {
+      "sdedit_0.3": {
+        "original_prompt": "A dog playing with a ball in the park",
+        "modified_prompt": "[sdedit_regeneration] A dog playing with a ball in the park (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_060": {
+      "sdedit_0.3": {
+        "original_prompt": "An orange on the tree",
+        "modified_prompt": "[sdedit_regeneration] An orange on the tree (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_061": {
+      "sdedit_0.3": {
+        "original_prompt": "A bus driving down a city street",
+        "modified_prompt": "[sdedit_regeneration] A bus driving down a city street (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_062": {
+      "sdedit_0.3": {
+        "original_prompt": "A broccoli in the garden",
+        "modified_prompt": "[sdedit_regeneration] A broccoli in the garden (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_063": {
+      "sdedit_0.3": {
+        "original_prompt": "A vase on the mantel",
+        "modified_prompt": "[sdedit_regeneration] A vase on the mantel (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_064": {
+      "sdedit_0.3": {
+        "original_prompt": "A secret garden hidden behind a stone wall, flowers blooming, magical lighting",
+        "modified_prompt": "[sdedit_regeneration] A secret garden hidden behind a stone wall, flowers blooming, magical lighting (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_065": {
+      "sdedit_0.3": {
+        "original_prompt": "A person riding a horse in a field",
+        "modified_prompt": "[sdedit_regeneration] A person riding a horse in a field (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_066": {
+      "sdedit_0.3": {
+        "original_prompt": "A storm chaser vehicle near tornado, dramatic weather, documentary style",
+        "modified_prompt": "[sdedit_regeneration] A storm chaser vehicle near tornado, dramatic weather, documentary style (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_067": {
+      "sdedit_0.3": {
+        "original_prompt": "A moss covered temple ruins in jungle, ancient civilization, exploration",
+        "modified_prompt": "[sdedit_regeneration] A moss covered temple ruins in jungle, ancient civilization, exploration (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_068": {
+      "sdedit_0.3": {
+        "original_prompt": "Portrait of a cyberpunk warrior, neon lighting, intricate details, octane render, unreal engine",
+        "modified_prompt": "[sdedit_regeneration] Portrait of a cyberpunk warrior, neon lighting, intricate details, octane render, unreal engine (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_069": {
+      "sdedit_0.3": {
+        "original_prompt": "A medieval blacksmith working at forge, sparks flying, realistic historical scene",
+        "modified_prompt": "[sdedit_regeneration] A medieval blacksmith working at forge, sparks flying, realistic historical scene (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_070": {
+      "sdedit_0.3": {
+        "original_prompt": "An underwater city with bioluminescent creatures, submarine lighting, sci-fi art",
+        "modified_prompt": "[sdedit_regeneration] An underwater city with bioluminescent creatures, submarine lighting, sci-fi art (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_071": {
+      "sdedit_0.3": {
+        "original_prompt": "A microwave in the kitchen",
+        "modified_prompt": "[sdedit_regeneration] A microwave in the kitchen (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_072": {
+      "sdedit_0.3": {
+        "original_prompt": "A man cooking in the kitchen",
+        "modified_prompt": "[sdedit_regeneration] A man cooking in the kitchen (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_073": {
+      "sdedit_0.3": {
+        "original_prompt": "A hiker on the trail",
+        "modified_prompt": "[sdedit_regeneration] A hiker on the trail (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_074": {
+      "sdedit_0.3": {
+        "original_prompt": "A giraffe reaching for leaves",
+        "modified_prompt": "[sdedit_regeneration] A giraffe reaching for leaves (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_075": {
+      "sdedit_0.3": {
+        "original_prompt": "A toilet in the bathroom",
+        "modified_prompt": "[sdedit_regeneration] A toilet in the bathroom (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_076": {
+      "sdedit_0.3": {
+        "original_prompt": "A banana on the counter",
+        "modified_prompt": "[sdedit_regeneration] A banana on the counter (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_077": {
+      "sdedit_0.3": {
+        "original_prompt": "A hot dog on a bun",
+        "modified_prompt": "[sdedit_regeneration] A hot dog on a bun (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_078": {
+      "sdedit_0.3": {
+        "original_prompt": "A street musician playing violin, cobblestone street, European city, romantic",
+        "modified_prompt": "[sdedit_regeneration] A street musician playing violin, cobblestone street, European city, romantic (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_079": {
+      "sdedit_0.3": {
+        "original_prompt": "A tie hanging on a rack",
+        "modified_prompt": "[sdedit_regeneration] A tie hanging on a rack (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_080": {
+      "sdedit_0.3": {
+        "original_prompt": "A submarine exploring ocean depths, deep sea adventure, sci-fi exploration",
+        "modified_prompt": "[sdedit_regeneration] A submarine exploring ocean depths, deep sea adventure, sci-fi exploration (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_081": {
+      "sdedit_0.3": {
+        "original_prompt": "A rainy street in Tokyo at night, neon reflections, cyberpunk vibes",
+        "modified_prompt": "[sdedit_regeneration] A rainy street in Tokyo at night, neon reflections, cyberpunk vibes (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_082": {
+      "sdedit_0.3": {
+        "original_prompt": "A group of people at a concert",
+        "modified_prompt": "[sdedit_regeneration] A group of people at a concert (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_083": {
+      "sdedit_0.3": {
+        "original_prompt": "A rollercoaster at amusement park, motion blur, exciting, summer fun",
+        "modified_prompt": "[sdedit_regeneration] A rollercoaster at amusement park, motion blur, exciting, summer fun (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_084": {
+      "sdedit_0.3": {
+        "original_prompt": "A windmill in tulip fields, Netherlands landscape, colorful spring scene",
+        "modified_prompt": "[sdedit_regeneration] A windmill in tulip fields, Netherlands landscape, colorful spring scene (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_085": {
+      "sdedit_0.3": {
+        "original_prompt": "A baseball bat on the ground",
+        "modified_prompt": "[sdedit_regeneration] A baseball bat on the ground (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_086": {
+      "sdedit_0.3": {
+        "original_prompt": "A beautiful fantasy landscape with floating islands and waterfalls, digital art, highly detailed, 8k, concept art",
+        "modified_prompt": "[sdedit_regeneration] A beautiful fantasy landscape with floating islands and waterfalls, digital art, highly detailed, 8k, concept art (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_087": {
+      "sdedit_0.3": {
+        "original_prompt": "A space explorer on Mars, red planet landscape, sci-fi, realistic style",
+        "modified_prompt": "[sdedit_regeneration] A space explorer on Mars, red planet landscape, sci-fi, realistic style (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_088": {
+      "sdedit_0.3": {
+        "original_prompt": "An artist painting on canvas",
+        "modified_prompt": "[sdedit_regeneration] An artist painting on canvas (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_089": {
+      "sdedit_0.3": {
+        "original_prompt": "A deep sea anglerfish, bioluminescent lure, dark ocean, documentary style",
+        "modified_prompt": "[sdedit_regeneration] A deep sea anglerfish, bioluminescent lure, dark ocean, documentary style (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_090": {
+      "sdedit_0.3": {
+        "original_prompt": "An art deco skyscraper lobby, vintage elegance, architectural photography",
+        "modified_prompt": "[sdedit_regeneration] An art deco skyscraper lobby, vintage elegance, architectural photography (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_091": {
+      "sdedit_0.3": {
+        "original_prompt": "A flamenco dancer in red dress, passionate performance, Spanish culture",
+        "modified_prompt": "[sdedit_regeneration] A flamenco dancer in red dress, passionate performance, Spanish culture (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_092": {
+      "sdedit_0.3": {
+        "original_prompt": "A tennis racket in hand",
+        "modified_prompt": "[sdedit_regeneration] A tennis racket in hand (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_093": {
+      "sdedit_0.3": {
+        "original_prompt": "A tree of life with glowing branches, fantasy concept, mystical atmosphere",
+        "modified_prompt": "[sdedit_regeneration] A tree of life with glowing branches, fantasy concept, mystical atmosphere (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_094": {
+      "sdedit_0.3": {
+        "original_prompt": "A wolf howling at the full moon, snowy mountain landscape, realistic, atmospheric",
+        "modified_prompt": "[sdedit_regeneration] A wolf howling at the full moon, snowy mountain landscape, realistic, atmospheric (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_095": {
+      "sdedit_0.3": {
+        "original_prompt": "A person walking on the beach",
+        "modified_prompt": "[sdedit_regeneration] A person walking on the beach (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_096": {
+      "sdedit_0.3": {
+        "original_prompt": "A laptop on the desk",
+        "modified_prompt": "[sdedit_regeneration] A laptop on the desk (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_097": {
+      "sdedit_0.3": {
+        "original_prompt": "A futuristic hospital with holographic displays, clean design, sci-fi medical",
+        "modified_prompt": "[sdedit_regeneration] A futuristic hospital with holographic displays, clean design, sci-fi medical (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_098": {
+      "sdedit_0.3": {
+        "original_prompt": "A dog running on the beach",
+        "modified_prompt": "[sdedit_regeneration] A dog running on the beach (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_099": {
+      "sdedit_0.3": {
+        "original_prompt": "A treehouse village in giant redwoods, fantasy architecture, sunset lighting",
+        "modified_prompt": "[sdedit_regeneration] A treehouse village in giant redwoods, fantasy architecture, sunset lighting (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_100": {
+      "sdedit_0.3": {
+        "original_prompt": "An ice castle with northern lights, frozen landscape, fantasy winter scene",
+        "modified_prompt": "[sdedit_regeneration] An ice castle with northern lights, frozen landscape, fantasy winter scene (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_101": {
+      "sdedit_0.3": {
+        "original_prompt": "A pirate ship battling a sea monster, epic battle scene, dynamic composition",
+        "modified_prompt": "[sdedit_regeneration] A pirate ship battling a sea monster, epic battle scene, dynamic composition (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_102": {
+      "sdedit_0.3": {
+        "original_prompt": "A hair drier in the bathroom",
+        "modified_prompt": "[sdedit_regeneration] A hair drier in the bathroom (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_103": {
+      "sdedit_0.3": {
+        "original_prompt": "A miniature world inside a snow globe, macro photography, magical tiny scene",
+        "modified_prompt": "[sdedit_regeneration] A miniature world inside a snow globe, macro photography, magical tiny scene (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_104": {
+      "sdedit_0.3": {
+        "original_prompt": "A grand piano in an empty concert hall, elegant, classical music atmosphere",
+        "modified_prompt": "[sdedit_regeneration] A grand piano in an empty concert hall, elegant, classical music atmosphere (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_105": {
+      "sdedit_0.3": {
+        "original_prompt": "A bird perched on a branch",
+        "modified_prompt": "[sdedit_regeneration] A bird perched on a branch (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_106": {
+      "sdedit_0.3": {
+        "original_prompt": "A vintage car on a coastal road, sunset, retro aesthetic, cinematic composition",
+        "modified_prompt": "[sdedit_regeneration] A vintage car on a coastal road, sunset, retro aesthetic, cinematic composition (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_107": {
+      "sdedit_0.3": {
+        "original_prompt": "A sunflower field at golden hour, summer vibes, warm colors, landscape photography",
+        "modified_prompt": "[sdedit_regeneration] A sunflower field at golden hour, summer vibes, warm colors, landscape photography (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_108": {
+      "sdedit_0.3": {
+        "original_prompt": "A kite flying in the sky",
+        "modified_prompt": "[sdedit_regeneration] A kite flying in the sky (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_109": {
+      "sdedit_0.3": {
+        "original_prompt": "A giraffe family at african watering hole, safari wildlife, golden hour",
+        "modified_prompt": "[sdedit_regeneration] A giraffe family at african watering hole, safari wildlife, golden hour (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_110": {
+      "sdedit_0.3": {
+        "original_prompt": "A snowboard on the snow",
+        "modified_prompt": "[sdedit_regeneration] A snowboard on the snow (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_111": {
+      "sdedit_0.3": {
+        "original_prompt": "A clock on the wall",
+        "modified_prompt": "[sdedit_regeneration] A clock on the wall (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_112": {
+      "sdedit_0.3": {
+        "original_prompt": "A hot air balloon festival at dawn, colorful balloons, scenic landscape, dreamy atmosphere",
+        "modified_prompt": "[sdedit_regeneration] A hot air balloon festival at dawn, colorful balloons, scenic landscape, dreamy atmosphere (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_113": {
+      "sdedit_0.3": {
+        "original_prompt": "A fox in autumn forest, falling leaves, golden hour lighting, nature photography",
+        "modified_prompt": "[sdedit_regeneration] A fox in autumn forest, falling leaves, golden hour lighting, nature photography (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_114": {
+      "sdedit_0.3": {
+        "original_prompt": "A book on the shelf",
+        "modified_prompt": "[sdedit_regeneration] A book on the shelf (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_115": {
+      "sdedit_0.3": {
+        "original_prompt": "A keyboard on the desk",
+        "modified_prompt": "[sdedit_regeneration] A keyboard on the desk (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_116": {
+      "sdedit_0.3": {
+        "original_prompt": "A starry night over desert dunes, milky way galaxy, astrophotography",
+        "modified_prompt": "[sdedit_regeneration] A starry night over desert dunes, milky way galaxy, astrophotography (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_117": {
+      "sdedit_0.3": {
+        "original_prompt": "A sea turtle swimming over coral, ocean conservation, marine life",
+        "modified_prompt": "[sdedit_regeneration] A sea turtle swimming over coral, ocean conservation, marine life (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_118": {
+      "sdedit_0.3": {
+        "original_prompt": "A bed in the bedroom",
+        "modified_prompt": "[sdedit_regeneration] A bed in the bedroom (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_119": {
+      "sdedit_0.3": {
+        "original_prompt": "A couch in the living room",
+        "modified_prompt": "[sdedit_regeneration] A couch in the living room (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_120": {
+      "sdedit_0.3": {
+        "original_prompt": "An umbrella in the rain",
+        "modified_prompt": "[sdedit_regeneration] An umbrella in the rain (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_121": {
+      "sdedit_0.3": {
+        "original_prompt": "A skateboard on the ground",
+        "modified_prompt": "[sdedit_regeneration] A skateboard on the ground (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_122": {
+      "sdedit_0.3": {
+        "original_prompt": "An apple in a basket",
+        "modified_prompt": "[sdedit_regeneration] An apple in a basket (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_123": {
+      "sdedit_0.3": {
+        "original_prompt": "A traditional tea ceremony in China, cultural ritual, serene atmosphere",
+        "modified_prompt": "[sdedit_regeneration] A traditional tea ceremony in China, cultural ritual, serene atmosphere (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_124": {
+      "sdedit_0.3": {
+        "original_prompt": "A mystical forest with glowing mushrooms, magical atmosphere, fantasy art, volumetric lighting",
+        "modified_prompt": "[sdedit_regeneration] A mystical forest with glowing mushrooms, magical atmosphere, fantasy art, volumetric lighting (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_125": {
+      "sdedit_0.3": {
+        "original_prompt": "A giant panda eating bamboo in misty mountains, cute wildlife photography",
+        "modified_prompt": "[sdedit_regeneration] A giant panda eating bamboo in misty mountains, cute wildlife photography (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_126": {
+      "sdedit_0.3": {
+        "original_prompt": "A hummingbird feeding from flower, frozen motion, macro wildlife photography",
+        "modified_prompt": "[sdedit_regeneration] A hummingbird feeding from flower, frozen motion, macro wildlife photography (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_127": {
+      "sdedit_0.3": {
+        "original_prompt": "A handbag on a table",
+        "modified_prompt": "[sdedit_regeneration] A handbag on a table (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_128": {
+      "sdedit_0.3": {
+        "original_prompt": "A majestic dragon soaring through stormy clouds, dramatic lighting, fantasy art, highly detailed",
+        "modified_prompt": "[sdedit_regeneration] A majestic dragon soaring through stormy clouds, dramatic lighting, fantasy art, highly detailed (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_129": {
+      "sdedit_0.3": {
+        "original_prompt": "A wild horse galloping across plains, motion capture, freedom, nature",
+        "modified_prompt": "[sdedit_regeneration] A wild horse galloping across plains, motion capture, freedom, nature (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_130": {
+      "sdedit_0.3": {
+        "original_prompt": "A gothic cathedral interior with stained glass, religious architecture, light rays",
+        "modified_prompt": "[sdedit_regeneration] A gothic cathedral interior with stained glass, religious architecture, light rays (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_131": {
+      "sdedit_0.3": {
+        "original_prompt": "A baseball glove on the bench",
+        "modified_prompt": "[sdedit_regeneration] A baseball glove on the bench (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_132": {
+      "sdedit_0.3": {
+        "original_prompt": "A cute robot gardening in a greenhouse, sunny day, wholesome, pixar style, 3d render",
+        "modified_prompt": "[sdedit_regeneration] A cute robot gardening in a greenhouse, sunny day, wholesome, pixar style, 3d render (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_133": {
+      "sdedit_0.3": {
+        "original_prompt": "A sink in the kitchen",
+        "modified_prompt": "[sdedit_regeneration] A sink in the kitchen (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_134": {
+      "sdedit_0.3": {
+        "original_prompt": "A giant turtle carrying a village on its back, fantasy creature, detailed, epic scale",
+        "modified_prompt": "[sdedit_regeneration] A giant turtle carrying a village on its back, fantasy creature, detailed, epic scale (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_135": {
+      "sdedit_0.3": {
+        "original_prompt": "A farmer's market with fresh produce, local food, community gathering",
+        "modified_prompt": "[sdedit_regeneration] A farmer's market with fresh produce, local food, community gathering (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_136": {
+      "sdedit_0.3": {
+        "original_prompt": "A cat sitting on a windowsill",
+        "modified_prompt": "[sdedit_regeneration] A cat sitting on a windowsill (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_137": {
+      "sdedit_0.3": {
+        "original_prompt": "A floating market in Thailand, boats with fruits, busy scene, travel photography",
+        "modified_prompt": "[sdedit_regeneration] A floating market in Thailand, boats with fruits, busy scene, travel photography (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_138": {
+      "sdedit_0.3": {
+        "original_prompt": "A dancer performing on stage",
+        "modified_prompt": "[sdedit_regeneration] A dancer performing on stage (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_139": {
+      "sdedit_0.3": {
+        "original_prompt": "An astronaut exploring an alien planet, vibrant colors, sci-fi concept art, epic composition",
+        "modified_prompt": "[sdedit_regeneration] An astronaut exploring an alien planet, vibrant colors, sci-fi concept art, epic composition (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_140": {
+      "sdedit_0.3": {
+        "original_prompt": "A steampunk airship floating among the clouds, intricate mechanical details, sunset lighting",
+        "modified_prompt": "[sdedit_regeneration] A steampunk airship floating among the clouds, intricate mechanical details, sunset lighting (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_141": {
+      "sdedit_0.3": {
+        "original_prompt": "A bioluminescent bay with glowing water, night scene, magical nature phenomenon",
+        "modified_prompt": "[sdedit_regeneration] A bioluminescent bay with glowing water, night scene, magical nature phenomenon (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_142": {
+      "sdedit_0.3": {
+        "original_prompt": "A firefighter at the station",
+        "modified_prompt": "[sdedit_regeneration] A firefighter at the station (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_143": {
+      "sdedit_0.3": {
+        "original_prompt": "A refrigerator in the corner",
+        "modified_prompt": "[sdedit_regeneration] A refrigerator in the corner (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_144": {
+      "sdedit_0.3": {
+        "original_prompt": "A hedge maze in formal garden, aerial view, geometric patterns",
+        "modified_prompt": "[sdedit_regeneration] A hedge maze in formal garden, aerial view, geometric patterns (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_145": {
+      "sdedit_0.3": {
+        "original_prompt": "A futuristic classroom with holographic teachers, education technology concept",
+        "modified_prompt": "[sdedit_regeneration] A futuristic classroom with holographic teachers, education technology concept (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_146": {
+      "sdedit_0.3": {
+        "original_prompt": "A rainforest canopy with morning mist, biodiversity, nature conservation",
+        "modified_prompt": "[sdedit_regeneration] A rainforest canopy with morning mist, biodiversity, nature conservation (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_147": {
+      "sdedit_0.3": {
+        "original_prompt": "A mouse on the pad",
+        "modified_prompt": "[sdedit_regeneration] A mouse on the pad (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_148": {
+      "sdedit_0.3": {
+        "original_prompt": "A retro diner at night, neon signs, american nostalgia, cinematic",
+        "modified_prompt": "[sdedit_regeneration] A retro diner at night, neon signs, american nostalgia, cinematic (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_149": {
+      "sdedit_0.3": {
+        "original_prompt": "A zen garden with raked sand patterns, minimalist, peaceful, Japanese aesthetic",
+        "modified_prompt": "[sdedit_regeneration] A zen garden with raked sand patterns, minimalist, peaceful, Japanese aesthetic (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_150": {
+      "sdedit_0.3": {
+        "original_prompt": "A zebra eating grass",
+        "modified_prompt": "[sdedit_regeneration] A zebra eating grass (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_151": {
+      "sdedit_0.3": {
+        "original_prompt": "A sandwich on a plate",
+        "modified_prompt": "[sdedit_regeneration] A sandwich on a plate (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_152": {
+      "sdedit_0.3": {
+        "original_prompt": "A wizard casting a spell in his tower, magical effects, fantasy art, dramatic lighting",
+        "modified_prompt": "[sdedit_regeneration] A wizard casting a spell in his tower, magical effects, fantasy art, dramatic lighting (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_153": {
+      "sdedit_0.3": {
+        "original_prompt": "A survival shelter in arctic wilderness, extreme conditions, adventure",
+        "modified_prompt": "[sdedit_regeneration] A survival shelter in arctic wilderness, extreme conditions, adventure (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_154": {
+      "sdedit_0.3": {
+        "original_prompt": "A traffic light on the corner",
+        "modified_prompt": "[sdedit_regeneration] A traffic light on the corner (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_155": {
+      "sdedit_0.3": {
+        "original_prompt": "A peacock displaying feathers, vibrant colors, nature photography",
+        "modified_prompt": "[sdedit_regeneration] A peacock displaying feathers, vibrant colors, nature photography (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_156": {
+      "sdedit_0.3": {
+        "original_prompt": "A mountain cabin with smoke from chimney, winter scene, cozy isolation",
+        "modified_prompt": "[sdedit_regeneration] A mountain cabin with smoke from chimney, winter scene, cozy isolation (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_157": {
+      "sdedit_0.3": {
+        "original_prompt": "A knight in shining armor standing guard, medieval castle, dramatic portrait",
+        "modified_prompt": "[sdedit_regeneration] A knight in shining armor standing guard, medieval castle, dramatic portrait (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_158": {
+      "sdedit_0.3": {
+        "original_prompt": "A student studying at the library",
+        "modified_prompt": "[sdedit_regeneration] A student studying at the library (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_159": {
+      "sdedit_0.3": {
+        "original_prompt": "A traditional wedding ceremony in India, colorful clothes, cultural celebration",
+        "modified_prompt": "[sdedit_regeneration] A traditional wedding ceremony in India, colorful clothes, cultural celebration (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_160": {
+      "sdedit_0.3": {
+        "original_prompt": "A bear in the forest",
+        "modified_prompt": "[sdedit_regeneration] A bear in the forest (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_161": {
+      "sdedit_0.3": {
+        "original_prompt": "A grand ballroom with chandeliers, elegant event space, classical architecture",
+        "modified_prompt": "[sdedit_regeneration] A grand ballroom with chandeliers, elegant event space, classical architecture (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_162": {
+      "sdedit_0.3": {
+        "original_prompt": "A photographer taking pictures",
+        "modified_prompt": "[sdedit_regeneration] A photographer taking pictures (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_163": {
+      "sdedit_0.3": {
+        "original_prompt": "An elephant walking in the savanna",
+        "modified_prompt": "[sdedit_regeneration] An elephant walking in the savanna (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_164": {
+      "sdedit_0.3": {
+        "original_prompt": "A futuristic cityscape at night, neon lights, flying cars, cyberpunk aesthetic, detailed",
+        "modified_prompt": "[sdedit_regeneration] A futuristic cityscape at night, neon lights, flying cars, cyberpunk aesthetic, detailed (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_165": {
+      "sdedit_0.3": {
+        "original_prompt": "A massive waterfall in tropical jungle, rainbow mist, nature documentary style",
+        "modified_prompt": "[sdedit_regeneration] A massive waterfall in tropical jungle, rainbow mist, nature documentary style (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_166": {
+      "sdedit_0.3": {
+        "original_prompt": "A remote on the coffee table",
+        "modified_prompt": "[sdedit_regeneration] A remote on the coffee table (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_167": {
+      "sdedit_0.3": {
+        "original_prompt": "A cyclist on the road",
+        "modified_prompt": "[sdedit_regeneration] A cyclist on the road (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_168": {
+      "sdedit_0.3": {
+        "original_prompt": "A police officer on patrol",
+        "modified_prompt": "[sdedit_regeneration] A police officer on patrol (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_169": {
+      "sdedit_0.3": {
+        "original_prompt": "A robot hand painting on canvas, creative AI, modern art studio",
+        "modified_prompt": "[sdedit_regeneration] A robot hand painting on canvas, creative AI, modern art studio (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_170": {
+      "sdedit_0.3": {
+        "original_prompt": "A airplane flying in the sky",
+        "modified_prompt": "[sdedit_regeneration] A airplane flying in the sky (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_171": {
+      "sdedit_0.3": {
+        "original_prompt": "A Victorian mansion with ghosts, spooky atmosphere, gothic art style",
+        "modified_prompt": "[sdedit_regeneration] A Victorian mansion with ghosts, spooky atmosphere, gothic art style (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_172": {
+      "sdedit_0.3": {
+        "original_prompt": "A backpack on a chair",
+        "modified_prompt": "[sdedit_regeneration] A backpack on a chair (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_173": {
+      "sdedit_0.3": {
+        "original_prompt": "A stop sign on the road",
+        "modified_prompt": "[sdedit_regeneration] A stop sign on the road (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_174": {
+      "sdedit_0.3": {
+        "original_prompt": "A pair of scissors in the drawer",
+        "modified_prompt": "[sdedit_regeneration] A pair of scissors in the drawer (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_175": {
+      "sdedit_0.3": {
+        "original_prompt": "A samurai standing in bamboo forest, misty atmosphere, traditional Japanese art style",
+        "modified_prompt": "[sdedit_regeneration] A samurai standing in bamboo forest, misty atmosphere, traditional Japanese art style (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_176": {
+      "sdedit_0.3": {
+        "original_prompt": "A surfboard on the sand",
+        "modified_prompt": "[sdedit_regeneration] A surfboard on the sand (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_177": {
+      "sdedit_0.3": {
+        "original_prompt": "A carnival at night with ferris wheel, colorful lights, festive atmosphere",
+        "modified_prompt": "[sdedit_regeneration] A carnival at night with ferris wheel, colorful lights, festive atmosphere (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_178": {
+      "sdedit_0.3": {
+        "original_prompt": "A arctic fox in snow, white camouflage, wildlife survival, cold environment",
+        "modified_prompt": "[sdedit_regeneration] A arctic fox in snow, white camouflage, wildlife survival, cold environment (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_179": {
+      "sdedit_0.3": {
+        "original_prompt": "A suitcase by the door",
+        "modified_prompt": "[sdedit_regeneration] A suitcase by the door (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_180": {
+      "sdedit_0.3": {
+        "original_prompt": "A pair of skis leaning against a wall",
+        "modified_prompt": "[sdedit_regeneration] A pair of skis leaning against a wall (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_181": {
+      "sdedit_0.3": {
+        "original_prompt": "A skier on the slope",
+        "modified_prompt": "[sdedit_regeneration] A skier on the slope (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_182": {
+      "sdedit_0.3": {
+        "original_prompt": "A cat sleeping on a couch",
+        "modified_prompt": "[sdedit_regeneration] A cat sleeping on a couch (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_183": {
+      "sdedit_0.3": {
+        "original_prompt": "A farmer working in the field",
+        "modified_prompt": "[sdedit_regeneration] A farmer working in the field (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_184": {
+      "sdedit_0.3": {
+        "original_prompt": "A runner on the track",
+        "modified_prompt": "[sdedit_regeneration] A runner on the track (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_185": {
+      "sdedit_0.3": {
+        "original_prompt": "A sushi chef preparing fresh fish, traditional kitchen, documentary style",
+        "modified_prompt": "[sdedit_regeneration] A sushi chef preparing fresh fish, traditional kitchen, documentary style (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_186": {
+      "sdedit_0.3": {
+        "original_prompt": "A magical library with infinite shelves, warm candlelight, fantasy interior, detailed",
+        "modified_prompt": "[sdedit_regeneration] A magical library with infinite shelves, warm candlelight, fantasy interior, detailed (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_187": {
+      "sdedit_0.3": {
+        "original_prompt": "A lavender field in Provence, purple flowers, scenic landscape, summer",
+        "modified_prompt": "[sdedit_regeneration] A lavender field in Provence, purple flowers, scenic landscape, summer (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_188": {
+      "sdedit_0.3": {
+        "original_prompt": "A toothbrush in the cup",
+        "modified_prompt": "[sdedit_regeneration] A toothbrush in the cup (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_189": {
+      "sdedit_0.3": {
+        "original_prompt": "A vintage bookstore with ladders, literary atmosphere, warm lighting",
+        "modified_prompt": "[sdedit_regeneration] A vintage bookstore with ladders, literary atmosphere, warm lighting (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_190": {
+      "sdedit_0.3": {
+        "original_prompt": "A cozy cottage in the woods, warm lighting, fairy tale illustration, storybook style",
+        "modified_prompt": "[sdedit_regeneration] A cozy cottage in the woods, warm lighting, fairy tale illustration, storybook style (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_191": {
+      "sdedit_0.3": {
+        "original_prompt": "A phoenix rising from flames, mythical creature, dramatic lighting, fantasy art",
+        "modified_prompt": "[sdedit_regeneration] A phoenix rising from flames, mythical creature, dramatic lighting, fantasy art (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_192": {
+      "sdedit_0.3": {
+        "original_prompt": "A boat sailing on the lake",
+        "modified_prompt": "[sdedit_regeneration] A boat sailing on the lake (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_193": {
+      "sdedit_0.3": {
+        "original_prompt": "A medieval castle on a hilltop, dramatic sky, epic landscape, digital painting",
+        "modified_prompt": "[sdedit_regeneration] A medieval castle on a hilltop, dramatic sky, epic landscape, digital painting (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_194": {
+      "sdedit_0.3": {
+        "original_prompt": "A woman reading a book",
+        "modified_prompt": "[sdedit_regeneration] A woman reading a book (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_195": {
+      "sdedit_0.3": {
+        "original_prompt": "A parrot in tropical rainforest, colorful plumage, nature documentary",
+        "modified_prompt": "[sdedit_regeneration] A parrot in tropical rainforest, colorful plumage, nature documentary (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_196": {
+      "sdedit_0.3": {
+        "original_prompt": "An ancient temple in the jungle, mysterious atmosphere, adventure movie style",
+        "modified_prompt": "[sdedit_regeneration] An ancient temple in the jungle, mysterious atmosphere, adventure movie style (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_197": {
+      "sdedit_0.3": {
+        "original_prompt": "A butterfly garden with exotic species, vibrant colors, macro photography style",
+        "modified_prompt": "[sdedit_regeneration] A butterfly garden with exotic species, vibrant colors, macro photography style (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    },
+    "wm_198": {
+      "sdedit_0.3": {
+        "original_prompt": "A robot and a cat having tea party, whimsical, cartoon style, warm colors",
+        "modified_prompt": "[sdedit_regeneration] A robot and a cat having tea party, whimsical, cartoon style, warm colors (regenerated with noise strength 0.3)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.3
+      }
+    }
+  },
+  "attack_types": {
+    "sdxl": [],
+    "fluxfill": [],
+    "sdedit": [
+      "sdedit_0.3"
+    ]
+  }
+}

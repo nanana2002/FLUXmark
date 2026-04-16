@@ -1,0 +1,19 @@
+{
+  "experiment_name": "OrthoFlow_Topic_0327",
+  "num_inference_steps": 4,
+  "guidance_scale": 0.0,
+  "height": 512,
+  "width": 512,
+  "alpha": 0.6,
+  "fft_radius_inner": 2,
+  "fft_radius_outer": 14,
+  "mask_region": [6, 26, 6, 26],
+  "secret_key": 42,
+  "num_samples": 20,
+  "prompt_seed": 42,
+  "model_path": "/data/daiyina/project_flux/model/flux-schnell",
+  "sdxl_path": "/data/daiyina/project_flux/model/sdxl-instructpix2pix",
+  "flux_fill_path": "/data/daiyina/project_flux/model/flux-fill",
+  "hf_cache": "/data/daiyina/hf_cache",
+  "output_base_dir": "/data/daiyina/project_flux/second"
+}

@@ -1,0 +1,32 @@
+{
+  "description": "示例：prompts_modified.json 格式说明",
+  "note": "此文件由用户自己使用大模型（如ChatGPT/Claude）生成",
+  "format": {
+    "wm_000": {
+      "sdxl_style_oil_painting": {
+        "original_prompt": "A cat sitting on a sofa",
+        "modified_prompt": "[oil_painting] A majestic cat sitting on a velvet sofa, rendered in rich oil painting style with visible brushstrokes",
+        "instruction": "transform into an oil painting style",
+        "modification_type": "oil_painting"
+      },
+      "sdxl_style_sketch": {
+        "original_prompt": "A cat sitting on a sofa",
+        "modified_prompt": "[sketch] A cat sitting on a sofa, pencil sketch style with cross-hatching and shading",
+        "instruction": "convert to pencil sketch style",
+        "modification_type": "sketch"
+      },
+      "fluxfill_center": {
+        "original_prompt": "A cat sitting on a sofa",
+        "modified_prompt": "[inpaint_center] A cat sitting on a sofa (inpainted: a beautiful scenic view through the window)",
+        "inpaint_prompt": "a beautiful scenic view through the window",
+        "modification_type": "inpaint_center"
+      }
+    }
+  },
+  "generation_guide": {
+    "step1": "使用 generate_prompt.py 生成 prompts.json",
+    "step2": "将 prompts.json 中的 prompts 输入大模型",
+    "step3": "使用以下 system prompt 让大模型生成修改后的 prompts:",
+    "system_prompt": "I have a list of image generation prompts. For each prompt, please generate semantic modifications for the following attack types:\n\n1. oil_painting: Transform into an oil painting style\n2. sketch: Convert to pencil sketch style\n3. watercolor: Transform into watercolor painting\n4. cyberpunk: Convert to cyberpunk neon style\n5. anime: Transform into anime style\n6. inpaint_center: Generate an inpainting prompt for center region (e.g., 'a beautiful scenic view')\n7. inpaint_random: Generate an inpainting prompt for random region\n\nPlease output in JSON format with the following structure for each image:\n{\n  'wm_000': {\n    'sdxl_style_oil_painting': {\n      'original_prompt': '...',\n      'modified_prompt': '[oil_painting] ...',\n      'instruction': 'transform into an oil painting style',\n      'modification_type': 'oil_painting'\n    },\n    ...\n  }\n}"
+  }
+}
