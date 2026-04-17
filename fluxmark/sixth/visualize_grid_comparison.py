@@ -25,7 +25,7 @@ import cv2
 
 # ========== 用户可配置 ==========
 IMG_IDX = 27
-ATTACK_NAME = "black_block_random"
+ATTACK_NAME = "fluxfill_random"
 OUTPUT_PATH = os.path.join(
     config["output_base_dir"], "result", "ablation_grid", "grid_size_comparison.png"
 )
@@ -33,10 +33,12 @@ OUTPUT_PATH = os.path.join(
 
 watermarked_dir = os.path.join(config["output_base_dir"], "pic", "watermarked_img")
 attack_dir = os.path.join(config["output_base_dir"], "pic", "attack_watermarked_img")
+watermark_extra_dir = os.path.join(config["output_base_dir"], "watermark_extra")
 
 summary_path = os.path.join(
     watermarked_dir, f"{config['experiment_name']}_watermark_summary.json"
 )
+
 with open(summary_path, "r") as f:
     summary = json.load(f)
 img_info = summary["images"][IMG_IDX]
@@ -48,9 +50,29 @@ attacked_img_path = os.path.join(attack_dir, ATTACK_NAME, f"{img_id}.png")
 if not os.path.exists(attacked_img_path):
     attacked_img_path = os.path.join(attack_dir, ATTACK_NAME, f"{img_id}.jpg")
 
-print(f"📷 原始图: {orig_img_path}")
-print(f"🔥 攻击图: {attacked_img_path}")
+true_mask_path = os.path.join(attack_dir, ATTACK_NAME, f"{img_id}_mask.npy")
+S_orig_path = os.path.join(watermark_extra_dir, f"{img_id}_S_orig.npy")
+S_tamp_path = os.path.join(watermark_extra_dir, f"{img_id}_{ATTACK_NAME}_S_tamp.npy")
+viz_path = os.path.join(
+    config["output_base_dir"], "result", "pic", "tamper_img",
+    f"{ATTACK_NAME}_{img_id}_heatmap.png"
+)
 
+# ==========================
+# 🎯 你要的一模一样格式打印
+# ==========================
+print(f"🆔 处理图片: {img_id} | 攻击类型: {ATTACK_NAME}")
+print(f"📥 输入原始签名路径: {S_orig_path}")
+print(f"📥 输入篡改签名路径: {S_tamp_path}")
+print(f"📥 真实掩码路径: {true_mask_path}")
+print(f"🖼️ 原始图片路径: {orig_img_path}")
+print(f"🖼️ 攻击后图片路径: {attacked_img_path}")
+print(f"📤 输出热力图路径: {viz_path}")
+print(f"📊 输出对比图路径: {OUTPUT_PATH}\n")
+
+# ==========================
+# 继续原有逻辑
+# ==========================
 orig_img = Image.open(orig_img_path).convert("RGB").resize((512, 512), Image.LANCZOS)
 attacked_img = Image.open(attacked_img_path).convert("RGB").resize((512, 512), Image.LANCZOS)
 
@@ -151,12 +173,11 @@ def extract_32x32_signature(img_pil):
             vp = v_pred_spatial[i, j].flatten().float()
             S[i, j] = torch.nn.functional.cosine_similarity(wp.unsqueeze(0), vp.unsqueeze(0)).item()
 
-    # 强制释放所有临时张量
     del img_tensor, z_0, v_pred, v_pred_spatial, pe, ppe, tid, img_ids
     torch.cuda.empty_cache()
     return S
 
-# ========== 4. 只提取一次 32×32，16/8 下采样得到（核心OOM修复） ==========
+# ========== 4. 提取签名 ==========
 print("\n🔬 提取 32×32 签名（原图+攻击图）...")
 S_orig_32 = extract_32x32_signature(orig_img)
 S_tamp_32 = extract_32x32_signature(attacked_img)
@@ -191,9 +212,7 @@ axes[0, 1].imshow(attacked_img)
 axes[0, 1].set_title(f"Attacked: {ATTACK_NAME}", fontsize=14)
 axes[0, 1].axis("off")
 
-true_mask_path = os.path.join(attack_dir, ATTACK_NAME, f"{img_id}_mask.npy")
 true_mask_8x8 = np.load(true_mask_path) if os.path.exists(true_mask_path) else None
-
 if true_mask_8x8 is not None:
     axes[0, 2].imshow(true_mask_8x8, cmap="Reds", interpolation="nearest")
     axes[0, 2].set_title("True Mask (8×8)", fontsize=14)
@@ -231,6 +250,5 @@ os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
 plt.savefig(OUTPUT_PATH, dpi=300, bbox_inches="tight")
 print(f"\n✅ 对比图已保存: {OUTPUT_PATH}")
 
-# 最终释放
 del pipe, W, W_s, encoded
 torch.cuda.empty_cache()
