@@ -49,7 +49,16 @@ def get_prompts():
     prompts = data['prompts']
     print(f"📋 从 prompts.json 加载了 {len(prompts)} 条 prompts")
     if 'source' in data:
-        print(f"   来源: {data['source']['coco_count']} 条 COCO + {data['source']['sd_count']} 条 SD-Prompts")
+        # 兼容新旧两种格式
+        if 'coco_count' in data['source']:
+            # 旧格式
+            coco_count = data['source']['coco_count']
+            sd_count = data['source']['sd_count']
+        else:
+            # 新格式（嵌套结构）
+            coco_count = data['source'].get('coco', {}).get('count', 0)
+            sd_count = data['source'].get('sd_prompts', {}).get('count', 0)
+        print(f"   来源: {coco_count} 条 COCO + {sd_count} 条 SD-Prompts")
     else:
         print("   来源: prompts.json (旧格式)")
 

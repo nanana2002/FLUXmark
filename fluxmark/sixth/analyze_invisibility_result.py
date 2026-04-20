@@ -43,13 +43,13 @@ watermarked_dir = os.path.join(config['output_base_dir'], 'pic', 'watermarked_im
 # 1. 尝试加载 CLIP Score
 # ==========================================
 try:
-    from torchmetrics.multimodal.clip_score import CLIPScore
+    from transformers import CLIPProcessor, CLIPModel
     CLIP_AVAILABLE = True
-    print("✅ CLIP Score 评估可用")
+    print("✅ CLIP Score 评估可用 (transformers本地模式)")
 except ImportError:
     CLIP_AVAILABLE = False
     print("⚠️  CLIP Score 未安装，跳过语义一致性评估")
-    print("   安装命令: pip install torchmetrics")
+    print("   安装命令: pip install transformers")
 
 # ==========================================
 # 2. 尝试加载 FID
@@ -105,26 +105,51 @@ def compute_fid(images_real, images_fake, device='cuda'):
 
 def compute_clip_score(images, prompts, device='cuda'):
     """
-    计算CLIP Score (高性能版 - 大批量)
+    计算CLIP Score (高性能版 - 大批量，本地模型，完全离线)
     """
     if not CLIP_AVAILABLE:
         return None
 
-    images_uint8 = (images * 255).byte()
-    # 使用本地 CLIP 模型，禁止联网
     clip_model_path = "/home/daiyn/project_flux/model/clip-model"
-    clip_score_fn = CLIPScore(model_name_or_path=clip_model_path).to(device)
+
+    # 本地加载 CLIP，强制 local_files_only=True，绝不联网
+    model = CLIPModel.from_pretrained(clip_model_path, local_files_only=True).to(device)
+    processor = CLIPProcessor.from_pretrained(clip_model_path, local_files_only=True)
+    model.eval()
 
     # 大批量计算
     scores = []
     batch_size = 25
-    for i in range(0, len(images_uint8), batch_size):
-        img_batch = images_uint8[i:i+batch_size].to(device)
+    for i in range(0, len(images), batch_size):
+        img_batch = images[i:i+batch_size]
         prompt_batch = prompts[i:i+batch_size]
-        score = clip_score_fn(img_batch, prompt_batch)
-        scores.append(score.item())
 
-    return np.mean(scores)
+        # tensor [0,1] -> PIL Image
+        pil_images = []
+        for img_tensor in img_batch:
+            img_np = (img_tensor.permute(1, 2, 0).cpu().numpy() * 255).clip(0, 255).astype('uint8')
+            pil_images.append(Image.fromarray(img_np))
+
+        inputs = processor(
+            text=prompt_batch,
+            images=pil_images,
+            return_tensors="pt",
+            padding=True,
+            truncation=True,
+            max_length=77
+        )
+        inputs = {k: v.to(device) for k, v in inputs.items()}
+
+        with torch.no_grad():
+            outputs = model(**inputs)
+            # logits_per_image: [batch_size, batch_size]，对角线是同图文对的相似度
+            logits = outputs.logits_per_image
+            batch_scores = logits.diagonal().cpu().numpy()
+            scores.extend(batch_scores.tolist())
+
+    del model, processor
+    torch.cuda.empty_cache()
+    return float(np.mean(scores))
 
 
 # ==========================================

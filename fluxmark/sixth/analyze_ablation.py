@@ -34,7 +34,7 @@ from diffusers import FluxPipeline
 
 
 try:
-    from torchmetrics.multimodal.clip_score import CLIPScore
+    from transformers import CLIPProcessor, CLIPModel
     CLIP_AVAILABLE = True
 except ImportError:
     CLIP_AVAILABLE = False
@@ -76,11 +76,18 @@ ABLATIONS = {
         'desc': '消融：不加正交投影'
     },
     'no_ortho_stress': {
-        'name': 'w/o Orthogonal (Stress)',
-        'dir': os.path.join(base_pic_dir, 'ablation_obj_stress_watermarked_img'),
+        'name': 'w/o Orthogonal (Stress α=3.0)',
+        'dir': os.path.join(base_pic_dir, 'ablation_obj_stress_watermarked_img', 'alpha_3.0'),
         'prefix': 'ablation_obj_stress',
         'fallback_prefix': 'ablation_obj',
-        'desc': '消融：不加正交投影（alpha=2.5 压力测试）'
+        'desc': '消融：不加正交投影（alpha=3.0 极限压力测试）'
+    },
+    'full_stress': {
+        'name': 'Full Method (Stress α=3.0)',
+        'dir': os.path.join(base_pic_dir, 'ablation_ortho_stress_watermarked_img', 'alpha_3.0'),
+        'prefix': 'ablation_ortho_stress',
+        'fallback_prefix': 'ablation_ortho',
+        'desc': '完整方法（alpha=3.0 极限压力测试，正交保护图像依然完美）'
     },
     'semantic': {
         'name': 'w/ Semantic Mask',
@@ -142,15 +149,42 @@ def compute_fid(images_real, images_fake, device='cuda'):
 def compute_clip_score(images, prompts, device='cuda'):
     if not CLIP_AVAILABLE:
         return None
-    images_uint8 = (images * 255).byte()
-    clip_fn = CLIPScore(model_name_or_path="openai/clip-vit-base-patch16").to(device)
+
+    clip_model_path = "/home/daiyn/project_flux/model/clip-model"
+    model = CLIPModel.from_pretrained(clip_model_path, local_files_only=True).to(device)
+    processor = CLIPProcessor.from_pretrained(clip_model_path, local_files_only=True)
+    model.eval()
+
     scores = []
     batch_size = 8
-    for i in range(0, len(images_uint8), batch_size):
-        scores.append(clip_fn(images_uint8[i:i+batch_size].to(device), prompts[i:i+batch_size]).item())
+    for i in range(0, len(images), batch_size):
+        img_batch = images[i:i+batch_size]
+        prompt_batch = prompts[i:i+batch_size]
+
+        pil_images = []
+        for img_tensor in img_batch:
+            img_np = (img_tensor.permute(1, 2, 0).cpu().numpy() * 255).clip(0, 255).astype('uint8')
+            pil_images.append(Image.fromarray(img_np))
+
+        inputs = processor(
+            text=prompt_batch,
+            images=pil_images,
+            return_tensors="pt",
+            padding=True,
+            truncation=True,
+            max_length=77
+        )
+        inputs = {k: v.to(device) for k, v in inputs.items()}
+
+        with torch.no_grad():
+            outputs = model(**inputs)
+            batch_scores = outputs.logits_per_image.diagonal().cpu().numpy()
+            scores.extend(batch_scores.tolist())
+
         torch.cuda.empty_cache()
-    result = np.mean(scores)
-    del clip_fn
+
+    result = float(np.mean(scores))
+    del model, processor
     torch.cuda.empty_cache()
     return result
 
@@ -468,7 +502,7 @@ print("\\textbf{Method} & \\textbf{FID$\\downarrow$} & \\textbf{CLIP Score$\\upa
 print("\\midrule")
 
 
-order = ['full', 'no_fft', 'no_ortho', 'no_ortho_stress', 'semantic']
+order = ['full', 'full_stress', 'no_fft', 'no_ortho', 'no_ortho_stress', 'semantic']
 for key in order:
     if key not in ABLATIONS:
         continue

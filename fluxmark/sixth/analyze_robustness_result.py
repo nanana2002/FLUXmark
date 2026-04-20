@@ -348,6 +348,7 @@ for attack_name in tqdm(attack_configs, desc="分析攻击"):
         'images': [],
         'S_orig_means': [],
         'S_tamp_means': [],
+        'S_tamp_stds': [],
         'retention_rates': []
     }
 
@@ -392,12 +393,16 @@ for attack_name in tqdm(attack_configs, desc="分析攻击"):
 
         S_orig_mean = float(np.mean(S_orig))
         S_tamp_mean = float(np.mean(S_tamp))
+        S_orig_std = float(np.std(S_orig))
+        S_tamp_std = float(np.std(S_tamp))
         retention_rate = compute_retention_rate(S_tamp_mean, S_orig_mean)
 
         img_result = {
             'img_id': img_id,
             'S_orig_mean': S_orig_mean,
             'S_tamp_mean': S_tamp_mean,
+            'S_orig_std': S_orig_std,
+            'S_tamp_std': S_tamp_std,
             'retention_rate': retention_rate
         }
 
@@ -475,12 +480,14 @@ for attack_name in tqdm(attack_configs, desc="分析攻击"):
         attack_results['images'].append(img_result)
         attack_results['S_orig_means'].append(S_orig_mean)
         attack_results['S_tamp_means'].append(S_tamp_mean)
+        attack_results['S_tamp_stds'].append(S_tamp_std)
         attack_results['retention_rates'].append(retention_rate)
 
     if attack_results['S_tamp_means']:
         merge_results[attack_name] = {
             'mean_cosine': float(np.mean(attack_results['S_tamp_means'])),
             'std_cosine': float(np.std(attack_results['S_tamp_means'])),
+            'mean_std_cosine': float(np.mean(attack_results['S_tamp_stds'])),
             'mean_retention_rate': float(np.mean(attack_results['retention_rates']))
         }
 
@@ -552,22 +559,23 @@ print(f"   热力图: {pic_result_dir}")
 # ==========================================
 # 6. 打印汇总表格
 # ==========================================
-print("\n" + "="*100)
+print("\n" + "="*102)
 print("📊 Table 1: 全局鲁棒性评价 (Robustness / Copyright Verification)")
-print("="*100)
-print(f"{'Attack Type':<25} {'Mean Cosine':>15} {'Retention Rate':>18} {'AUC':>10} {'TPR@0.1%FPR':>15}")
-print("-"*100)
+print("="*102)
+print(f"{'Attack Type':<25} {'Mean Cosine':>15} {'Std Cosine':>15} {'Retention Rate':>18} {'AUC':>10} {'TPR@0.1%FPR':>15}")
+print("-"*102)
 
 for attack_name in attack_configs:
     if attack_name not in merge_results:
         continue
     stats = merge_results[attack_name]
     print(f"{attack_name:<25} {stats.get('mean_cosine', 0):>15.4f} "
+          f"{stats.get('mean_std_cosine', 0):>15.4f} "
           f"{stats.get('mean_retention_rate', 0):>17.2f}% "
           f"{stats.get('auc', 0):>10.4f} "
           f"{stats.get('tpr_at_0.1%_fpr', 0):>15.4f}")
 
-print("="*100)
+print("="*102)
 
 print("\n" + "="*100)
 print("📊 Table 2: 篡改定位评价 (Tamper Localization / Fragility)")

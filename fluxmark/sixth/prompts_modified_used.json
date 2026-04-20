@@ -1,26 +1,26 @@
 {
   "experiment_name": "OrthoFlow_Topic_0327_HighPerf",
-  "timestamp": "2026-04-20T16:03:01.591711",
+  "timestamp": "2026-04-20T21:30:49.836367",
   "description": "\u5b9e\u9645\u4f7f\u7528\u7684\u8bed\u4e49\u4fee\u6539prompts\uff08\u6765\u81eaprompts_modified.json\u6216\u9ed8\u8ba4\uff09",
   "modified_prompts": {
     "wm_000": {
       "sdxl_style_oil_painting": {
-        "original_prompt": "A frisbee in the air",
-        "modified_prompt": "[oil_painting] A frisbee in the air (style: transform into an oil painting style)",
+        "original_prompt": "a highly detailed epic cinematic concept art CG render digital painting artwork: Shrek. By Greg Rutkowski, Ilya Kuvshinov, WLOP, Stanley Artgerm Lau, Ruan Jia and Fenghua Zhong, trending on ArtStation, subtle muted cinematic colors, made in Maya, Blender and Photoshop, octane render, excellent composition, cinematic atmosphere, dynamic dramatic cinematic lighting, precise correct anatomy, aesthetic, very inspirational, arthouse",
+        "modified_prompt": "[oil_painting] a highly detailed epic cinematic concept art CG render digital painting artwork: Shrek. By Greg Rutkowski, Ilya Kuvshinov, WLOP, Stanley Artgerm Lau, Ruan Jia and Fenghua Zhong, trending on ArtStation, subtle muted cinematic colors, made in Maya, Blender and Photoshop, octane render, excellent composition, cinematic atmosphere, dynamic dramatic cinematic lighting, precise correct anatomy, aesthetic, very inspirational, arthouse (style: transform into an oil painting style)",
         "instruction": "transform into an oil painting style",
         "modification_type": "oil_painting",
         "source": "default"
       },
       "sdxl_style_sketch": {
-        "original_prompt": "A frisbee in the air",
-        "modified_prompt": "[sketch] A frisbee in the air (style: convert to pencil sketch style)",
+        "original_prompt": "a highly detailed epic cinematic concept art CG render digital painting artwork: Shrek. By Greg Rutkowski, Ilya Kuvshinov, WLOP, Stanley Artgerm Lau, Ruan Jia and Fenghua Zhong, trending on ArtStation, subtle muted cinematic colors, made in Maya, Blender and Photoshop, octane render, excellent composition, cinematic atmosphere, dynamic dramatic cinematic lighting, precise correct anatomy, aesthetic, very inspirational, arthouse",
+        "modified_prompt": "[sketch] a highly detailed epic cinematic concept art CG render digital painting artwork: Shrek. By Greg Rutkowski, Ilya Kuvshinov, WLOP, Stanley Artgerm Lau, Ruan Jia and Fenghua Zhong, trending on ArtStation, subtle muted cinematic colors, made in Maya, Blender and Photoshop, octane render, excellent composition, cinematic atmosphere, dynamic dramatic cinematic lighting, precise correct anatomy, aesthetic, very inspirational, arthouse (style: convert to pencil sketch style)",
         "instruction": "convert to pencil sketch style",
         "modification_type": "sketch",
         "source": "default"
       },
       "fluxfill_center": {
-        "original_prompt": "A frisbee in the air",
-        "modified_prompt": "[inpaint_center] A frisbee in the air (inpainted: seamless continuation)",
+        "original_prompt": "a highly detailed epic cinematic concept art CG render digital painting artwork: Shrek. By Greg Rutkowski, Ilya Kuvshinov, WLOP, Stanley Artgerm Lau, Ruan Jia and Fenghua Zhong, trending on ArtStation, subtle muted cinematic colors, made in Maya, Blender and Photoshop, octane render, excellent composition, cinematic atmosphere, dynamic dramatic cinematic lighting, precise correct anatomy, aesthetic, very inspirational, arthouse",
+        "modified_prompt": "[inpaint_center] a highly detailed epic cinematic concept art CG render digital painting artwork: Shrek. By Greg Rutkowski, Ilya Kuvshinov, WLOP, Stanley Artgerm Lau, Ruan Jia and Fenghua Zhong, trending on ArtStation, subtle muted cinematic colors, made in Maya, Blender and Photoshop, octane render, excellent composition, cinematic atmosphere, dynamic dramatic cinematic lighting, precise correct anatomy, aesthetic, very inspirational, arthouse (inpainted: seamless continuation)",
         "inpaint_prompt": "seamless continuation",
         "modification_type": "inpaint_center",
         "mask_ratio": 0.3,
@@ -28,8 +28,8 @@
         "source": "default"
       },
       "fluxfill_random": {
-        "original_prompt": "A frisbee in the air",
-        "modified_prompt": "[inpaint_random] A frisbee in the air (inpainted: seamless continuation)",
+        "original_prompt": "a highly detailed epic cinematic concept art CG render digital painting artwork: Shrek. By Greg Rutkowski, Ilya Kuvshinov, WLOP, Stanley Artgerm Lau, Ruan Jia and Fenghua Zhong, trending on ArtStation, subtle muted cinematic colors, made in Maya, Blender and Photoshop, octane render, excellent composition, cinematic atmosphere, dynamic dramatic cinematic lighting, precise correct anatomy, aesthetic, very inspirational, arthouse",
+        "modified_prompt": "[inpaint_random] a highly detailed epic cinematic concept art CG render digital painting artwork: Shrek. By Greg Rutkowski, Ilya Kuvshinov, WLOP, Stanley Artgerm Lau, Ruan Jia and Fenghua Zhong, trending on ArtStation, subtle muted cinematic colors, made in Maya, Blender and Photoshop, octane render, excellent composition, cinematic atmosphere, dynamic dramatic cinematic lighting, precise correct anatomy, aesthetic, very inspirational, arthouse (inpainted: seamless continuation)",
         "inpaint_prompt": "seamless continuation",
         "modification_type": "inpaint_random",
         "mask_ratio": 0.25,
@@ -37,30 +37,42 @@
         "source": "default"
       },
       "sdedit_0.3": {
-        "original_prompt": "A frisbee in the air",
-        "modified_prompt": "[sdedit_regeneration] A frisbee in the air (regenerated with noise strength 0.3)",
+        "original_prompt": "a highly detailed epic cinematic concept art CG render digital painting artwork: Shrek. By Greg Rutkowski, Ilya Kuvshinov, WLOP, Stanley Artgerm Lau, Ruan Jia and Fenghua Zhong, trending on ArtStation, subtle muted cinematic colors, made in Maya, Blender and Photoshop, octane render, excellent composition, cinematic atmosphere, dynamic dramatic cinematic lighting, precise correct anatomy, aesthetic, very inspirational, arthouse",
+        "modified_prompt": "[sdedit_regeneration] a highly detailed epic cinematic concept art CG render digital painting artwork: Shrek. By Greg Rutkowski, Ilya Kuvshinov, WLOP, Stanley Artgerm Lau, Ruan Jia and Fenghua Zhong, trending on ArtStation, subtle muted cinematic colors, made in Maya, Blender and Photoshop, octane render, excellent composition, cinematic atmosphere, dynamic dramatic cinematic lighting, precise correct anatomy, aesthetic, very inspirational, arthouse (regenerated with noise strength 0.3)",
         "modification_type": "sdedit_regeneration",
         "noise_strength": 0.3
+      },
+      "sdedit_0.4": {
+        "original_prompt": "a highly detailed epic cinematic concept art CG render digital painting artwork: Shrek. By Greg Rutkowski, Ilya Kuvshinov, WLOP, Stanley Artgerm Lau, Ruan Jia and Fenghua Zhong, trending on ArtStation, subtle muted cinematic colors, made in Maya, Blender and Photoshop, octane render, excellent composition, cinematic atmosphere, dynamic dramatic cinematic lighting, precise correct anatomy, aesthetic, very inspirational, arthouse",
+        "modified_prompt": "[sdedit_regeneration] a highly detailed epic cinematic concept art CG render digital painting artwork: Shrek. By Greg Rutkowski, Ilya Kuvshinov, WLOP, Stanley Artgerm Lau, Ruan Jia and Fenghua Zhong, trending on ArtStation, subtle muted cinematic colors, made in Maya, Blender and Photoshop, octane render, excellent composition, cinematic atmosphere, dynamic dramatic cinematic lighting, precise correct anatomy, aesthetic, very inspirational, arthouse (regenerated with noise strength 0.4)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.4
+      },
+      "sdedit_0.5": {
+        "original_prompt": "a highly detailed epic cinematic concept art CG render digital painting artwork: Shrek. By Greg Rutkowski, Ilya Kuvshinov, WLOP, Stanley Artgerm Lau, Ruan Jia and Fenghua Zhong, trending on ArtStation, subtle muted cinematic colors, made in Maya, Blender and Photoshop, octane render, excellent composition, cinematic atmosphere, dynamic dramatic cinematic lighting, precise correct anatomy, aesthetic, very inspirational, arthouse",
+        "modified_prompt": "[sdedit_regeneration] a highly detailed epic cinematic concept art CG render digital painting artwork: Shrek. By Greg Rutkowski, Ilya Kuvshinov, WLOP, Stanley Artgerm Lau, Ruan Jia and Fenghua Zhong, trending on ArtStation, subtle muted cinematic colors, made in Maya, Blender and Photoshop, octane render, excellent composition, cinematic atmosphere, dynamic dramatic cinematic lighting, precise correct anatomy, aesthetic, very inspirational, arthouse (regenerated with noise strength 0.5)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.5
       }
     },
     "wm_001": {
       "sdxl_style_oil_painting": {
-        "original_prompt": "A teddy bear on the bed",
-        "modified_prompt": "[oil_painting] A teddy bear on the bed (style: transform into an oil painting style)",
+        "original_prompt": "Elderly  gray haired man in a suit scowling into the camera.",
+        "modified_prompt": "[oil_painting] Elderly  gray haired man in a suit scowling into the camera. (style: transform into an oil painting style)",
         "instruction": "transform into an oil painting style",
         "modification_type": "oil_painting",
         "source": "default"
       },
       "sdxl_style_sketch": {
-        "original_prompt": "A teddy bear on the bed",
-        "modified_prompt": "[sketch] A teddy bear on the bed (style: convert to pencil sketch style)",
+        "original_prompt": "Elderly  gray haired man in a suit scowling into the camera.",
+        "modified_prompt": "[sketch] Elderly  gray haired man in a suit scowling into the camera. (style: convert to pencil sketch style)",
         "instruction": "convert to pencil sketch style",
         "modification_type": "sketch",
         "source": "default"
       },
       "fluxfill_center": {
-        "original_prompt": "A teddy bear on the bed",
-        "modified_prompt": "[inpaint_center] A teddy bear on the bed (inpainted: seamless continuation)",
+        "original_prompt": "Elderly  gray haired man in a suit scowling into the camera.",
+        "modified_prompt": "[inpaint_center] Elderly  gray haired man in a suit scowling into the camera. (inpainted: seamless continuation)",
         "inpaint_prompt": "seamless continuation",
         "modification_type": "inpaint_center",
         "mask_ratio": 0.3,
@@ -68,8 +80,8 @@
         "source": "default"
       },
       "fluxfill_random": {
-        "original_prompt": "A teddy bear on the bed",
-        "modified_prompt": "[inpaint_random] A teddy bear on the bed (inpainted: seamless continuation)",
+        "original_prompt": "Elderly  gray haired man in a suit scowling into the camera.",
+        "modified_prompt": "[inpaint_random] Elderly  gray haired man in a suit scowling into the camera. (inpainted: seamless continuation)",
         "inpaint_prompt": "seamless continuation",
         "modification_type": "inpaint_random",
         "mask_ratio": 0.25,
@@ -77,30 +89,42 @@
         "source": "default"
       },
       "sdedit_0.3": {
-        "original_prompt": "A teddy bear on the bed",
-        "modified_prompt": "[sdedit_regeneration] A teddy bear on the bed (regenerated with noise strength 0.3)",
+        "original_prompt": "Elderly  gray haired man in a suit scowling into the camera.",
+        "modified_prompt": "[sdedit_regeneration] Elderly  gray haired man in a suit scowling into the camera. (regenerated with noise strength 0.3)",
         "modification_type": "sdedit_regeneration",
         "noise_strength": 0.3
+      },
+      "sdedit_0.4": {
+        "original_prompt": "Elderly  gray haired man in a suit scowling into the camera.",
+        "modified_prompt": "[sdedit_regeneration] Elderly  gray haired man in a suit scowling into the camera. (regenerated with noise strength 0.4)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.4
+      },
+      "sdedit_0.5": {
+        "original_prompt": "Elderly  gray haired man in a suit scowling into the camera.",
+        "modified_prompt": "[sdedit_regeneration] Elderly  gray haired man in a suit scowling into the camera. (regenerated with noise strength 0.5)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.5
       }
     },
     "wm_002": {
       "sdxl_style_oil_painting": {
-        "original_prompt": "A vintage train station in winter, steam locomotive, nostalgic atmosphere",
-        "modified_prompt": "[oil_painting] A vintage train station in winter, steam locomotive, nostalgic atmosphere (style: transform into an oil painting style)",
+        "original_prompt": "A young girl looking at a huge pizza in amazement.",
+        "modified_prompt": "[oil_painting] A young girl looking at a huge pizza in amazement. (style: transform into an oil painting style)",
         "instruction": "transform into an oil painting style",
         "modification_type": "oil_painting",
         "source": "default"
       },
       "sdxl_style_sketch": {
-        "original_prompt": "A vintage train station in winter, steam locomotive, nostalgic atmosphere",
-        "modified_prompt": "[sketch] A vintage train station in winter, steam locomotive, nostalgic atmosphere (style: convert to pencil sketch style)",
+        "original_prompt": "A young girl looking at a huge pizza in amazement.",
+        "modified_prompt": "[sketch] A young girl looking at a huge pizza in amazement. (style: convert to pencil sketch style)",
         "instruction": "convert to pencil sketch style",
         "modification_type": "sketch",
         "source": "default"
       },
       "fluxfill_center": {
-        "original_prompt": "A vintage train station in winter, steam locomotive, nostalgic atmosphere",
-        "modified_prompt": "[inpaint_center] A vintage train station in winter, steam locomotive, nostalgic atmosphere (inpainted: seamless continuation)",
+        "original_prompt": "A young girl looking at a huge pizza in amazement.",
+        "modified_prompt": "[inpaint_center] A young girl looking at a huge pizza in amazement. (inpainted: seamless continuation)",
         "inpaint_prompt": "seamless continuation",
         "modification_type": "inpaint_center",
         "mask_ratio": 0.3,
@@ -108,8 +132,8 @@
         "source": "default"
       },
       "fluxfill_random": {
-        "original_prompt": "A vintage train station in winter, steam locomotive, nostalgic atmosphere",
-        "modified_prompt": "[inpaint_random] A vintage train station in winter, steam locomotive, nostalgic atmosphere (inpainted: seamless continuation)",
+        "original_prompt": "A young girl looking at a huge pizza in amazement.",
+        "modified_prompt": "[inpaint_random] A young girl looking at a huge pizza in amazement. (inpainted: seamless continuation)",
         "inpaint_prompt": "seamless continuation",
         "modification_type": "inpaint_random",
         "mask_ratio": 0.25,
@@ -117,30 +141,42 @@
         "source": "default"
       },
       "sdedit_0.3": {
-        "original_prompt": "A vintage train station in winter, steam locomotive, nostalgic atmosphere",
-        "modified_prompt": "[sdedit_regeneration] A vintage train station in winter, steam locomotive, nostalgic atmosphere (regenerated with noise strength 0.3)",
+        "original_prompt": "A young girl looking at a huge pizza in amazement.",
+        "modified_prompt": "[sdedit_regeneration] A young girl looking at a huge pizza in amazement. (regenerated with noise strength 0.3)",
         "modification_type": "sdedit_regeneration",
         "noise_strength": 0.3
+      },
+      "sdedit_0.4": {
+        "original_prompt": "A young girl looking at a huge pizza in amazement.",
+        "modified_prompt": "[sdedit_regeneration] A young girl looking at a huge pizza in amazement. (regenerated with noise strength 0.4)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.4
+      },
+      "sdedit_0.5": {
+        "original_prompt": "A young girl looking at a huge pizza in amazement.",
+        "modified_prompt": "[sdedit_regeneration] A young girl looking at a huge pizza in amazement. (regenerated with noise strength 0.5)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.5
       }
     },
     "wm_003": {
       "sdxl_style_oil_painting": {
-        "original_prompt": "A ballerina dancing in an abandoned theater, dust particles, atmospheric lighting",
-        "modified_prompt": "[oil_painting] A ballerina dancing in an abandoned theater, dust particles, atmospheric lighting (style: transform into an oil painting style)",
+        "original_prompt": "rimuru tempest, tensei shitara slime datta ken, super highly detailed, professional digital painting, concept art, smooth, sharp focus, extreme illustration, unreal engine 5, photorealism, hd quality, 8 k, cinema 4 d, 3 d, beautiful, black hoodie, cuffed sleeves, cinematic, art by artgerm, yoshitaka amano and junji ito",
+        "modified_prompt": "[oil_painting] rimuru tempest, tensei shitara slime datta ken, super highly detailed, professional digital painting, concept art, smooth, sharp focus, extreme illustration, unreal engine 5, photorealism, hd quality, 8 k, cinema 4 d, 3 d, beautiful, black hoodie, cuffed sleeves, cinematic, art by artgerm, yoshitaka amano and junji ito (style: transform into an oil painting style)",
         "instruction": "transform into an oil painting style",
         "modification_type": "oil_painting",
         "source": "default"
       },
       "sdxl_style_sketch": {
-        "original_prompt": "A ballerina dancing in an abandoned theater, dust particles, atmospheric lighting",
-        "modified_prompt": "[sketch] A ballerina dancing in an abandoned theater, dust particles, atmospheric lighting (style: convert to pencil sketch style)",
+        "original_prompt": "rimuru tempest, tensei shitara slime datta ken, super highly detailed, professional digital painting, concept art, smooth, sharp focus, extreme illustration, unreal engine 5, photorealism, hd quality, 8 k, cinema 4 d, 3 d, beautiful, black hoodie, cuffed sleeves, cinematic, art by artgerm, yoshitaka amano and junji ito",
+        "modified_prompt": "[sketch] rimuru tempest, tensei shitara slime datta ken, super highly detailed, professional digital painting, concept art, smooth, sharp focus, extreme illustration, unreal engine 5, photorealism, hd quality, 8 k, cinema 4 d, 3 d, beautiful, black hoodie, cuffed sleeves, cinematic, art by artgerm, yoshitaka amano and junji ito (style: convert to pencil sketch style)",
         "instruction": "convert to pencil sketch style",
         "modification_type": "sketch",
         "source": "default"
       },
       "fluxfill_center": {
-        "original_prompt": "A ballerina dancing in an abandoned theater, dust particles, atmospheric lighting",
-        "modified_prompt": "[inpaint_center] A ballerina dancing in an abandoned theater, dust particles, atmospheric lighting (inpainted: seamless continuation)",
+        "original_prompt": "rimuru tempest, tensei shitara slime datta ken, super highly detailed, professional digital painting, concept art, smooth, sharp focus, extreme illustration, unreal engine 5, photorealism, hd quality, 8 k, cinema 4 d, 3 d, beautiful, black hoodie, cuffed sleeves, cinematic, art by artgerm, yoshitaka amano and junji ito",
+        "modified_prompt": "[inpaint_center] rimuru tempest, tensei shitara slime datta ken, super highly detailed, professional digital painting, concept art, smooth, sharp focus, extreme illustration, unreal engine 5, photorealism, hd quality, 8 k, cinema 4 d, 3 d, beautiful, black hoodie, cuffed sleeves, cinematic, art by artgerm, yoshitaka amano and junji ito (inpainted: seamless continuation)",
         "inpaint_prompt": "seamless continuation",
         "modification_type": "inpaint_center",
         "mask_ratio": 0.3,
@@ -148,8 +184,8 @@
         "source": "default"
       },
       "fluxfill_random": {
-        "original_prompt": "A ballerina dancing in an abandoned theater, dust particles, atmospheric lighting",
-        "modified_prompt": "[inpaint_random] A ballerina dancing in an abandoned theater, dust particles, atmospheric lighting (inpainted: seamless continuation)",
+        "original_prompt": "rimuru tempest, tensei shitara slime datta ken, super highly detailed, professional digital painting, concept art, smooth, sharp focus, extreme illustration, unreal engine 5, photorealism, hd quality, 8 k, cinema 4 d, 3 d, beautiful, black hoodie, cuffed sleeves, cinematic, art by artgerm, yoshitaka amano and junji ito",
+        "modified_prompt": "[inpaint_random] rimuru tempest, tensei shitara slime datta ken, super highly detailed, professional digital painting, concept art, smooth, sharp focus, extreme illustration, unreal engine 5, photorealism, hd quality, 8 k, cinema 4 d, 3 d, beautiful, black hoodie, cuffed sleeves, cinematic, art by artgerm, yoshitaka amano and junji ito (inpainted: seamless continuation)",
         "inpaint_prompt": "seamless continuation",
         "modification_type": "inpaint_random",
         "mask_ratio": 0.25,
@@ -157,30 +193,42 @@
         "source": "default"
       },
       "sdedit_0.3": {
-        "original_prompt": "A ballerina dancing in an abandoned theater, dust particles, atmospheric lighting",
-        "modified_prompt": "[sdedit_regeneration] A ballerina dancing in an abandoned theater, dust particles, atmospheric lighting (regenerated with noise strength 0.3)",
+        "original_prompt": "rimuru tempest, tensei shitara slime datta ken, super highly detailed, professional digital painting, concept art, smooth, sharp focus, extreme illustration, unreal engine 5, photorealism, hd quality, 8 k, cinema 4 d, 3 d, beautiful, black hoodie, cuffed sleeves, cinematic, art by artgerm, yoshitaka amano and junji ito",
+        "modified_prompt": "[sdedit_regeneration] rimuru tempest, tensei shitara slime datta ken, super highly detailed, professional digital painting, concept art, smooth, sharp focus, extreme illustration, unreal engine 5, photorealism, hd quality, 8 k, cinema 4 d, 3 d, beautiful, black hoodie, cuffed sleeves, cinematic, art by artgerm, yoshitaka amano and junji ito (regenerated with noise strength 0.3)",
         "modification_type": "sdedit_regeneration",
         "noise_strength": 0.3
+      },
+      "sdedit_0.4": {
+        "original_prompt": "rimuru tempest, tensei shitara slime datta ken, super highly detailed, professional digital painting, concept art, smooth, sharp focus, extreme illustration, unreal engine 5, photorealism, hd quality, 8 k, cinema 4 d, 3 d, beautiful, black hoodie, cuffed sleeves, cinematic, art by artgerm, yoshitaka amano and junji ito",
+        "modified_prompt": "[sdedit_regeneration] rimuru tempest, tensei shitara slime datta ken, super highly detailed, professional digital painting, concept art, smooth, sharp focus, extreme illustration, unreal engine 5, photorealism, hd quality, 8 k, cinema 4 d, 3 d, beautiful, black hoodie, cuffed sleeves, cinematic, art by artgerm, yoshitaka amano and junji ito (regenerated with noise strength 0.4)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.4
+      },
+      "sdedit_0.5": {
+        "original_prompt": "rimuru tempest, tensei shitara slime datta ken, super highly detailed, professional digital painting, concept art, smooth, sharp focus, extreme illustration, unreal engine 5, photorealism, hd quality, 8 k, cinema 4 d, 3 d, beautiful, black hoodie, cuffed sleeves, cinematic, art by artgerm, yoshitaka amano and junji ito",
+        "modified_prompt": "[sdedit_regeneration] rimuru tempest, tensei shitara slime datta ken, super highly detailed, professional digital painting, concept art, smooth, sharp focus, extreme illustration, unreal engine 5, photorealism, hd quality, 8 k, cinema 4 d, 3 d, beautiful, black hoodie, cuffed sleeves, cinematic, art by artgerm, yoshitaka amano and junji ito (regenerated with noise strength 0.5)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.5
       }
     },
     "wm_004": {
       "sdxl_style_oil_painting": {
-        "original_prompt": "A deep space nebula with stars, cosmic colors, astronomy photography style",
-        "modified_prompt": "[oil_painting] A deep space nebula with stars, cosmic colors, astronomy photography style (style: transform into an oil painting style)",
+        "original_prompt": "Eleven girls in tennis outfits pose for a picture with their racquets on a tennis court.",
+        "modified_prompt": "[oil_painting] Eleven girls in tennis outfits pose for a picture with their racquets on a tennis court. (style: transform into an oil painting style)",
         "instruction": "transform into an oil painting style",
         "modification_type": "oil_painting",
         "source": "default"
       },
       "sdxl_style_sketch": {
-        "original_prompt": "A deep space nebula with stars, cosmic colors, astronomy photography style",
-        "modified_prompt": "[sketch] A deep space nebula with stars, cosmic colors, astronomy photography style (style: convert to pencil sketch style)",
+        "original_prompt": "Eleven girls in tennis outfits pose for a picture with their racquets on a tennis court.",
+        "modified_prompt": "[sketch] Eleven girls in tennis outfits pose for a picture with their racquets on a tennis court. (style: convert to pencil sketch style)",
         "instruction": "convert to pencil sketch style",
         "modification_type": "sketch",
         "source": "default"
       },
       "fluxfill_center": {
-        "original_prompt": "A deep space nebula with stars, cosmic colors, astronomy photography style",
-        "modified_prompt": "[inpaint_center] A deep space nebula with stars, cosmic colors, astronomy photography style (inpainted: seamless continuation)",
+        "original_prompt": "Eleven girls in tennis outfits pose for a picture with their racquets on a tennis court.",
+        "modified_prompt": "[inpaint_center] Eleven girls in tennis outfits pose for a picture with their racquets on a tennis court. (inpainted: seamless continuation)",
         "inpaint_prompt": "seamless continuation",
         "modification_type": "inpaint_center",
         "mask_ratio": 0.3,
@@ -188,8 +236,8 @@
         "source": "default"
       },
       "fluxfill_random": {
-        "original_prompt": "A deep space nebula with stars, cosmic colors, astronomy photography style",
-        "modified_prompt": "[inpaint_random] A deep space nebula with stars, cosmic colors, astronomy photography style (inpainted: seamless continuation)",
+        "original_prompt": "Eleven girls in tennis outfits pose for a picture with their racquets on a tennis court.",
+        "modified_prompt": "[inpaint_random] Eleven girls in tennis outfits pose for a picture with their racquets on a tennis court. (inpainted: seamless continuation)",
         "inpaint_prompt": "seamless continuation",
         "modification_type": "inpaint_random",
         "mask_ratio": 0.25,
@@ -197,30 +245,42 @@
         "source": "default"
       },
       "sdedit_0.3": {
-        "original_prompt": "A deep space nebula with stars, cosmic colors, astronomy photography style",
-        "modified_prompt": "[sdedit_regeneration] A deep space nebula with stars, cosmic colors, astronomy photography style (regenerated with noise strength 0.3)",
+        "original_prompt": "Eleven girls in tennis outfits pose for a picture with their racquets on a tennis court.",
+        "modified_prompt": "[sdedit_regeneration] Eleven girls in tennis outfits pose for a picture with their racquets on a tennis court. (regenerated with noise strength 0.3)",
         "modification_type": "sdedit_regeneration",
         "noise_strength": 0.3
+      },
+      "sdedit_0.4": {
+        "original_prompt": "Eleven girls in tennis outfits pose for a picture with their racquets on a tennis court.",
+        "modified_prompt": "[sdedit_regeneration] Eleven girls in tennis outfits pose for a picture with their racquets on a tennis court. (regenerated with noise strength 0.4)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.4
+      },
+      "sdedit_0.5": {
+        "original_prompt": "Eleven girls in tennis outfits pose for a picture with their racquets on a tennis court.",
+        "modified_prompt": "[sdedit_regeneration] Eleven girls in tennis outfits pose for a picture with their racquets on a tennis court. (regenerated with noise strength 0.5)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.5
       }
     },
     "wm_005": {
       "sdxl_style_oil_painting": {
-        "original_prompt": "A motorcycle parked on the sidewalk",
-        "modified_prompt": "[oil_painting] A motorcycle parked on the sidewalk (style: transform into an oil painting style)",
+        "original_prompt": "A masterpiece ultrarealistic portrait of a Irristible angel princess tribal-shaman-knight-witch-ghost with  Skull  Iron mask. baroque renaissance  girl  in the night forest. medium shot, intricate, elegant, highly detailed. trending on artstation, digital art, by Stanley Artgerm Lau, WLOP, Rossdraws, James Jean, Andrei Riabovitchev, Marc Simonetti, Yoshitaka Amano. background by James Jean and Gustav Klimt, light by Julie Bell, 4k, porcelain skin.",
+        "modified_prompt": "[oil_painting] A masterpiece ultrarealistic portrait of a Irristible angel princess tribal-shaman-knight-witch-ghost with  Skull  Iron mask. baroque renaissance  girl  in the night forest. medium shot, intricate, elegant, highly detailed. trending on artstation, digital art, by Stanley Artgerm Lau, WLOP, Rossdraws, James Jean, Andrei Riabovitchev, Marc Simonetti, Yoshitaka Amano. background by James Jean and Gustav Klimt, light by Julie Bell, 4k, porcelain skin. (style: transform into an oil painting style)",
         "instruction": "transform into an oil painting style",
         "modification_type": "oil_painting",
         "source": "default"
       },
       "sdxl_style_sketch": {
-        "original_prompt": "A motorcycle parked on the sidewalk",
-        "modified_prompt": "[sketch] A motorcycle parked on the sidewalk (style: convert to pencil sketch style)",
+        "original_prompt": "A masterpiece ultrarealistic portrait of a Irristible angel princess tribal-shaman-knight-witch-ghost with  Skull  Iron mask. baroque renaissance  girl  in the night forest. medium shot, intricate, elegant, highly detailed. trending on artstation, digital art, by Stanley Artgerm Lau, WLOP, Rossdraws, James Jean, Andrei Riabovitchev, Marc Simonetti, Yoshitaka Amano. background by James Jean and Gustav Klimt, light by Julie Bell, 4k, porcelain skin.",
+        "modified_prompt": "[sketch] A masterpiece ultrarealistic portrait of a Irristible angel princess tribal-shaman-knight-witch-ghost with  Skull  Iron mask. baroque renaissance  girl  in the night forest. medium shot, intricate, elegant, highly detailed. trending on artstation, digital art, by Stanley Artgerm Lau, WLOP, Rossdraws, James Jean, Andrei Riabovitchev, Marc Simonetti, Yoshitaka Amano. background by James Jean and Gustav Klimt, light by Julie Bell, 4k, porcelain skin. (style: convert to pencil sketch style)",
         "instruction": "convert to pencil sketch style",
         "modification_type": "sketch",
         "source": "default"
       },
       "fluxfill_center": {
-        "original_prompt": "A motorcycle parked on the sidewalk",
-        "modified_prompt": "[inpaint_center] A motorcycle parked on the sidewalk (inpainted: seamless continuation)",
+        "original_prompt": "A masterpiece ultrarealistic portrait of a Irristible angel princess tribal-shaman-knight-witch-ghost with  Skull  Iron mask. baroque renaissance  girl  in the night forest. medium shot, intricate, elegant, highly detailed. trending on artstation, digital art, by Stanley Artgerm Lau, WLOP, Rossdraws, James Jean, Andrei Riabovitchev, Marc Simonetti, Yoshitaka Amano. background by James Jean and Gustav Klimt, light by Julie Bell, 4k, porcelain skin.",
+        "modified_prompt": "[inpaint_center] A masterpiece ultrarealistic portrait of a Irristible angel princess tribal-shaman-knight-witch-ghost with  Skull  Iron mask. baroque renaissance  girl  in the night forest. medium shot, intricate, elegant, highly detailed. trending on artstation, digital art, by Stanley Artgerm Lau, WLOP, Rossdraws, James Jean, Andrei Riabovitchev, Marc Simonetti, Yoshitaka Amano. background by James Jean and Gustav Klimt, light by Julie Bell, 4k, porcelain skin. (inpainted: seamless continuation)",
         "inpaint_prompt": "seamless continuation",
         "modification_type": "inpaint_center",
         "mask_ratio": 0.3,
@@ -228,8 +288,8 @@
         "source": "default"
       },
       "fluxfill_random": {
-        "original_prompt": "A motorcycle parked on the sidewalk",
-        "modified_prompt": "[inpaint_random] A motorcycle parked on the sidewalk (inpainted: seamless continuation)",
+        "original_prompt": "A masterpiece ultrarealistic portrait of a Irristible angel princess tribal-shaman-knight-witch-ghost with  Skull  Iron mask. baroque renaissance  girl  in the night forest. medium shot, intricate, elegant, highly detailed. trending on artstation, digital art, by Stanley Artgerm Lau, WLOP, Rossdraws, James Jean, Andrei Riabovitchev, Marc Simonetti, Yoshitaka Amano. background by James Jean and Gustav Klimt, light by Julie Bell, 4k, porcelain skin.",
+        "modified_prompt": "[inpaint_random] A masterpiece ultrarealistic portrait of a Irristible angel princess tribal-shaman-knight-witch-ghost with  Skull  Iron mask. baroque renaissance  girl  in the night forest. medium shot, intricate, elegant, highly detailed. trending on artstation, digital art, by Stanley Artgerm Lau, WLOP, Rossdraws, James Jean, Andrei Riabovitchev, Marc Simonetti, Yoshitaka Amano. background by James Jean and Gustav Klimt, light by Julie Bell, 4k, porcelain skin. (inpainted: seamless continuation)",
         "inpaint_prompt": "seamless continuation",
         "modification_type": "inpaint_random",
         "mask_ratio": 0.25,
@@ -237,30 +297,42 @@
         "source": "default"
       },
       "sdedit_0.3": {
-        "original_prompt": "A motorcycle parked on the sidewalk",
-        "modified_prompt": "[sdedit_regeneration] A motorcycle parked on the sidewalk (regenerated with noise strength 0.3)",
+        "original_prompt": "A masterpiece ultrarealistic portrait of a Irristible angel princess tribal-shaman-knight-witch-ghost with  Skull  Iron mask. baroque renaissance  girl  in the night forest. medium shot, intricate, elegant, highly detailed. trending on artstation, digital art, by Stanley Artgerm Lau, WLOP, Rossdraws, James Jean, Andrei Riabovitchev, Marc Simonetti, Yoshitaka Amano. background by James Jean and Gustav Klimt, light by Julie Bell, 4k, porcelain skin.",
+        "modified_prompt": "[sdedit_regeneration] A masterpiece ultrarealistic portrait of a Irristible angel princess tribal-shaman-knight-witch-ghost with  Skull  Iron mask. baroque renaissance  girl  in the night forest. medium shot, intricate, elegant, highly detailed. trending on artstation, digital art, by Stanley Artgerm Lau, WLOP, Rossdraws, James Jean, Andrei Riabovitchev, Marc Simonetti, Yoshitaka Amano. background by James Jean and Gustav Klimt, light by Julie Bell, 4k, porcelain skin. (regenerated with noise strength 0.3)",
         "modification_type": "sdedit_regeneration",
         "noise_strength": 0.3
+      },
+      "sdedit_0.4": {
+        "original_prompt": "A masterpiece ultrarealistic portrait of a Irristible angel princess tribal-shaman-knight-witch-ghost with  Skull  Iron mask. baroque renaissance  girl  in the night forest. medium shot, intricate, elegant, highly detailed. trending on artstation, digital art, by Stanley Artgerm Lau, WLOP, Rossdraws, James Jean, Andrei Riabovitchev, Marc Simonetti, Yoshitaka Amano. background by James Jean and Gustav Klimt, light by Julie Bell, 4k, porcelain skin.",
+        "modified_prompt": "[sdedit_regeneration] A masterpiece ultrarealistic portrait of a Irristible angel princess tribal-shaman-knight-witch-ghost with  Skull  Iron mask. baroque renaissance  girl  in the night forest. medium shot, intricate, elegant, highly detailed. trending on artstation, digital art, by Stanley Artgerm Lau, WLOP, Rossdraws, James Jean, Andrei Riabovitchev, Marc Simonetti, Yoshitaka Amano. background by James Jean and Gustav Klimt, light by Julie Bell, 4k, porcelain skin. (regenerated with noise strength 0.4)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.4
+      },
+      "sdedit_0.5": {
+        "original_prompt": "A masterpiece ultrarealistic portrait of a Irristible angel princess tribal-shaman-knight-witch-ghost with  Skull  Iron mask. baroque renaissance  girl  in the night forest. medium shot, intricate, elegant, highly detailed. trending on artstation, digital art, by Stanley Artgerm Lau, WLOP, Rossdraws, James Jean, Andrei Riabovitchev, Marc Simonetti, Yoshitaka Amano. background by James Jean and Gustav Klimt, light by Julie Bell, 4k, porcelain skin.",
+        "modified_prompt": "[sdedit_regeneration] A masterpiece ultrarealistic portrait of a Irristible angel princess tribal-shaman-knight-witch-ghost with  Skull  Iron mask. baroque renaissance  girl  in the night forest. medium shot, intricate, elegant, highly detailed. trending on artstation, digital art, by Stanley Artgerm Lau, WLOP, Rossdraws, James Jean, Andrei Riabovitchev, Marc Simonetti, Yoshitaka Amano. background by James Jean and Gustav Klimt, light by Julie Bell, 4k, porcelain skin. (regenerated with noise strength 0.5)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.5
       }
     },
     "wm_006": {
       "sdxl_style_oil_painting": {
-        "original_prompt": "A jellyfish floating in deep blue ocean, ethereal, underwater photography",
-        "modified_prompt": "[oil_painting] A jellyfish floating in deep blue ocean, ethereal, underwater photography (style: transform into an oil painting style)",
+        "original_prompt": "extremely realistic portrait of a real life titanium black cubra snake king with a very long fur and a wizard hat, fantasy, trending on artstation, heroic pose, highly detailed, profile picture,  8k",
+        "modified_prompt": "[oil_painting] extremely realistic portrait of a real life titanium black cubra snake king with a very long fur and a wizard hat, fantasy, trending on artstation, heroic pose, highly detailed, profile picture,  8k (style: transform into an oil painting style)",
         "instruction": "transform into an oil painting style",
         "modification_type": "oil_painting",
         "source": "default"
       },
       "sdxl_style_sketch": {
-        "original_prompt": "A jellyfish floating in deep blue ocean, ethereal, underwater photography",
-        "modified_prompt": "[sketch] A jellyfish floating in deep blue ocean, ethereal, underwater photography (style: convert to pencil sketch style)",
+        "original_prompt": "extremely realistic portrait of a real life titanium black cubra snake king with a very long fur and a wizard hat, fantasy, trending on artstation, heroic pose, highly detailed, profile picture,  8k",
+        "modified_prompt": "[sketch] extremely realistic portrait of a real life titanium black cubra snake king with a very long fur and a wizard hat, fantasy, trending on artstation, heroic pose, highly detailed, profile picture,  8k (style: convert to pencil sketch style)",
         "instruction": "convert to pencil sketch style",
         "modification_type": "sketch",
         "source": "default"
       },
       "fluxfill_center": {
-        "original_prompt": "A jellyfish floating in deep blue ocean, ethereal, underwater photography",
-        "modified_prompt": "[inpaint_center] A jellyfish floating in deep blue ocean, ethereal, underwater photography (inpainted: seamless continuation)",
+        "original_prompt": "extremely realistic portrait of a real life titanium black cubra snake king with a very long fur and a wizard hat, fantasy, trending on artstation, heroic pose, highly detailed, profile picture,  8k",
+        "modified_prompt": "[inpaint_center] extremely realistic portrait of a real life titanium black cubra snake king with a very long fur and a wizard hat, fantasy, trending on artstation, heroic pose, highly detailed, profile picture,  8k (inpainted: seamless continuation)",
         "inpaint_prompt": "seamless continuation",
         "modification_type": "inpaint_center",
         "mask_ratio": 0.3,
@@ -268,8 +340,8 @@
         "source": "default"
       },
       "fluxfill_random": {
-        "original_prompt": "A jellyfish floating in deep blue ocean, ethereal, underwater photography",
-        "modified_prompt": "[inpaint_random] A jellyfish floating in deep blue ocean, ethereal, underwater photography (inpainted: seamless continuation)",
+        "original_prompt": "extremely realistic portrait of a real life titanium black cubra snake king with a very long fur and a wizard hat, fantasy, trending on artstation, heroic pose, highly detailed, profile picture,  8k",
+        "modified_prompt": "[inpaint_random] extremely realistic portrait of a real life titanium black cubra snake king with a very long fur and a wizard hat, fantasy, trending on artstation, heroic pose, highly detailed, profile picture,  8k (inpainted: seamless continuation)",
         "inpaint_prompt": "seamless continuation",
         "modification_type": "inpaint_random",
         "mask_ratio": 0.25,
@@ -277,30 +349,42 @@
         "source": "default"
       },
       "sdedit_0.3": {
-        "original_prompt": "A jellyfish floating in deep blue ocean, ethereal, underwater photography",
-        "modified_prompt": "[sdedit_regeneration] A jellyfish floating in deep blue ocean, ethereal, underwater photography (regenerated with noise strength 0.3)",
+        "original_prompt": "extremely realistic portrait of a real life titanium black cubra snake king with a very long fur and a wizard hat, fantasy, trending on artstation, heroic pose, highly detailed, profile picture,  8k",
+        "modified_prompt": "[sdedit_regeneration] extremely realistic portrait of a real life titanium black cubra snake king with a very long fur and a wizard hat, fantasy, trending on artstation, heroic pose, highly detailed, profile picture,  8k (regenerated with noise strength 0.3)",
         "modification_type": "sdedit_regeneration",
         "noise_strength": 0.3
+      },
+      "sdedit_0.4": {
+        "original_prompt": "extremely realistic portrait of a real life titanium black cubra snake king with a very long fur and a wizard hat, fantasy, trending on artstation, heroic pose, highly detailed, profile picture,  8k",
+        "modified_prompt": "[sdedit_regeneration] extremely realistic portrait of a real life titanium black cubra snake king with a very long fur and a wizard hat, fantasy, trending on artstation, heroic pose, highly detailed, profile picture,  8k (regenerated with noise strength 0.4)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.4
+      },
+      "sdedit_0.5": {
+        "original_prompt": "extremely realistic portrait of a real life titanium black cubra snake king with a very long fur and a wizard hat, fantasy, trending on artstation, heroic pose, highly detailed, profile picture,  8k",
+        "modified_prompt": "[sdedit_regeneration] extremely realistic portrait of a real life titanium black cubra snake king with a very long fur and a wizard hat, fantasy, trending on artstation, heroic pose, highly detailed, profile picture,  8k (regenerated with noise strength 0.5)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.5
       }
     },
     "wm_007": {
       "sdxl_style_oil_painting": {
-        "original_prompt": "A mermaid sitting on a rock, ocean waves, sunset lighting, fantasy illustration",
-        "modified_prompt": "[oil_painting] A mermaid sitting on a rock, ocean waves, sunset lighting, fantasy illustration (style: transform into an oil painting style)",
+        "original_prompt": "Woman with blue dress sitting in modern chair next to vase in empty room.",
+        "modified_prompt": "[oil_painting] Woman with blue dress sitting in modern chair next to vase in empty room. (style: transform into an oil painting style)",
         "instruction": "transform into an oil painting style",
         "modification_type": "oil_painting",
         "source": "default"
       },
       "sdxl_style_sketch": {
-        "original_prompt": "A mermaid sitting on a rock, ocean waves, sunset lighting, fantasy illustration",
-        "modified_prompt": "[sketch] A mermaid sitting on a rock, ocean waves, sunset lighting, fantasy illustration (style: convert to pencil sketch style)",
+        "original_prompt": "Woman with blue dress sitting in modern chair next to vase in empty room.",
+        "modified_prompt": "[sketch] Woman with blue dress sitting in modern chair next to vase in empty room. (style: convert to pencil sketch style)",
         "instruction": "convert to pencil sketch style",
         "modification_type": "sketch",
         "source": "default"
       },
       "fluxfill_center": {
-        "original_prompt": "A mermaid sitting on a rock, ocean waves, sunset lighting, fantasy illustration",
-        "modified_prompt": "[inpaint_center] A mermaid sitting on a rock, ocean waves, sunset lighting, fantasy illustration (inpainted: seamless continuation)",
+        "original_prompt": "Woman with blue dress sitting in modern chair next to vase in empty room.",
+        "modified_prompt": "[inpaint_center] Woman with blue dress sitting in modern chair next to vase in empty room. (inpainted: seamless continuation)",
         "inpaint_prompt": "seamless continuation",
         "modification_type": "inpaint_center",
         "mask_ratio": 0.3,
@@ -308,8 +392,8 @@
         "source": "default"
       },
       "fluxfill_random": {
-        "original_prompt": "A mermaid sitting on a rock, ocean waves, sunset lighting, fantasy illustration",
-        "modified_prompt": "[inpaint_random] A mermaid sitting on a rock, ocean waves, sunset lighting, fantasy illustration (inpainted: seamless continuation)",
+        "original_prompt": "Woman with blue dress sitting in modern chair next to vase in empty room.",
+        "modified_prompt": "[inpaint_random] Woman with blue dress sitting in modern chair next to vase in empty room. (inpainted: seamless continuation)",
         "inpaint_prompt": "seamless continuation",
         "modification_type": "inpaint_random",
         "mask_ratio": 0.25,
@@ -317,30 +401,42 @@
         "source": "default"
       },
       "sdedit_0.3": {
-        "original_prompt": "A mermaid sitting on a rock, ocean waves, sunset lighting, fantasy illustration",
-        "modified_prompt": "[sdedit_regeneration] A mermaid sitting on a rock, ocean waves, sunset lighting, fantasy illustration (regenerated with noise strength 0.3)",
+        "original_prompt": "Woman with blue dress sitting in modern chair next to vase in empty room.",
+        "modified_prompt": "[sdedit_regeneration] Woman with blue dress sitting in modern chair next to vase in empty room. (regenerated with noise strength 0.3)",
         "modification_type": "sdedit_regeneration",
         "noise_strength": 0.3
+      },
+      "sdedit_0.4": {
+        "original_prompt": "Woman with blue dress sitting in modern chair next to vase in empty room.",
+        "modified_prompt": "[sdedit_regeneration] Woman with blue dress sitting in modern chair next to vase in empty room. (regenerated with noise strength 0.4)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.4
+      },
+      "sdedit_0.5": {
+        "original_prompt": "Woman with blue dress sitting in modern chair next to vase in empty room.",
+        "modified_prompt": "[sdedit_regeneration] Woman with blue dress sitting in modern chair next to vase in empty room. (regenerated with noise strength 0.5)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.5
       }
     },
     "wm_008": {
       "sdxl_style_oil_painting": {
-        "original_prompt": "A northern lights display over snowy mountains, vibrant colors, nature photography style",
-        "modified_prompt": "[oil_painting] A northern lights display over snowy mountains, vibrant colors, nature photography style (style: transform into an oil painting style)",
+        "original_prompt": "electric woman, cute - fine - face, pretty face, oil slick hair, realistic shaded perfect face, extremely fine details, realistic shaded lighting, dynamic background, artgerm, 8 k ultra realistic, highly detailed, octane render, petros afshar",
+        "modified_prompt": "[oil_painting] electric woman, cute - fine - face, pretty face, oil slick hair, realistic shaded perfect face, extremely fine details, realistic shaded lighting, dynamic background, artgerm, 8 k ultra realistic, highly detailed, octane render, petros afshar (style: transform into an oil painting style)",
         "instruction": "transform into an oil painting style",
         "modification_type": "oil_painting",
         "source": "default"
       },
       "sdxl_style_sketch": {
-        "original_prompt": "A northern lights display over snowy mountains, vibrant colors, nature photography style",
-        "modified_prompt": "[sketch] A northern lights display over snowy mountains, vibrant colors, nature photography style (style: convert to pencil sketch style)",
+        "original_prompt": "electric woman, cute - fine - face, pretty face, oil slick hair, realistic shaded perfect face, extremely fine details, realistic shaded lighting, dynamic background, artgerm, 8 k ultra realistic, highly detailed, octane render, petros afshar",
+        "modified_prompt": "[sketch] electric woman, cute - fine - face, pretty face, oil slick hair, realistic shaded perfect face, extremely fine details, realistic shaded lighting, dynamic background, artgerm, 8 k ultra realistic, highly detailed, octane render, petros afshar (style: convert to pencil sketch style)",
         "instruction": "convert to pencil sketch style",
         "modification_type": "sketch",
         "source": "default"
       },
       "fluxfill_center": {
-        "original_prompt": "A northern lights display over snowy mountains, vibrant colors, nature photography style",
-        "modified_prompt": "[inpaint_center] A northern lights display over snowy mountains, vibrant colors, nature photography style (inpainted: seamless continuation)",
+        "original_prompt": "electric woman, cute - fine - face, pretty face, oil slick hair, realistic shaded perfect face, extremely fine details, realistic shaded lighting, dynamic background, artgerm, 8 k ultra realistic, highly detailed, octane render, petros afshar",
+        "modified_prompt": "[inpaint_center] electric woman, cute - fine - face, pretty face, oil slick hair, realistic shaded perfect face, extremely fine details, realistic shaded lighting, dynamic background, artgerm, 8 k ultra realistic, highly detailed, octane render, petros afshar (inpainted: seamless continuation)",
         "inpaint_prompt": "seamless continuation",
         "modification_type": "inpaint_center",
         "mask_ratio": 0.3,
@@ -348,8 +444,8 @@
         "source": "default"
       },
       "fluxfill_random": {
-        "original_prompt": "A northern lights display over snowy mountains, vibrant colors, nature photography style",
-        "modified_prompt": "[inpaint_random] A northern lights display over snowy mountains, vibrant colors, nature photography style (inpainted: seamless continuation)",
+        "original_prompt": "electric woman, cute - fine - face, pretty face, oil slick hair, realistic shaded perfect face, extremely fine details, realistic shaded lighting, dynamic background, artgerm, 8 k ultra realistic, highly detailed, octane render, petros afshar",
+        "modified_prompt": "[inpaint_random] electric woman, cute - fine - face, pretty face, oil slick hair, realistic shaded perfect face, extremely fine details, realistic shaded lighting, dynamic background, artgerm, 8 k ultra realistic, highly detailed, octane render, petros afshar (inpainted: seamless continuation)",
         "inpaint_prompt": "seamless continuation",
         "modification_type": "inpaint_random",
         "mask_ratio": 0.25,
@@ -357,30 +453,42 @@
         "source": "default"
       },
       "sdedit_0.3": {
-        "original_prompt": "A northern lights display over snowy mountains, vibrant colors, nature photography style",
-        "modified_prompt": "[sdedit_regeneration] A northern lights display over snowy mountains, vibrant colors, nature photography style (regenerated with noise strength 0.3)",
+        "original_prompt": "electric woman, cute - fine - face, pretty face, oil slick hair, realistic shaded perfect face, extremely fine details, realistic shaded lighting, dynamic background, artgerm, 8 k ultra realistic, highly detailed, octane render, petros afshar",
+        "modified_prompt": "[sdedit_regeneration] electric woman, cute - fine - face, pretty face, oil slick hair, realistic shaded perfect face, extremely fine details, realistic shaded lighting, dynamic background, artgerm, 8 k ultra realistic, highly detailed, octane render, petros afshar (regenerated with noise strength 0.3)",
         "modification_type": "sdedit_regeneration",
         "noise_strength": 0.3
+      },
+      "sdedit_0.4": {
+        "original_prompt": "electric woman, cute - fine - face, pretty face, oil slick hair, realistic shaded perfect face, extremely fine details, realistic shaded lighting, dynamic background, artgerm, 8 k ultra realistic, highly detailed, octane render, petros afshar",
+        "modified_prompt": "[sdedit_regeneration] electric woman, cute - fine - face, pretty face, oil slick hair, realistic shaded perfect face, extremely fine details, realistic shaded lighting, dynamic background, artgerm, 8 k ultra realistic, highly detailed, octane render, petros afshar (regenerated with noise strength 0.4)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.4
+      },
+      "sdedit_0.5": {
+        "original_prompt": "electric woman, cute - fine - face, pretty face, oil slick hair, realistic shaded perfect face, extremely fine details, realistic shaded lighting, dynamic background, artgerm, 8 k ultra realistic, highly detailed, octane render, petros afshar",
+        "modified_prompt": "[sdedit_regeneration] electric woman, cute - fine - face, pretty face, oil slick hair, realistic shaded perfect face, extremely fine details, realistic shaded lighting, dynamic background, artgerm, 8 k ultra realistic, highly detailed, octane render, petros afshar (regenerated with noise strength 0.5)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.5
       }
     },
     "wm_009": {
       "sdxl_style_oil_painting": {
-        "original_prompt": "A cup of coffee on a saucer",
-        "modified_prompt": "[oil_painting] A cup of coffee on a saucer (style: transform into an oil painting style)",
+        "original_prompt": "ismail inceoglu epic oil on canvas painting of a middle ages landscape, line art!!, ink, art concept for a book cover!!, harmonic colours, thik brushstrokes, medieval movie still, game of thrones card game, highly detailed, centered, hyperrealism, romantic, concept art, smooth, sharp focus trending on artstation, by greg manchess and by craig mullins and by kilian eng and by jake parker",
+        "modified_prompt": "[oil_painting] ismail inceoglu epic oil on canvas painting of a middle ages landscape, line art!!, ink, art concept for a book cover!!, harmonic colours, thik brushstrokes, medieval movie still, game of thrones card game, highly detailed, centered, hyperrealism, romantic, concept art, smooth, sharp focus trending on artstation, by greg manchess and by craig mullins and by kilian eng and by jake parker (style: transform into an oil painting style)",
         "instruction": "transform into an oil painting style",
         "modification_type": "oil_painting",
         "source": "default"
       },
       "sdxl_style_sketch": {
-        "original_prompt": "A cup of coffee on a saucer",
-        "modified_prompt": "[sketch] A cup of coffee on a saucer (style: convert to pencil sketch style)",
+        "original_prompt": "ismail inceoglu epic oil on canvas painting of a middle ages landscape, line art!!, ink, art concept for a book cover!!, harmonic colours, thik brushstrokes, medieval movie still, game of thrones card game, highly detailed, centered, hyperrealism, romantic, concept art, smooth, sharp focus trending on artstation, by greg manchess and by craig mullins and by kilian eng and by jake parker",
+        "modified_prompt": "[sketch] ismail inceoglu epic oil on canvas painting of a middle ages landscape, line art!!, ink, art concept for a book cover!!, harmonic colours, thik brushstrokes, medieval movie still, game of thrones card game, highly detailed, centered, hyperrealism, romantic, concept art, smooth, sharp focus trending on artstation, by greg manchess and by craig mullins and by kilian eng and by jake parker (style: convert to pencil sketch style)",
         "instruction": "convert to pencil sketch style",
         "modification_type": "sketch",
         "source": "default"
       },
       "fluxfill_center": {
-        "original_prompt": "A cup of coffee on a saucer",
-        "modified_prompt": "[inpaint_center] A cup of coffee on a saucer (inpainted: seamless continuation)",
+        "original_prompt": "ismail inceoglu epic oil on canvas painting of a middle ages landscape, line art!!, ink, art concept for a book cover!!, harmonic colours, thik brushstrokes, medieval movie still, game of thrones card game, highly detailed, centered, hyperrealism, romantic, concept art, smooth, sharp focus trending on artstation, by greg manchess and by craig mullins and by kilian eng and by jake parker",
+        "modified_prompt": "[inpaint_center] ismail inceoglu epic oil on canvas painting of a middle ages landscape, line art!!, ink, art concept for a book cover!!, harmonic colours, thik brushstrokes, medieval movie still, game of thrones card game, highly detailed, centered, hyperrealism, romantic, concept art, smooth, sharp focus trending on artstation, by greg manchess and by craig mullins and by kilian eng and by jake parker (inpainted: seamless continuation)",
         "inpaint_prompt": "seamless continuation",
         "modification_type": "inpaint_center",
         "mask_ratio": 0.3,
@@ -388,8 +496,8 @@
         "source": "default"
       },
       "fluxfill_random": {
-        "original_prompt": "A cup of coffee on a saucer",
-        "modified_prompt": "[inpaint_random] A cup of coffee on a saucer (inpainted: seamless continuation)",
+        "original_prompt": "ismail inceoglu epic oil on canvas painting of a middle ages landscape, line art!!, ink, art concept for a book cover!!, harmonic colours, thik brushstrokes, medieval movie still, game of thrones card game, highly detailed, centered, hyperrealism, romantic, concept art, smooth, sharp focus trending on artstation, by greg manchess and by craig mullins and by kilian eng and by jake parker",
+        "modified_prompt": "[inpaint_random] ismail inceoglu epic oil on canvas painting of a middle ages landscape, line art!!, ink, art concept for a book cover!!, harmonic colours, thik brushstrokes, medieval movie still, game of thrones card game, highly detailed, centered, hyperrealism, romantic, concept art, smooth, sharp focus trending on artstation, by greg manchess and by craig mullins and by kilian eng and by jake parker (inpainted: seamless continuation)",
         "inpaint_prompt": "seamless continuation",
         "modification_type": "inpaint_random",
         "mask_ratio": 0.25,
@@ -397,30 +505,42 @@
         "source": "default"
       },
       "sdedit_0.3": {
-        "original_prompt": "A cup of coffee on a saucer",
-        "modified_prompt": "[sdedit_regeneration] A cup of coffee on a saucer (regenerated with noise strength 0.3)",
+        "original_prompt": "ismail inceoglu epic oil on canvas painting of a middle ages landscape, line art!!, ink, art concept for a book cover!!, harmonic colours, thik brushstrokes, medieval movie still, game of thrones card game, highly detailed, centered, hyperrealism, romantic, concept art, smooth, sharp focus trending on artstation, by greg manchess and by craig mullins and by kilian eng and by jake parker",
+        "modified_prompt": "[sdedit_regeneration] ismail inceoglu epic oil on canvas painting of a middle ages landscape, line art!!, ink, art concept for a book cover!!, harmonic colours, thik brushstrokes, medieval movie still, game of thrones card game, highly detailed, centered, hyperrealism, romantic, concept art, smooth, sharp focus trending on artstation, by greg manchess and by craig mullins and by kilian eng and by jake parker (regenerated with noise strength 0.3)",
         "modification_type": "sdedit_regeneration",
         "noise_strength": 0.3
+      },
+      "sdedit_0.4": {
+        "original_prompt": "ismail inceoglu epic oil on canvas painting of a middle ages landscape, line art!!, ink, art concept for a book cover!!, harmonic colours, thik brushstrokes, medieval movie still, game of thrones card game, highly detailed, centered, hyperrealism, romantic, concept art, smooth, sharp focus trending on artstation, by greg manchess and by craig mullins and by kilian eng and by jake parker",
+        "modified_prompt": "[sdedit_regeneration] ismail inceoglu epic oil on canvas painting of a middle ages landscape, line art!!, ink, art concept for a book cover!!, harmonic colours, thik brushstrokes, medieval movie still, game of thrones card game, highly detailed, centered, hyperrealism, romantic, concept art, smooth, sharp focus trending on artstation, by greg manchess and by craig mullins and by kilian eng and by jake parker (regenerated with noise strength 0.4)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.4
+      },
+      "sdedit_0.5": {
+        "original_prompt": "ismail inceoglu epic oil on canvas painting of a middle ages landscape, line art!!, ink, art concept for a book cover!!, harmonic colours, thik brushstrokes, medieval movie still, game of thrones card game, highly detailed, centered, hyperrealism, romantic, concept art, smooth, sharp focus trending on artstation, by greg manchess and by craig mullins and by kilian eng and by jake parker",
+        "modified_prompt": "[sdedit_regeneration] ismail inceoglu epic oil on canvas painting of a middle ages landscape, line art!!, ink, art concept for a book cover!!, harmonic colours, thik brushstrokes, medieval movie still, game of thrones card game, highly detailed, centered, hyperrealism, romantic, concept art, smooth, sharp focus trending on artstation, by greg manchess and by craig mullins and by kilian eng and by jake parker (regenerated with noise strength 0.5)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.5
       }
     },
     "wm_010": {
       "sdxl_style_oil_painting": {
-        "original_prompt": "A snowy village with Christmas lights, festive winter scene, cozy holiday vibes",
-        "modified_prompt": "[oil_painting] A snowy village with Christmas lights, festive winter scene, cozy holiday vibes (style: transform into an oil painting style)",
+        "original_prompt": "basketball sneakers concept of bucky barnes, trending on artstation, smooth, sharp focus",
+        "modified_prompt": "[oil_painting] basketball sneakers concept of bucky barnes, trending on artstation, smooth, sharp focus (style: transform into an oil painting style)",
         "instruction": "transform into an oil painting style",
         "modification_type": "oil_painting",
         "source": "default"
       },
       "sdxl_style_sketch": {
-        "original_prompt": "A snowy village with Christmas lights, festive winter scene, cozy holiday vibes",
-        "modified_prompt": "[sketch] A snowy village with Christmas lights, festive winter scene, cozy holiday vibes (style: convert to pencil sketch style)",
+        "original_prompt": "basketball sneakers concept of bucky barnes, trending on artstation, smooth, sharp focus",
+        "modified_prompt": "[sketch] basketball sneakers concept of bucky barnes, trending on artstation, smooth, sharp focus (style: convert to pencil sketch style)",
         "instruction": "convert to pencil sketch style",
         "modification_type": "sketch",
         "source": "default"
       },
       "fluxfill_center": {
-        "original_prompt": "A snowy village with Christmas lights, festive winter scene, cozy holiday vibes",
-        "modified_prompt": "[inpaint_center] A snowy village with Christmas lights, festive winter scene, cozy holiday vibes (inpainted: seamless continuation)",
+        "original_prompt": "basketball sneakers concept of bucky barnes, trending on artstation, smooth, sharp focus",
+        "modified_prompt": "[inpaint_center] basketball sneakers concept of bucky barnes, trending on artstation, smooth, sharp focus (inpainted: seamless continuation)",
         "inpaint_prompt": "seamless continuation",
         "modification_type": "inpaint_center",
         "mask_ratio": 0.3,
@@ -428,8 +548,8 @@
         "source": "default"
       },
       "fluxfill_random": {
-        "original_prompt": "A snowy village with Christmas lights, festive winter scene, cozy holiday vibes",
-        "modified_prompt": "[inpaint_random] A snowy village with Christmas lights, festive winter scene, cozy holiday vibes (inpainted: seamless continuation)",
+        "original_prompt": "basketball sneakers concept of bucky barnes, trending on artstation, smooth, sharp focus",
+        "modified_prompt": "[inpaint_random] basketball sneakers concept of bucky barnes, trending on artstation, smooth, sharp focus (inpainted: seamless continuation)",
         "inpaint_prompt": "seamless continuation",
         "modification_type": "inpaint_random",
         "mask_ratio": 0.25,
@@ -437,30 +557,42 @@
         "source": "default"
       },
       "sdedit_0.3": {
-        "original_prompt": "A snowy village with Christmas lights, festive winter scene, cozy holiday vibes",
-        "modified_prompt": "[sdedit_regeneration] A snowy village with Christmas lights, festive winter scene, cozy holiday vibes (regenerated with noise strength 0.3)",
+        "original_prompt": "basketball sneakers concept of bucky barnes, trending on artstation, smooth, sharp focus",
+        "modified_prompt": "[sdedit_regeneration] basketball sneakers concept of bucky barnes, trending on artstation, smooth, sharp focus (regenerated with noise strength 0.3)",
         "modification_type": "sdedit_regeneration",
         "noise_strength": 0.3
+      },
+      "sdedit_0.4": {
+        "original_prompt": "basketball sneakers concept of bucky barnes, trending on artstation, smooth, sharp focus",
+        "modified_prompt": "[sdedit_regeneration] basketball sneakers concept of bucky barnes, trending on artstation, smooth, sharp focus (regenerated with noise strength 0.4)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.4
+      },
+      "sdedit_0.5": {
+        "original_prompt": "basketball sneakers concept of bucky barnes, trending on artstation, smooth, sharp focus",
+        "modified_prompt": "[sdedit_regeneration] basketball sneakers concept of bucky barnes, trending on artstation, smooth, sharp focus (regenerated with noise strength 0.5)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.5
       }
     },
     "wm_011": {
       "sdxl_style_oil_painting": {
-        "original_prompt": "A charming European street cafe, rainy day, impressionist style, cozy atmosphere",
-        "modified_prompt": "[oil_painting] A charming European street cafe, rainy day, impressionist style, cozy atmosphere (style: transform into an oil painting style)",
+        "original_prompt": "A cat is curled up and sleeping in a round tin.",
+        "modified_prompt": "[oil_painting] A cat is curled up and sleeping in a round tin. (style: transform into an oil painting style)",
         "instruction": "transform into an oil painting style",
         "modification_type": "oil_painting",
         "source": "default"
       },
       "sdxl_style_sketch": {
-        "original_prompt": "A charming European street cafe, rainy day, impressionist style, cozy atmosphere",
-        "modified_prompt": "[sketch] A charming European street cafe, rainy day, impressionist style, cozy atmosphere (style: convert to pencil sketch style)",
+        "original_prompt": "A cat is curled up and sleeping in a round tin.",
+        "modified_prompt": "[sketch] A cat is curled up and sleeping in a round tin. (style: convert to pencil sketch style)",
         "instruction": "convert to pencil sketch style",
         "modification_type": "sketch",
         "source": "default"
       },
       "fluxfill_center": {
-        "original_prompt": "A charming European street cafe, rainy day, impressionist style, cozy atmosphere",
-        "modified_prompt": "[inpaint_center] A charming European street cafe, rainy day, impressionist style, cozy atmosphere (inpainted: seamless continuation)",
+        "original_prompt": "A cat is curled up and sleeping in a round tin.",
+        "modified_prompt": "[inpaint_center] A cat is curled up and sleeping in a round tin. (inpainted: seamless continuation)",
         "inpaint_prompt": "seamless continuation",
         "modification_type": "inpaint_center",
         "mask_ratio": 0.3,
@@ -468,8 +600,8 @@
         "source": "default"
       },
       "fluxfill_random": {
-        "original_prompt": "A charming European street cafe, rainy day, impressionist style, cozy atmosphere",
-        "modified_prompt": "[inpaint_random] A charming European street cafe, rainy day, impressionist style, cozy atmosphere (inpainted: seamless continuation)",
+        "original_prompt": "A cat is curled up and sleeping in a round tin.",
+        "modified_prompt": "[inpaint_random] A cat is curled up and sleeping in a round tin. (inpainted: seamless continuation)",
         "inpaint_prompt": "seamless continuation",
         "modification_type": "inpaint_random",
         "mask_ratio": 0.25,
@@ -477,30 +609,42 @@
         "source": "default"
       },
       "sdedit_0.3": {
-        "original_prompt": "A charming European street cafe, rainy day, impressionist style, cozy atmosphere",
-        "modified_prompt": "[sdedit_regeneration] A charming European street cafe, rainy day, impressionist style, cozy atmosphere (regenerated with noise strength 0.3)",
+        "original_prompt": "A cat is curled up and sleeping in a round tin.",
+        "modified_prompt": "[sdedit_regeneration] A cat is curled up and sleeping in a round tin. (regenerated with noise strength 0.3)",
         "modification_type": "sdedit_regeneration",
         "noise_strength": 0.3
+      },
+      "sdedit_0.4": {
+        "original_prompt": "A cat is curled up and sleeping in a round tin.",
+        "modified_prompt": "[sdedit_regeneration] A cat is curled up and sleeping in a round tin. (regenerated with noise strength 0.4)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.4
+      },
+      "sdedit_0.5": {
+        "original_prompt": "A cat is curled up and sleeping in a round tin.",
+        "modified_prompt": "[sdedit_regeneration] A cat is curled up and sleeping in a round tin. (regenerated with noise strength 0.5)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.5
       }
     },
     "wm_012": {
       "sdxl_style_oil_painting": {
-        "original_prompt": "A cell phone on the table",
-        "modified_prompt": "[oil_painting] A cell phone on the table (style: transform into an oil painting style)",
+        "original_prompt": "A row of cars parked next to a large boat",
+        "modified_prompt": "[oil_painting] A row of cars parked next to a large boat (style: transform into an oil painting style)",
         "instruction": "transform into an oil painting style",
         "modification_type": "oil_painting",
         "source": "default"
       },
       "sdxl_style_sketch": {
-        "original_prompt": "A cell phone on the table",
-        "modified_prompt": "[sketch] A cell phone on the table (style: convert to pencil sketch style)",
+        "original_prompt": "A row of cars parked next to a large boat",
+        "modified_prompt": "[sketch] A row of cars parked next to a large boat (style: convert to pencil sketch style)",
         "instruction": "convert to pencil sketch style",
         "modification_type": "sketch",
         "source": "default"
       },
       "fluxfill_center": {
-        "original_prompt": "A cell phone on the table",
-        "modified_prompt": "[inpaint_center] A cell phone on the table (inpainted: seamless continuation)",
+        "original_prompt": "A row of cars parked next to a large boat",
+        "modified_prompt": "[inpaint_center] A row of cars parked next to a large boat (inpainted: seamless continuation)",
         "inpaint_prompt": "seamless continuation",
         "modification_type": "inpaint_center",
         "mask_ratio": 0.3,
@@ -508,8 +652,8 @@
         "source": "default"
       },
       "fluxfill_random": {
-        "original_prompt": "A cell phone on the table",
-        "modified_prompt": "[inpaint_random] A cell phone on the table (inpainted: seamless continuation)",
+        "original_prompt": "A row of cars parked next to a large boat",
+        "modified_prompt": "[inpaint_random] A row of cars parked next to a large boat (inpainted: seamless continuation)",
         "inpaint_prompt": "seamless continuation",
         "modification_type": "inpaint_random",
         "mask_ratio": 0.25,
@@ -517,30 +661,42 @@
         "source": "default"
       },
       "sdedit_0.3": {
-        "original_prompt": "A cell phone on the table",
-        "modified_prompt": "[sdedit_regeneration] A cell phone on the table (regenerated with noise strength 0.3)",
+        "original_prompt": "A row of cars parked next to a large boat",
+        "modified_prompt": "[sdedit_regeneration] A row of cars parked next to a large boat (regenerated with noise strength 0.3)",
         "modification_type": "sdedit_regeneration",
         "noise_strength": 0.3
+      },
+      "sdedit_0.4": {
+        "original_prompt": "A row of cars parked next to a large boat",
+        "modified_prompt": "[sdedit_regeneration] A row of cars parked next to a large boat (regenerated with noise strength 0.4)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.4
+      },
+      "sdedit_0.5": {
+        "original_prompt": "A row of cars parked next to a large boat",
+        "modified_prompt": "[sdedit_regeneration] A row of cars parked next to a large boat (regenerated with noise strength 0.5)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.5
       }
     },
     "wm_013": {
       "sdxl_style_oil_painting": {
-        "original_prompt": "A pizza in a box",
-        "modified_prompt": "[oil_painting] A pizza in a box (style: transform into an oil painting style)",
+        "original_prompt": "A skateboarder wearing a DC shirt is doing tricks on a rail.",
+        "modified_prompt": "[oil_painting] A skateboarder wearing a DC shirt is doing tricks on a rail. (style: transform into an oil painting style)",
         "instruction": "transform into an oil painting style",
         "modification_type": "oil_painting",
         "source": "default"
       },
       "sdxl_style_sketch": {
-        "original_prompt": "A pizza in a box",
-        "modified_prompt": "[sketch] A pizza in a box (style: convert to pencil sketch style)",
+        "original_prompt": "A skateboarder wearing a DC shirt is doing tricks on a rail.",
+        "modified_prompt": "[sketch] A skateboarder wearing a DC shirt is doing tricks on a rail. (style: convert to pencil sketch style)",
         "instruction": "convert to pencil sketch style",
         "modification_type": "sketch",
         "source": "default"
       },
       "fluxfill_center": {
-        "original_prompt": "A pizza in a box",
-        "modified_prompt": "[inpaint_center] A pizza in a box (inpainted: seamless continuation)",
+        "original_prompt": "A skateboarder wearing a DC shirt is doing tricks on a rail.",
+        "modified_prompt": "[inpaint_center] A skateboarder wearing a DC shirt is doing tricks on a rail. (inpainted: seamless continuation)",
         "inpaint_prompt": "seamless continuation",
         "modification_type": "inpaint_center",
         "mask_ratio": 0.3,
@@ -548,8 +704,8 @@
         "source": "default"
       },
       "fluxfill_random": {
-        "original_prompt": "A pizza in a box",
-        "modified_prompt": "[inpaint_random] A pizza in a box (inpainted: seamless continuation)",
+        "original_prompt": "A skateboarder wearing a DC shirt is doing tricks on a rail.",
+        "modified_prompt": "[inpaint_random] A skateboarder wearing a DC shirt is doing tricks on a rail. (inpainted: seamless continuation)",
         "inpaint_prompt": "seamless continuation",
         "modification_type": "inpaint_random",
         "mask_ratio": 0.25,
@@ -557,30 +713,42 @@
         "source": "default"
       },
       "sdedit_0.3": {
-        "original_prompt": "A pizza in a box",
-        "modified_prompt": "[sdedit_regeneration] A pizza in a box (regenerated with noise strength 0.3)",
+        "original_prompt": "A skateboarder wearing a DC shirt is doing tricks on a rail.",
+        "modified_prompt": "[sdedit_regeneration] A skateboarder wearing a DC shirt is doing tricks on a rail. (regenerated with noise strength 0.3)",
         "modification_type": "sdedit_regeneration",
         "noise_strength": 0.3
+      },
+      "sdedit_0.4": {
+        "original_prompt": "A skateboarder wearing a DC shirt is doing tricks on a rail.",
+        "modified_prompt": "[sdedit_regeneration] A skateboarder wearing a DC shirt is doing tricks on a rail. (regenerated with noise strength 0.4)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.4
+      },
+      "sdedit_0.5": {
+        "original_prompt": "A skateboarder wearing a DC shirt is doing tricks on a rail.",
+        "modified_prompt": "[sdedit_regeneration] A skateboarder wearing a DC shirt is doing tricks on a rail. (regenerated with noise strength 0.5)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.5
       }
     },
     "wm_014": {
       "sdxl_style_oil_painting": {
-        "original_prompt": "A chef preparing a meal",
-        "modified_prompt": "[oil_painting] A chef preparing a meal (style: transform into an oil painting style)",
+        "original_prompt": "People waiting in line with luggage at a ticket counter.",
+        "modified_prompt": "[oil_painting] People waiting in line with luggage at a ticket counter. (style: transform into an oil painting style)",
         "instruction": "transform into an oil painting style",
         "modification_type": "oil_painting",
         "source": "default"
       },
       "sdxl_style_sketch": {
-        "original_prompt": "A chef preparing a meal",
-        "modified_prompt": "[sketch] A chef preparing a meal (style: convert to pencil sketch style)",
+        "original_prompt": "People waiting in line with luggage at a ticket counter.",
+        "modified_prompt": "[sketch] People waiting in line with luggage at a ticket counter. (style: convert to pencil sketch style)",
         "instruction": "convert to pencil sketch style",
         "modification_type": "sketch",
         "source": "default"
       },
       "fluxfill_center": {
-        "original_prompt": "A chef preparing a meal",
-        "modified_prompt": "[inpaint_center] A chef preparing a meal (inpainted: seamless continuation)",
+        "original_prompt": "People waiting in line with luggage at a ticket counter.",
+        "modified_prompt": "[inpaint_center] People waiting in line with luggage at a ticket counter. (inpainted: seamless continuation)",
         "inpaint_prompt": "seamless continuation",
         "modification_type": "inpaint_center",
         "mask_ratio": 0.3,
@@ -588,8 +756,8 @@
         "source": "default"
       },
       "fluxfill_random": {
-        "original_prompt": "A chef preparing a meal",
-        "modified_prompt": "[inpaint_random] A chef preparing a meal (inpainted: seamless continuation)",
+        "original_prompt": "People waiting in line with luggage at a ticket counter.",
+        "modified_prompt": "[inpaint_random] People waiting in line with luggage at a ticket counter. (inpainted: seamless continuation)",
         "inpaint_prompt": "seamless continuation",
         "modification_type": "inpaint_random",
         "mask_ratio": 0.25,
@@ -597,30 +765,42 @@
         "source": "default"
       },
       "sdedit_0.3": {
-        "original_prompt": "A chef preparing a meal",
-        "modified_prompt": "[sdedit_regeneration] A chef preparing a meal (regenerated with noise strength 0.3)",
+        "original_prompt": "People waiting in line with luggage at a ticket counter.",
+        "modified_prompt": "[sdedit_regeneration] People waiting in line with luggage at a ticket counter. (regenerated with noise strength 0.3)",
         "modification_type": "sdedit_regeneration",
         "noise_strength": 0.3
+      },
+      "sdedit_0.4": {
+        "original_prompt": "People waiting in line with luggage at a ticket counter.",
+        "modified_prompt": "[sdedit_regeneration] People waiting in line with luggage at a ticket counter. (regenerated with noise strength 0.4)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.4
+      },
+      "sdedit_0.5": {
+        "original_prompt": "People waiting in line with luggage at a ticket counter.",
+        "modified_prompt": "[sdedit_regeneration] People waiting in line with luggage at a ticket counter. (regenerated with noise strength 0.5)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.5
       }
     },
     "wm_015": {
       "sdxl_style_oil_painting": {
-        "original_prompt": "A teacher in the classroom",
-        "modified_prompt": "[oil_painting] A teacher in the classroom (style: transform into an oil painting style)",
+        "original_prompt": "a small bird sitting perched on a chain link fence",
+        "modified_prompt": "[oil_painting] a small bird sitting perched on a chain link fence (style: transform into an oil painting style)",
         "instruction": "transform into an oil painting style",
         "modification_type": "oil_painting",
         "source": "default"
       },
       "sdxl_style_sketch": {
-        "original_prompt": "A teacher in the classroom",
-        "modified_prompt": "[sketch] A teacher in the classroom (style: convert to pencil sketch style)",
+        "original_prompt": "a small bird sitting perched on a chain link fence",
+        "modified_prompt": "[sketch] a small bird sitting perched on a chain link fence (style: convert to pencil sketch style)",
         "instruction": "convert to pencil sketch style",
         "modification_type": "sketch",
         "source": "default"
       },
       "fluxfill_center": {
-        "original_prompt": "A teacher in the classroom",
-        "modified_prompt": "[inpaint_center] A teacher in the classroom (inpainted: seamless continuation)",
+        "original_prompt": "a small bird sitting perched on a chain link fence",
+        "modified_prompt": "[inpaint_center] a small bird sitting perched on a chain link fence (inpainted: seamless continuation)",
         "inpaint_prompt": "seamless continuation",
         "modification_type": "inpaint_center",
         "mask_ratio": 0.3,
@@ -628,8 +808,8 @@
         "source": "default"
       },
       "fluxfill_random": {
-        "original_prompt": "A teacher in the classroom",
-        "modified_prompt": "[inpaint_random] A teacher in the classroom (inpainted: seamless continuation)",
+        "original_prompt": "a small bird sitting perched on a chain link fence",
+        "modified_prompt": "[inpaint_random] a small bird sitting perched on a chain link fence (inpainted: seamless continuation)",
         "inpaint_prompt": "seamless continuation",
         "modification_type": "inpaint_random",
         "mask_ratio": 0.25,
@@ -637,30 +817,42 @@
         "source": "default"
       },
       "sdedit_0.3": {
-        "original_prompt": "A teacher in the classroom",
-        "modified_prompt": "[sdedit_regeneration] A teacher in the classroom (regenerated with noise strength 0.3)",
+        "original_prompt": "a small bird sitting perched on a chain link fence",
+        "modified_prompt": "[sdedit_regeneration] a small bird sitting perched on a chain link fence (regenerated with noise strength 0.3)",
         "modification_type": "sdedit_regeneration",
         "noise_strength": 0.3
+      },
+      "sdedit_0.4": {
+        "original_prompt": "a small bird sitting perched on a chain link fence",
+        "modified_prompt": "[sdedit_regeneration] a small bird sitting perched on a chain link fence (regenerated with noise strength 0.4)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.4
+      },
+      "sdedit_0.5": {
+        "original_prompt": "a small bird sitting perched on a chain link fence",
+        "modified_prompt": "[sdedit_regeneration] a small bird sitting perched on a chain link fence (regenerated with noise strength 0.5)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.5
       }
     },
     "wm_016": {
       "sdxl_style_oil_painting": {
-        "original_prompt": "A cow standing in a field",
-        "modified_prompt": "[oil_painting] A cow standing in a field (style: transform into an oil painting style)",
+        "original_prompt": "concept art of a dusty field with ruined dieselpunk orcish tanks in the background, key visual, ambient lighting, highly detailed, digital painting, artstation, concept art, sharp focus, by makoto shinkai and akihiko yoshida and hidari and wlop",
+        "modified_prompt": "[oil_painting] concept art of a dusty field with ruined dieselpunk orcish tanks in the background, key visual, ambient lighting, highly detailed, digital painting, artstation, concept art, sharp focus, by makoto shinkai and akihiko yoshida and hidari and wlop (style: transform into an oil painting style)",
         "instruction": "transform into an oil painting style",
         "modification_type": "oil_painting",
         "source": "default"
       },
       "sdxl_style_sketch": {
-        "original_prompt": "A cow standing in a field",
-        "modified_prompt": "[sketch] A cow standing in a field (style: convert to pencil sketch style)",
+        "original_prompt": "concept art of a dusty field with ruined dieselpunk orcish tanks in the background, key visual, ambient lighting, highly detailed, digital painting, artstation, concept art, sharp focus, by makoto shinkai and akihiko yoshida and hidari and wlop",
+        "modified_prompt": "[sketch] concept art of a dusty field with ruined dieselpunk orcish tanks in the background, key visual, ambient lighting, highly detailed, digital painting, artstation, concept art, sharp focus, by makoto shinkai and akihiko yoshida and hidari and wlop (style: convert to pencil sketch style)",
         "instruction": "convert to pencil sketch style",
         "modification_type": "sketch",
         "source": "default"
       },
       "fluxfill_center": {
-        "original_prompt": "A cow standing in a field",
-        "modified_prompt": "[inpaint_center] A cow standing in a field (inpainted: seamless continuation)",
+        "original_prompt": "concept art of a dusty field with ruined dieselpunk orcish tanks in the background, key visual, ambient lighting, highly detailed, digital painting, artstation, concept art, sharp focus, by makoto shinkai and akihiko yoshida and hidari and wlop",
+        "modified_prompt": "[inpaint_center] concept art of a dusty field with ruined dieselpunk orcish tanks in the background, key visual, ambient lighting, highly detailed, digital painting, artstation, concept art, sharp focus, by makoto shinkai and akihiko yoshida and hidari and wlop (inpainted: seamless continuation)",
         "inpaint_prompt": "seamless continuation",
         "modification_type": "inpaint_center",
         "mask_ratio": 0.3,
@@ -668,8 +860,8 @@
         "source": "default"
       },
       "fluxfill_random": {
-        "original_prompt": "A cow standing in a field",
-        "modified_prompt": "[inpaint_random] A cow standing in a field (inpainted: seamless continuation)",
+        "original_prompt": "concept art of a dusty field with ruined dieselpunk orcish tanks in the background, key visual, ambient lighting, highly detailed, digital painting, artstation, concept art, sharp focus, by makoto shinkai and akihiko yoshida and hidari and wlop",
+        "modified_prompt": "[inpaint_random] concept art of a dusty field with ruined dieselpunk orcish tanks in the background, key visual, ambient lighting, highly detailed, digital painting, artstation, concept art, sharp focus, by makoto shinkai and akihiko yoshida and hidari and wlop (inpainted: seamless continuation)",
         "inpaint_prompt": "seamless continuation",
         "modification_type": "inpaint_random",
         "mask_ratio": 0.25,
@@ -677,30 +869,42 @@
         "source": "default"
       },
       "sdedit_0.3": {
-        "original_prompt": "A cow standing in a field",
-        "modified_prompt": "[sdedit_regeneration] A cow standing in a field (regenerated with noise strength 0.3)",
+        "original_prompt": "concept art of a dusty field with ruined dieselpunk orcish tanks in the background, key visual, ambient lighting, highly detailed, digital painting, artstation, concept art, sharp focus, by makoto shinkai and akihiko yoshida and hidari and wlop",
+        "modified_prompt": "[sdedit_regeneration] concept art of a dusty field with ruined dieselpunk orcish tanks in the background, key visual, ambient lighting, highly detailed, digital painting, artstation, concept art, sharp focus, by makoto shinkai and akihiko yoshida and hidari and wlop (regenerated with noise strength 0.3)",
         "modification_type": "sdedit_regeneration",
         "noise_strength": 0.3
+      },
+      "sdedit_0.4": {
+        "original_prompt": "concept art of a dusty field with ruined dieselpunk orcish tanks in the background, key visual, ambient lighting, highly detailed, digital painting, artstation, concept art, sharp focus, by makoto shinkai and akihiko yoshida and hidari and wlop",
+        "modified_prompt": "[sdedit_regeneration] concept art of a dusty field with ruined dieselpunk orcish tanks in the background, key visual, ambient lighting, highly detailed, digital painting, artstation, concept art, sharp focus, by makoto shinkai and akihiko yoshida and hidari and wlop (regenerated with noise strength 0.4)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.4
+      },
+      "sdedit_0.5": {
+        "original_prompt": "concept art of a dusty field with ruined dieselpunk orcish tanks in the background, key visual, ambient lighting, highly detailed, digital painting, artstation, concept art, sharp focus, by makoto shinkai and akihiko yoshida and hidari and wlop",
+        "modified_prompt": "[sdedit_regeneration] concept art of a dusty field with ruined dieselpunk orcish tanks in the background, key visual, ambient lighting, highly detailed, digital painting, artstation, concept art, sharp focus, by makoto shinkai and akihiko yoshida and hidari and wlop (regenerated with noise strength 0.5)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.5
       }
     },
     "wm_017": {
       "sdxl_style_oil_painting": {
-        "original_prompt": "A volcanic eruption at night, lava flow, dramatic natural phenomenon",
-        "modified_prompt": "[oil_painting] A volcanic eruption at night, lava flow, dramatic natural phenomenon (style: transform into an oil painting style)",
+        "original_prompt": "whirlwind of souls rushing inside the metaverse, half body, glowin eye, tiara, tattoo pharaoh, android, cyborg, cyberpunk face, by loish, d & d, fantasy, intricate, elegant, highly detailed, colorful, vivid color, digital painting, artstation, concept art, art by artgerm and greg rutkowski and alphonse mucha and ruan jia",
+        "modified_prompt": "[oil_painting] whirlwind of souls rushing inside the metaverse, half body, glowin eye, tiara, tattoo pharaoh, android, cyborg, cyberpunk face, by loish, d & d, fantasy, intricate, elegant, highly detailed, colorful, vivid color, digital painting, artstation, concept art, art by artgerm and greg rutkowski and alphonse mucha and ruan jia (style: transform into an oil painting style)",
         "instruction": "transform into an oil painting style",
         "modification_type": "oil_painting",
         "source": "default"
       },
       "sdxl_style_sketch": {
-        "original_prompt": "A volcanic eruption at night, lava flow, dramatic natural phenomenon",
-        "modified_prompt": "[sketch] A volcanic eruption at night, lava flow, dramatic natural phenomenon (style: convert to pencil sketch style)",
+        "original_prompt": "whirlwind of souls rushing inside the metaverse, half body, glowin eye, tiara, tattoo pharaoh, android, cyborg, cyberpunk face, by loish, d & d, fantasy, intricate, elegant, highly detailed, colorful, vivid color, digital painting, artstation, concept art, art by artgerm and greg rutkowski and alphonse mucha and ruan jia",
+        "modified_prompt": "[sketch] whirlwind of souls rushing inside the metaverse, half body, glowin eye, tiara, tattoo pharaoh, android, cyborg, cyberpunk face, by loish, d & d, fantasy, intricate, elegant, highly detailed, colorful, vivid color, digital painting, artstation, concept art, art by artgerm and greg rutkowski and alphonse mucha and ruan jia (style: convert to pencil sketch style)",
         "instruction": "convert to pencil sketch style",
         "modification_type": "sketch",
         "source": "default"
       },
       "fluxfill_center": {
-        "original_prompt": "A volcanic eruption at night, lava flow, dramatic natural phenomenon",
-        "modified_prompt": "[inpaint_center] A volcanic eruption at night, lava flow, dramatic natural phenomenon (inpainted: seamless continuation)",
+        "original_prompt": "whirlwind of souls rushing inside the metaverse, half body, glowin eye, tiara, tattoo pharaoh, android, cyborg, cyberpunk face, by loish, d & d, fantasy, intricate, elegant, highly detailed, colorful, vivid color, digital painting, artstation, concept art, art by artgerm and greg rutkowski and alphonse mucha and ruan jia",
+        "modified_prompt": "[inpaint_center] whirlwind of souls rushing inside the metaverse, half body, glowin eye, tiara, tattoo pharaoh, android, cyborg, cyberpunk face, by loish, d & d, fantasy, intricate, elegant, highly detailed, colorful, vivid color, digital painting, artstation, concept art, art by artgerm and greg rutkowski and alphonse mucha and ruan jia (inpainted: seamless continuation)",
         "inpaint_prompt": "seamless continuation",
         "modification_type": "inpaint_center",
         "mask_ratio": 0.3,
@@ -708,8 +912,8 @@
         "source": "default"
       },
       "fluxfill_random": {
-        "original_prompt": "A volcanic eruption at night, lava flow, dramatic natural phenomenon",
-        "modified_prompt": "[inpaint_random] A volcanic eruption at night, lava flow, dramatic natural phenomenon (inpainted: seamless continuation)",
+        "original_prompt": "whirlwind of souls rushing inside the metaverse, half body, glowin eye, tiara, tattoo pharaoh, android, cyborg, cyberpunk face, by loish, d & d, fantasy, intricate, elegant, highly detailed, colorful, vivid color, digital painting, artstation, concept art, art by artgerm and greg rutkowski and alphonse mucha and ruan jia",
+        "modified_prompt": "[inpaint_random] whirlwind of souls rushing inside the metaverse, half body, glowin eye, tiara, tattoo pharaoh, android, cyborg, cyberpunk face, by loish, d & d, fantasy, intricate, elegant, highly detailed, colorful, vivid color, digital painting, artstation, concept art, art by artgerm and greg rutkowski and alphonse mucha and ruan jia (inpainted: seamless continuation)",
         "inpaint_prompt": "seamless continuation",
         "modification_type": "inpaint_random",
         "mask_ratio": 0.25,
@@ -717,30 +921,42 @@
         "source": "default"
       },
       "sdedit_0.3": {
-        "original_prompt": "A volcanic eruption at night, lava flow, dramatic natural phenomenon",
-        "modified_prompt": "[sdedit_regeneration] A volcanic eruption at night, lava flow, dramatic natural phenomenon (regenerated with noise strength 0.3)",
+        "original_prompt": "whirlwind of souls rushing inside the metaverse, half body, glowin eye, tiara, tattoo pharaoh, android, cyborg, cyberpunk face, by loish, d & d, fantasy, intricate, elegant, highly detailed, colorful, vivid color, digital painting, artstation, concept art, art by artgerm and greg rutkowski and alphonse mucha and ruan jia",
+        "modified_prompt": "[sdedit_regeneration] whirlwind of souls rushing inside the metaverse, half body, glowin eye, tiara, tattoo pharaoh, android, cyborg, cyberpunk face, by loish, d & d, fantasy, intricate, elegant, highly detailed, colorful, vivid color, digital painting, artstation, concept art, art by artgerm and greg rutkowski and alphonse mucha and ruan jia (regenerated with noise strength 0.3)",
         "modification_type": "sdedit_regeneration",
         "noise_strength": 0.3
+      },
+      "sdedit_0.4": {
+        "original_prompt": "whirlwind of souls rushing inside the metaverse, half body, glowin eye, tiara, tattoo pharaoh, android, cyborg, cyberpunk face, by loish, d & d, fantasy, intricate, elegant, highly detailed, colorful, vivid color, digital painting, artstation, concept art, art by artgerm and greg rutkowski and alphonse mucha and ruan jia",
+        "modified_prompt": "[sdedit_regeneration] whirlwind of souls rushing inside the metaverse, half body, glowin eye, tiara, tattoo pharaoh, android, cyborg, cyberpunk face, by loish, d & d, fantasy, intricate, elegant, highly detailed, colorful, vivid color, digital painting, artstation, concept art, art by artgerm and greg rutkowski and alphonse mucha and ruan jia (regenerated with noise strength 0.4)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.4
+      },
+      "sdedit_0.5": {
+        "original_prompt": "whirlwind of souls rushing inside the metaverse, half body, glowin eye, tiara, tattoo pharaoh, android, cyborg, cyberpunk face, by loish, d & d, fantasy, intricate, elegant, highly detailed, colorful, vivid color, digital painting, artstation, concept art, art by artgerm and greg rutkowski and alphonse mucha and ruan jia",
+        "modified_prompt": "[sdedit_regeneration] whirlwind of souls rushing inside the metaverse, half body, glowin eye, tiara, tattoo pharaoh, android, cyborg, cyberpunk face, by loish, d & d, fantasy, intricate, elegant, highly detailed, colorful, vivid color, digital painting, artstation, concept art, art by artgerm and greg rutkowski and alphonse mucha and ruan jia (regenerated with noise strength 0.5)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.5
       }
     },
     "wm_018": {
       "sdxl_style_oil_painting": {
-        "original_prompt": "A cake on a stand",
-        "modified_prompt": "[oil_painting] A cake on a stand (style: transform into an oil painting style)",
+        "original_prompt": "digital painting of a cyberpunk city by Dan Mumford, trending on Artstation, hyperdetailed",
+        "modified_prompt": "[oil_painting] digital painting of a cyberpunk city by Dan Mumford, trending on Artstation, hyperdetailed (style: transform into an oil painting style)",
         "instruction": "transform into an oil painting style",
         "modification_type": "oil_painting",
         "source": "default"
       },
       "sdxl_style_sketch": {
-        "original_prompt": "A cake on a stand",
-        "modified_prompt": "[sketch] A cake on a stand (style: convert to pencil sketch style)",
+        "original_prompt": "digital painting of a cyberpunk city by Dan Mumford, trending on Artstation, hyperdetailed",
+        "modified_prompt": "[sketch] digital painting of a cyberpunk city by Dan Mumford, trending on Artstation, hyperdetailed (style: convert to pencil sketch style)",
         "instruction": "convert to pencil sketch style",
         "modification_type": "sketch",
         "source": "default"
       },
       "fluxfill_center": {
-        "original_prompt": "A cake on a stand",
-        "modified_prompt": "[inpaint_center] A cake on a stand (inpainted: seamless continuation)",
+        "original_prompt": "digital painting of a cyberpunk city by Dan Mumford, trending on Artstation, hyperdetailed",
+        "modified_prompt": "[inpaint_center] digital painting of a cyberpunk city by Dan Mumford, trending on Artstation, hyperdetailed (inpainted: seamless continuation)",
         "inpaint_prompt": "seamless continuation",
         "modification_type": "inpaint_center",
         "mask_ratio": 0.3,
@@ -748,8 +964,8 @@
         "source": "default"
       },
       "fluxfill_random": {
-        "original_prompt": "A cake on a stand",
-        "modified_prompt": "[inpaint_random] A cake on a stand (inpainted: seamless continuation)",
+        "original_prompt": "digital painting of a cyberpunk city by Dan Mumford, trending on Artstation, hyperdetailed",
+        "modified_prompt": "[inpaint_random] digital painting of a cyberpunk city by Dan Mumford, trending on Artstation, hyperdetailed (inpainted: seamless continuation)",
         "inpaint_prompt": "seamless continuation",
         "modification_type": "inpaint_random",
         "mask_ratio": 0.25,
@@ -757,30 +973,42 @@
         "source": "default"
       },
       "sdedit_0.3": {
-        "original_prompt": "A cake on a stand",
-        "modified_prompt": "[sdedit_regeneration] A cake on a stand (regenerated with noise strength 0.3)",
+        "original_prompt": "digital painting of a cyberpunk city by Dan Mumford, trending on Artstation, hyperdetailed",
+        "modified_prompt": "[sdedit_regeneration] digital painting of a cyberpunk city by Dan Mumford, trending on Artstation, hyperdetailed (regenerated with noise strength 0.3)",
         "modification_type": "sdedit_regeneration",
         "noise_strength": 0.3
+      },
+      "sdedit_0.4": {
+        "original_prompt": "digital painting of a cyberpunk city by Dan Mumford, trending on Artstation, hyperdetailed",
+        "modified_prompt": "[sdedit_regeneration] digital painting of a cyberpunk city by Dan Mumford, trending on Artstation, hyperdetailed (regenerated with noise strength 0.4)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.4
+      },
+      "sdedit_0.5": {
+        "original_prompt": "digital painting of a cyberpunk city by Dan Mumford, trending on Artstation, hyperdetailed",
+        "modified_prompt": "[sdedit_regeneration] digital painting of a cyberpunk city by Dan Mumford, trending on Artstation, hyperdetailed (regenerated with noise strength 0.5)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.5
       }
     },
     "wm_019": {
       "sdxl_style_oil_painting": {
-        "original_prompt": "A truck carrying goods on the highway",
-        "modified_prompt": "[oil_painting] A truck carrying goods on the highway (style: transform into an oil painting style)",
+        "original_prompt": "mr bean ss spiderman, fine details, realistic shaded lighting poster by greg rutkowski, magali villeneuve, artgerm, jeremy lipkin and michael garmash and rob rey",
+        "modified_prompt": "[oil_painting] mr bean ss spiderman, fine details, realistic shaded lighting poster by greg rutkowski, magali villeneuve, artgerm, jeremy lipkin and michael garmash and rob rey (style: transform into an oil painting style)",
         "instruction": "transform into an oil painting style",
         "modification_type": "oil_painting",
         "source": "default"
       },
       "sdxl_style_sketch": {
-        "original_prompt": "A truck carrying goods on the highway",
-        "modified_prompt": "[sketch] A truck carrying goods on the highway (style: convert to pencil sketch style)",
+        "original_prompt": "mr bean ss spiderman, fine details, realistic shaded lighting poster by greg rutkowski, magali villeneuve, artgerm, jeremy lipkin and michael garmash and rob rey",
+        "modified_prompt": "[sketch] mr bean ss spiderman, fine details, realistic shaded lighting poster by greg rutkowski, magali villeneuve, artgerm, jeremy lipkin and michael garmash and rob rey (style: convert to pencil sketch style)",
         "instruction": "convert to pencil sketch style",
         "modification_type": "sketch",
         "source": "default"
       },
       "fluxfill_center": {
-        "original_prompt": "A truck carrying goods on the highway",
-        "modified_prompt": "[inpaint_center] A truck carrying goods on the highway (inpainted: seamless continuation)",
+        "original_prompt": "mr bean ss spiderman, fine details, realistic shaded lighting poster by greg rutkowski, magali villeneuve, artgerm, jeremy lipkin and michael garmash and rob rey",
+        "modified_prompt": "[inpaint_center] mr bean ss spiderman, fine details, realistic shaded lighting poster by greg rutkowski, magali villeneuve, artgerm, jeremy lipkin and michael garmash and rob rey (inpainted: seamless continuation)",
         "inpaint_prompt": "seamless continuation",
         "modification_type": "inpaint_center",
         "mask_ratio": 0.3,
@@ -788,8 +1016,8 @@
         "source": "default"
       },
       "fluxfill_random": {
-        "original_prompt": "A truck carrying goods on the highway",
-        "modified_prompt": "[inpaint_random] A truck carrying goods on the highway (inpainted: seamless continuation)",
+        "original_prompt": "mr bean ss spiderman, fine details, realistic shaded lighting poster by greg rutkowski, magali villeneuve, artgerm, jeremy lipkin and michael garmash and rob rey",
+        "modified_prompt": "[inpaint_random] mr bean ss spiderman, fine details, realistic shaded lighting poster by greg rutkowski, magali villeneuve, artgerm, jeremy lipkin and michael garmash and rob rey (inpainted: seamless continuation)",
         "inpaint_prompt": "seamless continuation",
         "modification_type": "inpaint_random",
         "mask_ratio": 0.25,
@@ -797,10 +1025,22 @@
         "source": "default"
       },
       "sdedit_0.3": {
-        "original_prompt": "A truck carrying goods on the highway",
-        "modified_prompt": "[sdedit_regeneration] A truck carrying goods on the highway (regenerated with noise strength 0.3)",
+        "original_prompt": "mr bean ss spiderman, fine details, realistic shaded lighting poster by greg rutkowski, magali villeneuve, artgerm, jeremy lipkin and michael garmash and rob rey",
+        "modified_prompt": "[sdedit_regeneration] mr bean ss spiderman, fine details, realistic shaded lighting poster by greg rutkowski, magali villeneuve, artgerm, jeremy lipkin and michael garmash and rob rey (regenerated with noise strength 0.3)",
         "modification_type": "sdedit_regeneration",
         "noise_strength": 0.3
+      },
+      "sdedit_0.4": {
+        "original_prompt": "mr bean ss spiderman, fine details, realistic shaded lighting poster by greg rutkowski, magali villeneuve, artgerm, jeremy lipkin and michael garmash and rob rey",
+        "modified_prompt": "[sdedit_regeneration] mr bean ss spiderman, fine details, realistic shaded lighting poster by greg rutkowski, magali villeneuve, artgerm, jeremy lipkin and michael garmash and rob rey (regenerated with noise strength 0.4)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.4
+      },
+      "sdedit_0.5": {
+        "original_prompt": "mr bean ss spiderman, fine details, realistic shaded lighting poster by greg rutkowski, magali villeneuve, artgerm, jeremy lipkin and michael garmash and rob rey",
+        "modified_prompt": "[sdedit_regeneration] mr bean ss spiderman, fine details, realistic shaded lighting poster by greg rutkowski, magali villeneuve, artgerm, jeremy lipkin and michael garmash and rob rey (regenerated with noise strength 0.5)",
+        "modification_type": "sdedit_regeneration",
+        "noise_strength": 0.5
       }
     }
   },
@@ -814,7 +1054,9 @@
       "fluxfill_random"
     ],
     "sdedit": [
-      "sdedit_0.3"
+      "sdedit_0.3",
+      "sdedit_0.4",
+      "sdedit_0.5"
     ]
   }
 }

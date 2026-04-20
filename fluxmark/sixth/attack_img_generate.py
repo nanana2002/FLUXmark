@@ -641,6 +641,26 @@ ATTACK_CONFIGS = [
     # FluxFill Inpainting 攻击 - 局部重绘
     {'name': 'fluxfill_center', 'type': 'flux_fill', 'params': {'prompt': 'seamless continuation', 'mask_ratio': 0.3, 'modification': 'inpaint_center', 'use_modified_prompt': True}},
     {'name': 'fluxfill_random', 'type': 'flux_fill', 'params': {'prompt': 'seamless continuation', 'mask_ratio': 0.25, 'position': 'random', 'modification': 'inpaint_random', 'use_modified_prompt': True}},
+
+    # ========== 崩溃边缘分析 (Breakdown Point Analysis) 极端攻击 ==========
+    # JPEG 更极端压缩
+    {'name': 'jpeg_20', 'type': 'jpeg', 'params': {'quality': 20}},
+    {'name': 'jpeg_10', 'type': 'jpeg', 'params': {'quality': 10}},
+
+    # 高斯模糊更极端
+    {'name': 'blur_3.0', 'type': 'blur', 'params': {'sigma': 3.0, 'kernel_size': 9}},
+    {'name': 'blur_4.0', 'type': 'blur', 'params': {'sigma': 4.0, 'kernel_size': 11}},
+
+    # SDEdit 更极端
+    {'name': 'sdedit_0.4', 'type': 'sdedit', 'params': {'noise_strength': 0.4}},
+    {'name': 'sdedit_0.5', 'type': 'sdedit', 'params': {'noise_strength': 0.5}},
+
+    # 噪声更极端
+    {'name': 'noise_0.15', 'type': 'noise', 'params': {'std': 0.15}},
+    {'name': 'noise_0.20', 'type': 'noise', 'params': {'std': 0.20}},
+
+    # 缩放更极端
+    {'name': 'resize_0.25', 'type': 'resize', 'params': {'scale': 0.25}},
 ]
 
 # 分离攻击类型

@@ -101,6 +101,19 @@ for prompt_text in tqdm(unique_prompts, desc="编码进度"):
 print(f"   已编码 {len(encoded_prompts_cache)} 个唯一prompts到GPU")
 print(f"   当前显存使用: {torch.cuda.memory_allocated() / 1024**3:.2f} GB")
 
+# 预编码空 prompt（盲提取模式缓存，只编码一次）
+print("🔤 预编码空 prompt（盲提取模式缓存）...")
+with torch.no_grad():
+    empty_prompt_embeds, empty_pooled_prompt_embeds, empty_text_ids = pipe.encode_prompt(
+        prompt="", prompt_2=None, max_sequence_length=256
+    )
+empty_prompt_cache = {
+    'prompt_embeds': empty_prompt_embeds,
+    'pooled_prompt_embeds': empty_pooled_prompt_embeds,
+    'text_ids': empty_text_ids
+}
+print("   空 prompt 编码已缓存")
+
 # ==========================================
 # 3. 重建FFT密码本（常驻GPU）
 # ==========================================
@@ -130,8 +143,12 @@ print(f"   密码本已重建并常驻GPU（全图统一提取）")
 # ==========================================
 # 4. 提取签名函数（批量版本）
 # ==========================================
-def extract_signature_batch(pil_images, prompt_embeds_list, pooled_embeds_list, text_ids_list, grid_size=32):
-    """批量从图像中提取签名（高性能GPU版本，支持可变网格尺寸）"""
+def extract_signature_batch(pil_images, prompt_embeds_list, pooled_embeds_list, text_ids_list, grid_size=32, use_empty_prompt=False):
+    """批量从图像中提取签名（高性能GPU版本，支持可变网格尺寸）
+    
+    Args:
+        use_empty_prompt: 若为 True，使用空字符串 "" 的 prompt embedding 进行盲提取
+    """
     batch_size = len(pil_images)
     patch_size = 32 // grid_size
 
@@ -163,12 +180,21 @@ def extract_signature_batch(pil_images, prompt_embeds_list, pooled_embeds_list, 
         # 批量提取v_pred
         v_pred_list = []
         for i in range(batch_size):
+            if use_empty_prompt:
+                pooled_proj = empty_prompt_cache['pooled_prompt_embeds']
+                enc_states = empty_prompt_cache['prompt_embeds']
+                txt_ids = empty_prompt_cache['text_ids']
+            else:
+                pooled_proj = pooled_embeds_list[i]
+                enc_states = prompt_embeds_list[i]
+                txt_ids = text_ids_list[i]
+
             v_pred = pipe.transformer(
                 hidden_states=z_0_list[i],
                 timestep=torch.tensor([pipe.scheduler.sigmas[-1]], device="cuda", dtype=torch.bfloat16) / 1000,
-                pooled_projections=pooled_embeds_list[i],
-                encoder_hidden_states=prompt_embeds_list[i],
-                txt_ids=text_ids_list[i],
+                pooled_projections=pooled_proj,
+                encoder_hidden_states=enc_states,
+                txt_ids=txt_ids,
                 img_ids=img_ids,
                 return_dict=False,
             )[0]

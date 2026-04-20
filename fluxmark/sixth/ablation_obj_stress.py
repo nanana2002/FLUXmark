@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-消融实验：不加正交投影的水印生成（极致性能版 - 50GB显存全速运行）
-对比正常版本，验证正交投影的重要性
+消融实验：极端 alpha 压力测试（非正交 vs 正交对比）
+在多个极端 alpha 值下运行，验证正交投影机制的重要性
 
 优化策略：
 - 保持所有模型常驻GPU
@@ -26,8 +26,12 @@ import numpy as np
 from datetime import datetime
 from tqdm import tqdm
 
-output_dir = os.path.join(config['output_base_dir'], 'pic', 'ablation_obj_stress_watermarked_img')
-os.makedirs(output_dir, exist_ok=True)
+# ==========================================
+# 0. 配置压力测试 alpha 列表
+# ==========================================
+stress_alphas = [1.0, 2.0, 3.0, 4.0]
+
+base_output_dir = os.path.join(config['output_base_dir'], 'pic')
 
 # 加载prompts
 prompts_path = os.path.join(config['output_base_dir'], 'prompts.json')
@@ -39,7 +43,7 @@ prompts = prompts_data['prompts']
 num_samples = config.get('num_samples', len(prompts))
 prompts = prompts[:num_samples]
 print(f"📋 加载了 {len(prompts)} 条 prompts（config.num_samples={num_samples}）")
-print("🔬 消融实验：不加正交投影（alpha=2.5 压力测试）")
+print(f"🔬 极端 alpha 压力测试：alpha 列表 = {stress_alphas}")
 
 # ==========================================
 # 1. 加载模型（直接到GPU，保持常驻）
@@ -101,58 +105,65 @@ W_filtered = torch.fft.ifft2(torch.fft.ifftshift(F_W_filtered, dim=(1, 2)), dim=
 W = W_filtered.view(1, 1024, 64).to(torch.bfloat16)
 W = W / (torch.norm(W, dim=-1, keepdim=True) + 1e-8)
 
-print("   ⚠️  警告：此版本未使用正交投影")
+print(f"   FFT带通: [{r_inner}, {r_outer}]")
 print(f"   当前显存使用: {torch.cuda.memory_allocated() / 1024**3:.2f} GB")
 
 # ==========================================
-# 4. 非正交注入回调（关键差异）
+# 4. 定义回调工厂函数（支持可变 alpha）
 # ==========================================
-alpha = 2.5  # 压力测试：极大水印强度
 
-def non_orthogonal_drift_callback(pipe, step_index, timestep, callback_kwargs):
+def make_non_orthogonal_callback(alpha_val):
     """
-    非正交注入回调
-    直接注入，不做正交化和能量重归一化（全图注入）
+    非正交注入回调（直接注入，无投影）
     """
-    latents = callback_kwargs["latents"]
+    def non_orthogonal_drift_callback(pipe, step_index, timestep, callback_kwargs):
+        latents = callback_kwargs["latents"]
+        sigmas = pipe.scheduler.sigmas
+        dt = sigmas[step_index + 1] - sigmas[step_index]
+        # 直接加法，不进行正交化和能量归一化
+        latents = latents + alpha_val * W * abs(dt)
+        callback_kwargs["latents"] = latents
+        return callback_kwargs
+    return non_orthogonal_drift_callback
 
-    # 不使用正交投影，直接注入
-    sigmas = pipe.scheduler.sigmas
-    dt = sigmas[step_index + 1] - sigmas[step_index]
 
-    # 直接加法，不进行正交化和能量归一化
-    latents = latents + alpha * W * abs(dt)
+def make_orthogonal_callback(alpha_val):
+    """
+    正交注入回调（Token-wise 正交投影 + 能量重归一化）
+    使用全图 W（与消融实验保持一致，仅对比投影机制本身）
+    """
+    def orthogonal_drift_callback(pipe, step_index, timestep, callback_kwargs):
+        latents = callback_kwargs["latents"]
 
-    callback_kwargs["latents"] = latents
-    return callback_kwargs
+        # Token-wise 正交化
+        dot_W_x = torch.sum(W * latents, dim=-1, keepdim=True)
+        dot_x_x = torch.sum(latents * latents, dim=-1, keepdim=True) + 1e-8
+        W_perp = W - (dot_W_x / dot_x_x) * latents
+
+        # 能量重归一化
+        norm_W = torch.norm(W, dim=-1, keepdim=True)
+        norm_W_perp = torch.norm(W_perp, dim=-1, keepdim=True) + 1e-8
+        W_perp = W_perp * (norm_W / norm_W_perp)
+
+        # 欧拉积分加权
+        sigmas = pipe.scheduler.sigmas
+        dt = sigmas[step_index + 1] - sigmas[step_index]
+        latents = latents + alpha_val * W_perp * abs(dt)
+
+        callback_kwargs["latents"] = latents
+        return callback_kwargs
+    return orthogonal_drift_callback
+
 
 # ==========================================
-# 5. 批量生成消融实验图像（高性能模式）
+# 5. 批量生成图像的辅助函数
 # ==========================================
-print(f"\n🎨 开始生成 {len(prompts)} 张消融实验图像（非正交）...\n")
-
-results_summary = {
-    'experiment_name': f"{config['experiment_name']}_ablation_obj_stress",
-    'timestamp': datetime.now().isoformat(),
-    'ablation_type': 'no_orthogonal_projection_stress',
-    'total_images': len(prompts),
-    'config': config,
-    'images': []
-}
-
-batch_size = config.get('batch_size', 4)
-
-# 批量生成
-for batch_start in tqdm(range(0, len(prompts), batch_size), desc="生成批次"):
-    batch_end = min(batch_start + batch_size, len(prompts))
-    batch_indices = list(range(batch_start, batch_end))
-
-    # 收集batch数据
+def generate_batch(pipe, batch_indices, callback):
+    """执行一批图像生成"""
     batch_prompt_embeds = torch.cat([encoded_prompts[i]['prompt_embeds'] for i in batch_indices])
     batch_pooled_embeds = torch.cat([encoded_prompts[i]['pooled_prompt_embeds'] for i in batch_indices])
     batch_text_ids = torch.cat([encoded_prompts[i]['text_ids'] for i in batch_indices])
 
-    # 批量生成
     with torch.no_grad():
         images = pipe(
             prompt_embeds=batch_prompt_embeds,
@@ -161,13 +172,17 @@ for batch_start in tqdm(range(0, len(prompts), batch_size), desc="生成批次")
             guidance_scale=config['guidance_scale'],
             height=config['height'],
             width=config['width'],
-            callback_on_step_end=non_orthogonal_drift_callback,
+            callback_on_step_end=callback,
             num_images_per_prompt=1,
         ).images
+    return images
 
-    # 批量提取签名
+
+def extract_signature_and_save(images, batch_indices, output_dir, img_prefix):
+    """提取签名并保存图像，返回结果列表"""
+    results = []
     for idx, img_idx in enumerate(batch_indices):
-        img_id = f"ablation_obj_stress_{img_idx:03d}"
+        img_id = f"{img_prefix}_{img_idx:03d}"
         img_filename = f"{img_id}.png"
         img_path = os.path.join(output_dir, img_filename)
         images[idx].save(img_path)
@@ -176,7 +191,6 @@ for batch_start in tqdm(range(0, len(prompts), batch_size), desc="生成批次")
         img_tensor = T.ToTensor()(images[idx]).unsqueeze(0).to("cuda", dtype=torch.bfloat16)
         img_tensor = (img_tensor - 0.5) * 2.0
 
-        # 使用原始 encoded_prompts 避免维度问题
         encoded = encoded_prompts[img_idx]
         prompt_embeds = encoded['prompt_embeds']
         pooled_prompt_embeds = encoded['pooled_prompt_embeds']
@@ -203,7 +217,7 @@ for batch_start in tqdm(range(0, len(prompts), batch_size), desc="生成批次")
                 return_dict=False,
             )[0]
 
-        # 计算签名
+        # 计算 32x32 签名
         v_pred_spatial = v_pred.view(32, 32, 64)
         W_spatial = W.view(32, 32, 64)
         S = np.zeros((32, 32))
@@ -232,23 +246,130 @@ for batch_start in tqdm(range(0, len(prompts), batch_size), desc="生成批次")
                 'max': float(np.max(S))
             }
         }
-        results_summary['images'].append(img_result)
+        results.append(img_result)
+    return results
+
 
 # ==========================================
-# 6. 保存摘要
+# 6. 主循环：对每个 alpha 运行两种方法
 # ==========================================
-summary_path = os.path.join(output_dir, f'{config["experiment_name"]}_ablation_obj_stress_summary.json')
+master_summary = {
+    'experiment_name': f"{config['experiment_name']}_ablation_obj_stress_multi_alpha",
+    'timestamp': datetime.now().isoformat(),
+    'stress_alphas': stress_alphas,
+    'total_images_per_alpha': len(prompts),
+    'config': config,
+    'alpha_results': {}
+}
+
+batch_size = config.get('batch_size', 4)
+
+for alpha in stress_alphas:
+    print(f"\n{'='*60}")
+    print(f"🧪 开始压力测试 alpha = {alpha}")
+    print(f"{'='*60}")
+
+    alpha_str = f"alpha_{alpha}"
+    master_summary['alpha_results'][alpha_str] = {}
+
+    # ---------- 6a. 非正交版本 ----------
+    no_ortho_dir = os.path.join(base_output_dir, 'ablation_obj_stress_watermarked_img', alpha_str)
+    os.makedirs(no_ortho_dir, exist_ok=True)
+    print(f"\n🔴 [alpha={alpha}] 非正交生成 → {no_ortho_dir}")
+
+    no_ortho_callback = make_non_orthogonal_callback(alpha)
+    no_ortho_images = []
+
+    for batch_start in tqdm(range(0, len(prompts), batch_size),
+                            desc=f"非正交 alpha={alpha}", leave=False):
+        batch_end = min(batch_start + batch_size, len(prompts))
+        batch_indices = list(range(batch_start, batch_end))
+        images = generate_batch(pipe, batch_indices, no_ortho_callback)
+        no_ortho_images.extend(extract_signature_and_save(
+            images, batch_indices, no_ortho_dir, "ablation_obj_stress"
+        ))
+
+    no_ortho_means = [img['stats']['mean'] for img in no_ortho_images]
+    no_ortho_stds = [img['stats']['std'] for img in no_ortho_images]
+    no_ortho_overall = {
+        'mean': float(np.mean(no_ortho_means)),
+        'std': float(np.std(no_ortho_means)),
+        'min': float(np.min(no_ortho_means)),
+        'max': float(np.max(no_ortho_means))
+    }
+
+    master_summary['alpha_results'][alpha_str]['non_orthogonal'] = {
+        'output_dir': no_ortho_dir,
+        'ablation_type': 'no_orthogonal_projection_stress',
+        'alpha': alpha,
+        'images': no_ortho_images,
+        'overall_stats': no_ortho_overall
+    }
+
+    print(f"   ✅ 非正交完成: mean={no_ortho_overall['mean']:.4f}, std={no_ortho_overall['std']:.4f}")
+
+    # ---------- 6b. 正交版本（Full Method） ----------
+    ortho_dir = os.path.join(base_output_dir, 'ablation_ortho_stress_watermarked_img', alpha_str)
+    os.makedirs(ortho_dir, exist_ok=True)
+    print(f"\n🟢 [alpha={alpha}] 正交生成（Full Method） → {ortho_dir}")
+
+    ortho_callback = make_orthogonal_callback(alpha)
+    ortho_images = []
+
+    for batch_start in tqdm(range(0, len(prompts), batch_size),
+                            desc=f"正交 alpha={alpha}", leave=False):
+        batch_end = min(batch_start + batch_size, len(prompts))
+        batch_indices = list(range(batch_start, batch_end))
+        images = generate_batch(pipe, batch_indices, ortho_callback)
+        ortho_images.extend(extract_signature_and_save(
+            images, batch_indices, ortho_dir, "ablation_ortho_stress"
+        ))
+
+    ortho_means = [img['stats']['mean'] for img in ortho_images]
+    ortho_stds = [img['stats']['std'] for img in ortho_images]
+    ortho_overall = {
+        'mean': float(np.mean(ortho_means)),
+        'std': float(np.std(ortho_stds)),
+        'min': float(np.min(ortho_means)),
+        'max': float(np.max(ortho_means))
+    }
+
+    master_summary['alpha_results'][alpha_str]['orthogonal'] = {
+        'output_dir': ortho_dir,
+        'ablation_type': 'orthogonal_projection_stress_full_method',
+        'alpha': alpha,
+        'images': ortho_images,
+        'overall_stats': ortho_overall
+    }
+
+    print(f"   ✅ 正交完成: mean={ortho_overall['mean']:.4f}, std={ortho_overall['std']:.4f}")
+
+    # ---------- 6c. 当前 alpha 对比打印 ----------
+    print(f"\n📊 [alpha={alpha}] 对比统计:")
+    print(f"   非正交  →  Mean: {no_ortho_overall['mean']:.4f} | Std: {no_ortho_overall['std']:.4f}")
+    print(f"   正交    →  Mean: {ortho_overall['mean']:.4f} | Std: {ortho_overall['std']:.4f}")
+    print(f"   💡 Std 差距: {abs(no_ortho_overall['std'] - ortho_overall['std']):.4f}")
+
+# ==========================================
+# 7. 保存总摘要
+# ==========================================
+summary_path = os.path.join(
+    base_output_dir,
+    f"{config['experiment_name']}_ablation_obj_stress_multi_alpha_summary.json"
+)
 with open(summary_path, 'w') as f:
-    json.dump(results_summary, f, indent=2)
+    json.dump(master_summary, f, indent=2)
 
-print(f"\n✅ 消融实验（非正交压力测试 alpha=2.5）完成！")
-print(f"   图像保存位置: {output_dir}")
-print(f"   实验摘要: {summary_path}")
-print(f"\n📊 全图签名统计:")
-means = [img['stats']['mean'] for img in results_summary['images']]
-print(f"   平均值: {np.mean(means):.4f}")
-print(f"   标准差: {np.std(means):.4f}")
-print(f"   最小值: {np.min(means):.4f}")
-print(f"   最大值: {np.max(means):.4f}")
+print(f"\n{'='*60}")
+print(f"🎉 全部极端 alpha 压力测试完成！")
+print(f"{'='*60}")
+print(f"   总摘要: {summary_path}")
+print(f"\n📈 跨 alpha 汇总:")
+for alpha in stress_alphas:
+    alpha_str = f"alpha_{alpha}"
+    no_o = master_summary['alpha_results'][alpha_str]['non_orthogonal']['overall_stats']
+    orth = master_summary['alpha_results'][alpha_str]['orthogonal']['overall_stats']
+    print(f"   alpha={alpha}: 非正交(std={no_o['std']:.4f}) vs 正交(std={orth['std']:.4f})")
+
 print(f"\n   最终显存使用: {torch.cuda.memory_allocated() / 1024**3:.2f} GB")
 print(f"   🚀 高性能模式：保持所有模型和缓存常驻GPU！")

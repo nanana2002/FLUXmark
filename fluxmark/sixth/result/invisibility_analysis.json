@@ -1,16 +1,16 @@
 {
   "experiment_name": "OrthoFlow_Topic_0327_HighPerf",
-  "timestamp": "2026-04-20T16:18:07.960349",
+  "timestamp": "2026-04-20T21:42:04.181936",
   "num_samples_fid": 20,
-  "num_samples_clip": 20,
+  "num_samples_clip": 0,
   "fid": {
-    "score": 205.59535217285156,
+    "score": 205.9090118408203,
     "interpretation": "lower is better, <50 excellent, <100 good, <200 moderate"
   },
   "clip_score": {
-    "no_watermark": 31.517475128173828,
-    "watermarked": 31.382282257080078,
-    "difference": -0.13519287109375,
+    "no_watermark": null,
+    "watermarked": null,
+    "difference": null,
     "interpretation": "higher is better, should be very close between two groups"
   }
 }
