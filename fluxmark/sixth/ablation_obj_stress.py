@@ -206,12 +206,12 @@ for batch_start in tqdm(range(0, len(prompts), batch_size), desc="生成批次")
         # 计算签名
         v_pred_spatial = v_pred.view(32, 32, 64)
         W_spatial = W.view(32, 32, 64)
-        S = np.zeros((8, 8))
+        S = np.zeros((32, 32))
 
-        for i in range(8):
-            for j in range(8):
-                W_patch = W_spatial[i*4:(i+1)*4, j*4:(j+1)*4, :].flatten().float()
-                v_patch = v_pred_spatial[i*4:(i+1)*4, j*4:(j+1)*4, :].flatten().float()
+        for i in range(32):
+            for j in range(32):
+                W_patch = W_spatial[i, j, :].flatten().float()
+                v_patch = v_pred_spatial[i, j, :].flatten().float()
                 S[i, j] = torch.nn.functional.cosine_similarity(
                     W_patch.unsqueeze(0), v_patch.unsqueeze(0)
                 ).item()

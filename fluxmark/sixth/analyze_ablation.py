@@ -234,7 +234,7 @@ def encode_all_prompts(pipe, prompts_set):
 
 
 def extract_signature_mean(img_path, pipe, prompt_embeds, pooled_prompt_embeds, text_ids, W):
-    """快速提取单张图的 8x8 签名全图均值"""
+    """快速提取单张图的 32x32 签名全图均值"""
     img = Image.open(img_path).convert('RGB').resize((512, 512), Image.Resampling.LANCZOS)
     img_tensor = T.ToTensor()(img).unsqueeze(0).to("cuda", dtype=torch.bfloat16)
     img_tensor = (img_tensor - 0.5) * 2.0
@@ -270,11 +270,11 @@ def extract_signature_mean(img_path, pipe, prompt_embeds, pooled_prompt_embeds, 
 
     v_pred_spatial = v_pred.view(32, 32, 64)
     W_spatial = W.view(32, 32, 64)
-    S = np.zeros((8, 8))
-    for i in range(8):
-        for j in range(8):
-            W_patch = W_spatial[i*4:(i+1)*4, j*4:(j+1)*4, :].flatten().float()
-            v_patch = v_pred_spatial[i*4:(i+1)*4, j*4:(j+1)*4, :].flatten().float()
+    S = np.zeros((32, 32))
+    for i in range(32):
+        for j in range(32):
+            W_patch = W_spatial[i, j, :].flatten().float()
+            v_patch = v_pred_spatial[i, j, :].flatten().float()
             S[i, j] = torch.nn.functional.cosine_similarity(W_patch.unsqueeze(0), v_patch.unsqueeze(0)).item()
 
 

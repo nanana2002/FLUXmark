@@ -218,15 +218,15 @@ for batch_start in tqdm(range(0, len(prompts), batch_size), desc="生成批次")
                 return_dict=False,
             )[0]
 
-        # 计算8x8签名
+        # 计算32x32签名（潜空间原生分辨率，每个token独立计算）
         v_pred_spatial = v_pred.view(32, 32, 64)
         W_spatial = W.view(32, 32, 64)
-        S_orig = np.zeros((8, 8))
+        S_orig = np.zeros((32, 32))
 
-        for i in range(8):
-            for j in range(8):
-                W_patch = W_spatial[i*4:(i+1)*4, j*4:(j+1)*4, :].flatten().float()
-                v_patch = v_pred_spatial[i*4:(i+1)*4, j*4:(j+1)*4, :].flatten().float()
+        for i in range(32):
+            for j in range(32):
+                W_patch = W_spatial[i, j, :].flatten().float()
+                v_patch = v_pred_spatial[i, j, :].flatten().float()
                 S_orig[i, j] = torch.nn.functional.cosine_similarity(
                     W_patch.unsqueeze(0), v_patch.unsqueeze(0)
                 ).item()

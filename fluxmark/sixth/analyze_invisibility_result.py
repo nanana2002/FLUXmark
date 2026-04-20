@@ -18,6 +18,12 @@ with open('config.json', 'r') as f:
 os.environ['CUDA_VISIBLE_DEVICES'] = str(config.get('gpu_id', 0))
 os.environ['HF_HOME'] = config['hf_cache']
 
+# 禁止 HuggingFace 联网，强制使用本地模型
+os.environ['TRANSFORMERS_OFFLINE'] = '1'
+os.environ['HF_HUB_OFFLINE'] = '1'
+os.environ['HF_DATASETS_OFFLINE'] = '1'
+os.environ['TORCH_HOME'] = os.path.expanduser('~/.cache/torch')
+
 import torch
 import torchvision.transforms as T
 from PIL import Image
@@ -105,7 +111,9 @@ def compute_clip_score(images, prompts, device='cuda'):
         return None
 
     images_uint8 = (images * 255).byte()
-    clip_score_fn = CLIPScore(model_name_or_path="openai/clip-vit-base-patch16").to(device)
+    # 使用本地 CLIP 模型，禁止联网
+    clip_model_path = "/home/daiyn/project_flux/model/clip-model"
+    clip_score_fn = CLIPScore(model_name_or_path=clip_model_path).to(device)
 
     # 大批量计算
     scores = []

@@ -8,7 +8,7 @@
   "fft_radius_inner": 2,
   "fft_radius_outer": 14,
   "secret_key": 42,
-  "num_samples": 200,
+  "num_samples": 20,
   "prompt_seed": 42,
   "model_path": "/home/daiyn/project_flux/model/flux-schnell",
   "sdxl_path": "/home/daiyn/project_flux/model/sdxl-instructpix2pix",
@@ -17,5 +17,5 @@
   "output_base_dir": "/home/daiyn/project_flux/fluxmark/sixth",
   "batch_size": 4,
   "num_workers": 4,
-  "gpu_id": 0
+  "gpu_id": 3
 }

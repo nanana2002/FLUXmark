@@ -143,19 +143,19 @@ def attack_black_block(img, block_size_ratio=0.25, position='center'):
     attacked = img_array.copy()
     attacked[y_start:y_start+block_h, x_start:x_start+block_w] = 0
 
-    # 计算真实篡改掩码（8x8网格）
-    true_mask = np.zeros((8, 8), dtype=bool)
-    y_start_8 = int(y_start / h * 8)
-    y_end_8 = int((y_start + block_h) / h * 8)
-    x_start_8 = int(x_start / w * 8)
-    x_end_8 = int((x_start + block_w) / w * 8)
+    # 计算真实篡改掩码（32x32网格，与潜空间原生分辨率一致）
+    true_mask = np.zeros((32, 32), dtype=bool)
+    y_start_32 = int(y_start / h * 32)
+    y_end_32 = int((y_start + block_h) / h * 32)
+    x_start_32 = int(x_start / w * 32)
+    x_end_32 = int((x_start + block_w) / w * 32)
 
-    y_start_8 = max(0, min(7, y_start_8))
-    y_end_8 = max(0, min(8, y_end_8))
-    x_start_8 = max(0, min(7, x_start_8))
-    x_end_8 = max(0, min(8, x_end_8))
+    y_start_32 = max(0, min(31, y_start_32))
+    y_end_32 = max(0, min(32, y_end_32))
+    x_start_32 = max(0, min(31, x_start_32))
+    x_end_32 = max(0, min(32, x_end_32))
 
-    true_mask[y_start_8:y_end_8, x_start_8:x_end_8] = True
+    true_mask[y_start_32:y_end_32, x_start_32:x_end_32] = True
 
     return Image.fromarray(attacked), true_mask
 
@@ -181,16 +181,16 @@ def attack_copy_move(img, block_size_ratio=0.2):
     attacked = img_array.copy()
     attacked[dst_y:dst_y+block_h, dst_x:dst_x+block_w] = img_array[src_y:src_y+block_h, src_x:src_x+block_w]
 
-    true_mask = np.zeros((8, 8), dtype=bool)
-    dst_y_start_8 = int(dst_y / h * 8)
-    dst_y_end_8 = int((dst_y + block_h) / h * 8)
-    dst_x_start_8 = int(dst_x / w * 8)
-    dst_x_end_8 = int((dst_x + block_w) / w * 8)
-    dst_y_start_8 = max(0, min(7, dst_y_start_8))
-    dst_y_end_8 = max(0, min(8, dst_y_end_8))
-    dst_x_start_8 = max(0, min(7, dst_x_start_8))
-    dst_x_end_8 = max(0, min(8, dst_x_end_8))
-    true_mask[dst_y_start_8:dst_y_end_8, dst_x_start_8:dst_x_end_8] = True
+    true_mask = np.zeros((32, 32), dtype=bool)
+    dst_y_start_32 = int(dst_y / h * 32)
+    dst_y_end_32 = int((dst_y + block_h) / h * 32)
+    dst_x_start_32 = int(dst_x / w * 32)
+    dst_x_end_32 = int((dst_x + block_w) / w * 32)
+    dst_y_start_32 = max(0, min(31, dst_y_start_32))
+    dst_y_end_32 = max(0, min(32, dst_y_end_32))
+    dst_x_start_32 = max(0, min(31, dst_x_start_32))
+    dst_x_end_32 = max(0, min(32, dst_x_end_32))
+    true_mask[dst_y_start_32:dst_y_end_32, dst_x_start_32:dst_x_end_32] = True
 
     return Image.fromarray(attacked), true_mask
 
@@ -214,16 +214,16 @@ def attack_splicing(img, donor_img, block_size_ratio=0.2):
     attacked = img_array.copy()
     attacked[dst_y:dst_y+block_h, dst_x:dst_x+block_w] = donor_array[src_y:src_y+block_h, src_x:src_x+block_w]
 
-    true_mask = np.zeros((8, 8), dtype=bool)
-    dst_y_start_8 = int(dst_y / h * 8)
-    dst_y_end_8 = int((dst_y + block_h) / h * 8)
-    dst_x_start_8 = int(dst_x / w * 8)
-    dst_x_end_8 = int((dst_x + block_w) / w * 8)
-    dst_y_start_8 = max(0, min(7, dst_y_start_8))
-    dst_y_end_8 = max(0, min(8, dst_y_end_8))
-    dst_x_start_8 = max(0, min(7, dst_x_start_8))
-    dst_x_end_8 = max(0, min(8, dst_x_end_8))
-    true_mask[dst_y_start_8:dst_y_end_8, dst_x_start_8:dst_x_end_8] = True
+    true_mask = np.zeros((32, 32), dtype=bool)
+    dst_y_start_32 = int(dst_y / h * 32)
+    dst_y_end_32 = int((dst_y + block_h) / h * 32)
+    dst_x_start_32 = int(dst_x / w * 32)
+    dst_x_end_32 = int((dst_x + block_w) / w * 32)
+    dst_y_start_32 = max(0, min(31, dst_y_start_32))
+    dst_y_end_32 = max(0, min(32, dst_y_end_32))
+    dst_x_start_32 = max(0, min(31, dst_x_start_32))
+    dst_x_end_32 = max(0, min(32, dst_x_end_32))
+    true_mask[dst_y_start_32:dst_y_end_32, dst_x_start_32:dst_x_end_32] = True
 
     return Image.fromarray(attacked), true_mask
 
@@ -524,17 +524,17 @@ class DeepLearningAttacker:
                 mask_draw = Image.new('L', (mask_w, mask_h), 255)
                 mask.paste(mask_draw, (x_start, y_start))
 
-                # 计算并保存8x8篡改掩码
-                true_mask = np.zeros((8, 8), dtype=bool)
-                y_start_8 = int(y_start / h * 8)
-                y_end_8 = int((y_start + mask_h) / h * 8)
-                x_start_8 = int(x_start / w * 8)
-                x_end_8 = int((x_start + mask_w) / w * 8)
-                y_start_8 = max(0, min(7, y_start_8))
-                y_end_8 = max(0, min(8, y_end_8))
-                x_start_8 = max(0, min(7, x_start_8))
-                x_end_8 = max(0, min(8, x_end_8))
-                true_mask[y_start_8:y_end_8, x_start_8:x_end_8] = True
+                # 计算并保存32x32篡改掩码（与潜空间原生分辨率一致）
+                true_mask = np.zeros((32, 32), dtype=bool)
+                y_start_32 = int(y_start / h * 32)
+                y_end_32 = int((y_start + mask_h) / h * 32)
+                x_start_32 = int(x_start / w * 32)
+                x_end_32 = int((x_start + mask_w) / w * 32)
+                y_start_32 = max(0, min(31, y_start_32))
+                y_end_32 = max(0, min(32, y_end_32))
+                x_start_32 = max(0, min(31, x_start_32))
+                x_end_32 = max(0, min(32, x_end_32))
+                true_mask[y_start_32:y_end_32, x_start_32:x_end_32] = True
                 np.save(mask_path, true_mask)
 
                 with torch.no_grad():
@@ -634,9 +634,9 @@ ATTACK_CONFIGS = [
     # 同时添加全局风格迁移
     {'name': 'sdxl_style_oil_painting', 'type': 'sdxl_i2i', 'params': {'instruction': 'transform into an oil painting style', 'modification': 'oil_painting', 'use_modified_prompt': True}},
     {'name': 'sdxl_style_sketch', 'type': 'sdxl_i2i', 'params': {'instruction': 'convert to pencil sketch style', 'modification': 'sketch', 'use_modified_prompt': True}},
-    {'name': 'sdxl_style_watercolor', 'type': 'sdxl_i2i', 'params': {'instruction': 'transform into watercolor painting', 'modification': 'watercolor', 'use_modified_prompt': True}},
-    {'name': 'sdxl_style_cyberpunk', 'type': 'sdxl_i2i', 'params': {'instruction': 'convert to cyberpunk neon style', 'modification': 'cyberpunk', 'use_modified_prompt': True}},
-    {'name': 'sdxl_style_anime', 'type': 'sdxl_i2i', 'params': {'instruction': 'transform into anime style', 'modification': 'anime', 'use_modified_prompt': True}},
+    # {'name': 'sdxl_style_watercolor', 'type': 'sdxl_i2i', 'params': {'instruction': 'transform into watercolor painting', 'modification': 'watercolor', 'use_modified_prompt': True}},
+    # {'name': 'sdxl_style_cyberpunk', 'type': 'sdxl_i2i', 'params': {'instruction': 'convert to cyberpunk neon style', 'modification': 'cyberpunk', 'use_modified_prompt': True}},
+    # {'name': 'sdxl_style_anime', 'type': 'sdxl_i2i', 'params': {'instruction': 'transform into anime style', 'modification': 'anime', 'use_modified_prompt': True}},
 
     # FluxFill Inpainting 攻击 - 局部重绘
     {'name': 'fluxfill_center', 'type': 'flux_fill', 'params': {'prompt': 'seamless continuation', 'mask_ratio': 0.3, 'modification': 'inpaint_center', 'use_modified_prompt': True}},

@@ -241,12 +241,12 @@ for idx, prompt in enumerate(tqdm(prompts, desc="生成进度")):
     # 计算签名
     v_pred_spatial = v_pred.view(32, 32, 64)
     W_anchored_spatial = current_W_anchored.view(32, 32, 64)
-    S = np.zeros((8, 8))
+    S = np.zeros((32, 32))
 
-    for i in range(8):
-        for j in range(8):
-            W_patch = W_anchored_spatial[i*4:(i+1)*4, j*4:(j+1)*4, :].flatten().float()
-            v_patch = v_pred_spatial[i*4:(i+1)*4, j*4:(j+1)*4, :].flatten().float()
+    for i in range(32):
+        for j in range(32):
+            W_patch = W_anchored_spatial[i, j, :].flatten().float()
+            v_patch = v_pred_spatial[i, j, :].flatten().float()
             S[i, j] = torch.nn.functional.cosine_similarity(
                 W_patch.unsqueeze(0), v_patch.unsqueeze(0)
             ).item()

@@ -202,7 +202,7 @@ def attack_black_block(img, block_size_ratio=0.25, position='center'):
     h, w = img_array.shape[:2]
     block_h = int(h * block_size_ratio)
     block_w = int(w * block_size_ratio)
-    true_mask = np.zeros((8, 8), dtype=int)
+    true_mask = np.zeros((32, 32), dtype=int)
 
     if position == 'center':
         y_start = (h - block_h) // 2
@@ -217,10 +217,10 @@ def attack_black_block(img, block_size_ratio=0.25, position='center'):
     attacked = img_array.copy()
     attacked[y_start:y_start+block_h, x_start:x_start+block_w] = 0
 
-    mask_y_start = max(0, min(7, y_start * 8 // h))
-    mask_y_end = max(0, min(8, (y_start + block_h) * 8 // h))
-    mask_x_start = max(0, min(7, x_start * 8 // w))
-    mask_x_end = max(0, min(8, (x_start + block_w) * 8 // w))
+    mask_y_start = max(0, min(31, y_start * 32 // h))
+    mask_y_end = max(0, min(32, (y_start + block_h) * 32 // h))
+    mask_x_start = max(0, min(31, x_start * 32 // w))
+    mask_x_end = max(0, min(32, (x_start + block_w) * 32 // w))
     true_mask[mask_y_start:mask_y_end, mask_x_start:mask_x_end] = 1
 
     return Image.fromarray(attacked), true_mask
@@ -289,13 +289,13 @@ def extract_signature_batch(pil_images, prompt_embeds_list, pooled_embeds_list, 
             encoder_hidden_states=prompt_embeds_list[i],
             txt_ids=text_ids_list[i], img_ids=img_ids, return_dict=False)[0]
         
-        s = np.zeros((8,8))
+        s = np.zeros((32,32))
         vv = v.view(32,32,64)
         ww = W.view(32,32,64)
-        for a in range(8):
-            for b in range(8):
-                wp = ww[a*4:(a+1)*4, b*4:(b+1)*4].flatten().float()
-                vp = vv[a*4:(a+1)*4, b*4:(b+1)*4].flatten().float()
+        for a in range(32):
+            for b in range(32):
+                wp = ww[a, b, :].flatten().float()
+                vp = vv[a, b, :].flatten().float()
                 s[a,b] = torch.nn.functional.cosine_similarity(wp[None],vp[None]).item()
         sigs[i] = s
     return sigs
@@ -415,12 +415,12 @@ if any(c['type']=='flux_fill' for c in DL_ATTACKS) and not args.skip_dl:
 
             out.save(os.path.join(sub, f"{info['id']}.png"))
 
-            # 保存 mask
-            m = np.zeros((8,8), dtype=int)
-            my1 = max(0, min(7, y*8//h))
-            my2 = max(0, min(8, (y+bh)*8//h))
-            mx1 = max(0, min(7, x*8//w))
-            mx2 = max(0, min(8, (x+bw)*8//w))
+            # 保存 mask（32x32 与潜空间原生分辨率一致）
+            m = np.zeros((32,32), dtype=int)
+            my1 = max(0, min(31, y*32//h))
+            my2 = max(0, min(32, (y+bh)*32//h))
+            mx1 = max(0, min(31, x*32//w))
+            mx2 = max(0, min(32, (x+bw)*32//w))
             m[my1:my2, mx1:mx2] = 1
             np.save(os.path.join(sub, f"{info['id']}_mask.npy"), m)
 
@@ -490,19 +490,34 @@ batch_size=4
 def visualize_tamper_heatmap(img_orig, img_attacked, S_orig, S_tamp, true_mask, save_path, attack_name, metrics=None):
     img_size = img_orig.size
     diff = S_orig - S_tamp
-    heatmap_8x8 = np.abs(diff)
-    smooth_heatmap = cv2.resize(heatmap_8x8, img_size, interpolation=cv2.INTER_CUBIC)
-    smooth_heatmap = cv2.GaussianBlur(smooth_heatmap,(21,21),0)
-    th = np.mean(heatmap_8x8)+1.5*np.std(heatmap_8x8)
-    th = max(th,0.04)
-    raw_mask = smooth_heatmap>th
-    kernel=np.ones((5,5),np.uint8)
-    cleaned_mask = cv2.morphologyEx(raw_mask.astype(np.uint8),cv2.MORPH_OPEN,kernel).astype(bool)
+    heatmap_32x32 = np.abs(diff)
+
+    # 32x32 形态学空间正则化
+    th = np.mean(heatmap_32x32) + 1.5 * np.std(heatmap_32x32)
+    th = max(th, 0.04)
+    raw_mask_32x32 = (heatmap_32x32 > th).astype(np.uint8)
+
+    # 开运算：2x2 核，抹杀孤立噪点
+    kernel_open = np.ones((2, 2), np.uint8)
+    opened = cv2.morphologyEx(raw_mask_32x32, cv2.MORPH_OPEN, kernel_open)
+
+    # 闭运算：5x5 核，融合篡改区域
+    kernel_close = np.ones((5, 5), np.uint8)
+    closed = cv2.morphologyEx(opened, cv2.MORPH_CLOSE, kernel_close)
+
+    # 上采样到图像尺寸用于可视化
+    aligned_mask = cv2.resize(closed, img_size, interpolation=cv2.INTER_NEAREST).astype(bool)
+    kernel_vis = np.ones((5, 5), np.uint8)
+    cleaned_mask = cv2.morphologyEx(aligned_mask.astype(np.uint8), cv2.MORPH_OPEN, kernel_vis).astype(bool)
+
+    # 平滑热力图仅用于可视化叠加
+    smooth_heatmap = cv2.resize(heatmap_32x32, img_size, interpolation=cv2.INTER_CUBIC)
+    smooth_heatmap = cv2.GaussianBlur(smooth_heatmap, (21, 21), 0)
 
     fig,axes=plt.subplots(2,4,figsize=(20,10))
     axes[0,0].imshow(img_orig); axes[0,0].set_title('Original'); axes[0,0].axis('off')
     axes[0,1].imshow(img_attacked); axes[0,1].set_title(f'Attacked: {attack_name}'); axes[0,1].axis('off')
-    im=axes[0,2].imshow(heatmap_8x8,cmap='hot'); axes[0,2].set_title('8x8 Heatmap'); axes[0,2].axis('off'); plt.colorbar(im,ax=axes[0,2],fraction=0.046)
+    im=axes[0,2].imshow(heatmap_32x32,cmap='hot'); axes[0,2].set_title('32x32 Heatmap'); axes[0,2].axis('off'); plt.colorbar(im,ax=axes[0,2],fraction=0.046)
     if true_mask is not None: axes[0,3].imshow(true_mask,cmap='Reds')
     axes[0,3].set_title('GT Mask'); axes[0,3].axis('off')
     im2=axes[1,0].imshow(smooth_heatmap,cmap='hot'); axes[1,0].set_title('High-Res Heatmap'); axes[1,0].axis('off'); plt.colorbar(im2,ax=axes[1,0],fraction=0.046)

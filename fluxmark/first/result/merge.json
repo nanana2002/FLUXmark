@@ -1,0 +1,176 @@
+{
+  "experiment_name": "OrthoFlow_Topic_0327",
+  "timestamp": "2026-03-30T13:53:21.539341",
+  "overall": {
+    "jpeg_75": {
+      "mean_cosine": 0.02181552138548189,
+      "std_cosine": 0.009146925718839474,
+      "mean_retention_rate": 49.02181053641287,
+      "auc": 0.99675,
+      "tpr_at_0.1%_fpr": 0.75
+    },
+    "jpeg_50": {
+      "mean_cosine": 0.013872273105597641,
+      "std_cosine": 0.006827944660043013,
+      "mean_retention_rate": 31.090310307025184,
+      "auc": 0.9705,
+      "tpr_at_0.1%_fpr": 0.4
+    },
+    "jpeg_30": {
+      "mean_cosine": 0.008803337099703237,
+      "std_cosine": 0.006761370766812189,
+      "mean_retention_rate": 19.093371726598466,
+      "auc": 0.87825,
+      "tpr_at_0.1%_fpr": 0.2
+    },
+    "jpeg_20": {
+      "mean_cosine": 0.0047940104055063165,
+      "std_cosine": 0.006392953756214111,
+      "mean_retention_rate": 9.650986289076162,
+      "auc": 0.738,
+      "tpr_at_0.1%_fpr": 0.1
+    },
+    "blur_0.5": {
+      "mean_cosine": 0.040663959698738636,
+      "std_cosine": 0.00916433020600379,
+      "mean_retention_rate": 94.01663951331292,
+      "auc": 1.0,
+      "tpr_at_0.1%_fpr": 1.0
+    },
+    "blur_1.0": {
+      "mean_cosine": 0.028750971086103368,
+      "std_cosine": 0.0072051016019023945,
+      "mean_retention_rate": 66.53565922885238,
+      "auc": 1.0,
+      "tpr_at_0.1%_fpr": 1.0
+    },
+    "blur_2.0": {
+      "mean_cosine": 0.015281024196883663,
+      "std_cosine": 0.005296720073601509,
+      "mean_retention_rate": 35.23649694488464,
+      "auc": 0.9877499999999999,
+      "tpr_at_0.1%_fpr": 0.45
+    },
+    "crop_0.75": {
+      "mean_cosine": -0.0028863999876193704,
+      "std_cosine": 0.0034378726308028464,
+      "mean_retention_rate": -7.0831712062344865,
+      "auc": 0.3705,
+      "tpr_at_0.1%_fpr": 0.0
+    },
+    "crop_0.50": {
+      "mean_cosine": -0.0016821488075139414,
+      "std_cosine": 0.004013318923058335,
+      "mean_retention_rate": -4.045913305158253,
+      "auc": 0.44475,
+      "tpr_at_0.1%_fpr": 0.0
+    },
+    "noise_0.03": {
+      "mean_cosine": 0.018481460321992122,
+      "std_cosine": 0.00907331797216511,
+      "mean_retention_rate": 41.87732815587164,
+      "auc": 0.9862500000000001,
+      "tpr_at_0.1%_fpr": 0.6
+    },
+    "noise_0.05": {
+      "mean_cosine": 0.012744929615291768,
+      "std_cosine": 0.008730019096400084,
+      "mean_retention_rate": 28.723167597014047,
+      "auc": 0.9187500000000001,
+      "tpr_at_0.1%_fpr": 0.35
+    },
+    "noise_0.10": {
+      "mean_cosine": 0.009064466550868625,
+      "std_cosine": 0.006386342916533069,
+      "mean_retention_rate": 20.028732044540593,
+      "auc": 0.88725,
+      "tpr_at_0.1%_fpr": 0.25
+    },
+    "resize_0.75": {
+      "mean_cosine": 0.03633759947939931,
+      "std_cosine": 0.007494973807544071,
+      "mean_retention_rate": 84.2007190390541,
+      "auc": 1.0,
+      "tpr_at_0.1%_fpr": 1.0
+    },
+    "resize_0.50": {
+      "mean_cosine": 0.028888060768885126,
+      "std_cosine": 0.006896599771357959,
+      "mean_retention_rate": 67.36580332972659,
+      "auc": 1.0,
+      "tpr_at_0.1%_fpr": 1.0
+    },
+    "resize_0.25": {
+      "mean_cosine": 0.013060702105091573,
+      "std_cosine": 0.005346433347463071,
+      "mean_retention_rate": 30.075184879030257,
+      "auc": 0.9710000000000001,
+      "tpr_at_0.1%_fpr": 0.3
+    },
+    "brightness_0.8": {
+      "mean_cosine": 0.040029841663716884,
+      "std_cosine": 0.008429138958506792,
+      "mean_retention_rate": 92.74046524894445,
+      "auc": 1.0,
+      "tpr_at_0.1%_fpr": 1.0
+    },
+    "brightness_1.2": {
+      "mean_cosine": 0.04322694972506724,
+      "std_cosine": 0.00812808407399802,
+      "mean_retention_rate": 100.70566203562664,
+      "auc": 1.0,
+      "tpr_at_0.1%_fpr": 1.0
+    },
+    "contrast_0.8": {
+      "mean_cosine": 0.042162979177212234,
+      "std_cosine": 0.009032412418736509,
+      "mean_retention_rate": 97.6033549940714,
+      "auc": 1.0,
+      "tpr_at_0.1%_fpr": 1.0
+    },
+    "contrast_1.2": {
+      "mean_cosine": 0.04117833483970672,
+      "std_cosine": 0.008549001201602333,
+      "mean_retention_rate": 95.46651895029686,
+      "auc": 1.0,
+      "tpr_at_0.1%_fpr": 1.0
+    },
+    "black_block_center": {
+      "mean_cosine": 0.035046678532509964,
+      "std_cosine": 0.00725984884519728,
+      "mean_retention_rate": 81.34078684708331,
+      "auc": 1.0,
+      "tpr_at_0.1%_fpr": 1.0,
+      "mean_iou": 0.489693222674869,
+      "mean_f1": 0.6361159615115461,
+      "mean_patch_auc": 0.9552083333333334
+    },
+    "black_block_random": {
+      "mean_cosine": 0.03855166970234778,
+      "std_cosine": 0.008371333995985658,
+      "mean_retention_rate": 89.41755351415983,
+      "auc": 1.0,
+      "tpr_at_0.1%_fpr": 1.0,
+      "mean_iou": 0.28321843971704397,
+      "mean_f1": 0.4175414812199449,
+      "mean_patch_auc": 0.7707291666666667
+    },
+    "black_block_corner": {
+      "mean_cosine": 0.04281120737723541,
+      "std_cosine": 0.00808326938616922,
+      "mean_retention_rate": 99.44727444520274,
+      "auc": 1.0,
+      "tpr_at_0.1%_fpr": 1.0,
+      "mean_iou": 0.0,
+      "mean_f1": 0.0,
+      "mean_patch_auc": 0.21428571428571433
+    },
+    "sdedit_0.3": {
+      "mean_cosine": 0.002972074159576247,
+      "std_cosine": 0.004358351918815668,
+      "mean_retention_rate": 6.744677551442878,
+      "auc": 0.71875,
+      "tpr_at_0.1%_fpr": 0.0
+    }
+  }
+}

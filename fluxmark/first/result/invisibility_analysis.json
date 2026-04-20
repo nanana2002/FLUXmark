@@ -1,0 +1,16 @@
+{
+  "experiment_name": "OrthoFlow_Topic_0327",
+  "timestamp": "2026-03-30T14:19:57.479613",
+  "num_samples_fid": 20,
+  "num_samples_clip": 20,
+  "fid": {
+    "score": 196.8883056640625,
+    "interpretation": "lower is better, <50 excellent, <100 good, <200 moderate"
+  },
+  "clip_score": {
+    "no_watermark": 33.85533905029297,
+    "watermarked": 33.19339370727539,
+    "difference": -0.6619453430175781,
+    "interpretation": "higher is better, should be very close between two groups"
+  }
+}

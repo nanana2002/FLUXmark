@@ -1,0 +1,206 @@
+{
+  "experiment_name": "OrthoFlow_Topic_0327_HighPerf",
+  "timestamp": "2026-04-20T19:22:34.614406",
+  "overall": {
+    "jpeg_75": {
+      "mean_cosine": 0.0284197456236825,
+      "std_cosine": 0.01195963586414937,
+      "mean_retention_rate": 44.635432869613076,
+      "auc": 1.0,
+      "tpr_at_0.1%_fpr": 1.0
+    },
+    "jpeg_50": {
+      "mean_cosine": 0.019752281697606122,
+      "std_cosine": 0.010952828660235055,
+      "mean_retention_rate": 30.787137604381805,
+      "auc": 0.9725,
+      "tpr_at_0.1%_fpr": 0.85
+    },
+    "jpeg_30": {
+      "mean_cosine": 0.01331211634499141,
+      "std_cosine": 0.009154853094844246,
+      "mean_retention_rate": 20.480869791633474,
+      "auc": 0.895,
+      "tpr_at_0.1%_fpr": 0.65
+    },
+    "blur_0.5": {
+      "mean_cosine": 0.05488152718485253,
+      "std_cosine": 0.012772370973459894,
+      "mean_retention_rate": 87.4284051245603,
+      "auc": 1.0,
+      "tpr_at_0.1%_fpr": 1.0
+    },
+    "blur_1.0": {
+      "mean_cosine": 0.041587132975428175,
+      "std_cosine": 0.009372344195414292,
+      "mean_retention_rate": 66.25673464450094,
+      "auc": 1.0,
+      "tpr_at_0.1%_fpr": 1.0
+    },
+    "blur_2.0": {
+      "mean_cosine": 0.021246209730338705,
+      "std_cosine": 0.006854382977565875,
+      "mean_retention_rate": 33.66411445254475,
+      "auc": 1.0,
+      "tpr_at_0.1%_fpr": 1.0
+    },
+    "crop_0.75": {
+      "mean_cosine": 0.001279806314914822,
+      "std_cosine": 0.0028346862796455735,
+      "mean_retention_rate": 2.151231422758001,
+      "auc": 0.5075000000000001,
+      "tpr_at_0.1%_fpr": 0.0
+    },
+    "crop_0.50": {
+      "mean_cosine": 0.0006396816743972523,
+      "std_cosine": 0.0027795230535431867,
+      "mean_retention_rate": 0.8940368560426112,
+      "auc": 0.445,
+      "tpr_at_0.1%_fpr": 0.05
+    },
+    "noise_0.03": {
+      "mean_cosine": 0.02410159450150786,
+      "std_cosine": 0.013432700198168881,
+      "mean_retention_rate": 37.378874030633554,
+      "auc": 1.0,
+      "tpr_at_0.1%_fpr": 1.0
+    },
+    "noise_0.05": {
+      "mean_cosine": 0.01726874805085572,
+      "std_cosine": 0.008761326294963248,
+      "mean_retention_rate": 27.163716532742814,
+      "auc": 0.9974999999999999,
+      "tpr_at_0.1%_fpr": 0.95
+    },
+    "noise_0.10": {
+      "mean_cosine": 0.011109625152948865,
+      "std_cosine": 0.004796068968590993,
+      "mean_retention_rate": 17.49747017100459,
+      "auc": 0.9575,
+      "tpr_at_0.1%_fpr": 0.85
+    },
+    "resize_0.75": {
+      "mean_cosine": 0.05374316554125471,
+      "std_cosine": 0.008440931904682045,
+      "mean_retention_rate": 86.16613910655829,
+      "auc": 1.0,
+      "tpr_at_0.1%_fpr": 1.0
+    },
+    "resize_0.50": {
+      "mean_cosine": 0.04071433563260598,
+      "std_cosine": 0.0063634401588224644,
+      "mean_retention_rate": 65.4081114952642,
+      "auc": 1.0,
+      "tpr_at_0.1%_fpr": 1.0
+    },
+    "brightness_0.8": {
+      "mean_cosine": 0.05779049022989966,
+      "std_cosine": 0.01036149059798929,
+      "mean_retention_rate": 92.32067785375789,
+      "auc": 1.0,
+      "tpr_at_0.1%_fpr": 1.0
+    },
+    "brightness_1.2": {
+      "mean_cosine": 0.058561711180118436,
+      "std_cosine": 0.009337549271214923,
+      "mean_retention_rate": 94.02497299410891,
+      "auc": 1.0,
+      "tpr_at_0.1%_fpr": 1.0
+    },
+    "contrast_0.8": {
+      "mean_cosine": 0.059932536643214004,
+      "std_cosine": 0.009713061046568524,
+      "mean_retention_rate": 95.98723686171803,
+      "auc": 1.0,
+      "tpr_at_0.1%_fpr": 1.0
+    },
+    "contrast_1.2": {
+      "mean_cosine": 0.0573336114064773,
+      "std_cosine": 0.011113397884048937,
+      "mean_retention_rate": 91.51913812046685,
+      "auc": 1.0,
+      "tpr_at_0.1%_fpr": 1.0
+    },
+    "black_block_center": {
+      "mean_cosine": 0.058312470952205334,
+      "std_cosine": 0.009090895680255343,
+      "mean_retention_rate": 93.39392565206494,
+      "auc": 1.0,
+      "tpr_at_0.1%_fpr": 1.0,
+      "mean_iou": 0.645925834774971,
+      "mean_f1": 0.7837722092866898,
+      "mean_patch_auc": 0.8941764322916667
+    },
+    "black_block_random": {
+      "mean_cosine": 0.0584981440552383,
+      "std_cosine": 0.009151771131018411,
+      "mean_retention_rate": 93.68644537969973,
+      "auc": 1.0,
+      "tpr_at_0.1%_fpr": 1.0,
+      "mean_iou": 0.5220098629593849,
+      "mean_f1": 0.6835780948400497,
+      "mean_patch_auc": 0.8657466634114582
+    },
+    "copy_move": {
+      "mean_cosine": 0.059752767944542026,
+      "std_cosine": 0.008393852188472495,
+      "mean_retention_rate": 95.88692104176894,
+      "auc": 1.0,
+      "tpr_at_0.1%_fpr": 1.0,
+      "mean_iou": 0.46001850962638857,
+      "mean_f1": 0.6274639621376992,
+      "mean_patch_auc": 0.92736588977442
+    },
+    "splicing": {
+      "mean_cosine": 0.059784496462066274,
+      "std_cosine": 0.008210176998937807,
+      "mean_retention_rate": 95.97353667812608,
+      "auc": 1.0,
+      "tpr_at_0.1%_fpr": 1.0,
+      "mean_iou": 0.43042402118444445,
+      "mean_f1": 0.6002130925655365,
+      "mean_patch_auc": 0.9035980690776164
+    },
+    "sdedit_0.3": {
+      "mean_cosine": 0.008334725630220419,
+      "std_cosine": 0.003685331158346908,
+      "mean_retention_rate": 13.342081181303698,
+      "auc": 0.895,
+      "tpr_at_0.1%_fpr": 0.6
+    },
+    "sdxl_style_oil_painting": {
+      "mean_cosine": 0.017078837370320343,
+      "std_cosine": 0.006791009037932835,
+      "mean_retention_rate": 27.39869180198956,
+      "auc": 1.0,
+      "tpr_at_0.1%_fpr": 1.0
+    },
+    "sdxl_style_sketch": {
+      "mean_cosine": 0.01179059493101704,
+      "std_cosine": 0.006004587993140687,
+      "mean_retention_rate": 18.884528628432903,
+      "auc": 0.9225,
+      "tpr_at_0.1%_fpr": 0.8
+    },
+    "fluxfill_center": {
+      "mean_cosine": 0.05099135292368828,
+      "std_cosine": 0.009345081127925396,
+      "mean_retention_rate": 81.48651839194267,
+      "auc": 1.0,
+      "tpr_at_0.1%_fpr": 1.0,
+      "mean_iou": 0.5190845564007759,
+      "mean_f1": 0.680738240480423,
+      "mean_patch_auc": 0.7724762054383828
+    },
+    "fluxfill_random": {
+      "mean_cosine": 0.051785196462174096,
+      "std_cosine": 0.00907833696040746,
+      "mean_retention_rate": 82.84437233230457,
+      "auc": 1.0,
+      "tpr_at_0.1%_fpr": 1.0,
+      "mean_iou": 0.4732067212462425,
+      "mean_f1": 0.6384897351264953,
+      "mean_patch_auc": 0.7601928710937499
+    }
+  }
+}

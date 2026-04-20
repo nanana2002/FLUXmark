@@ -24,7 +24,7 @@ import matplotlib.pyplot as plt
 import cv2
 
 # ========== 用户可配置 ==========
-IMG_IDX = 27
+IMG_IDX = 19  # 默认索引，若超出范围则自动取最后一张
 ATTACK_NAME = "fluxfill_random"
 OUTPUT_PATH = os.path.join(
     config["output_base_dir"], "result", "ablation_grid", "grid_size_comparison.png"
@@ -41,6 +41,13 @@ summary_path = os.path.join(
 
 with open(summary_path, "r") as f:
     summary = json.load(f)
+
+# 防止索引越界：若 IMG_IDX 超出范围，则取最后一张
+IMG_IDX = min(IMG_IDX, len(summary["images"]) - 1)
+if IMG_IDX < 0:
+    print("❌ 未找到任何水印图像，无法可视化")
+    exit(1)
+
 img_info = summary["images"][IMG_IDX]
 img_id = img_info["id"]
 prompt = img_info["prompt"]
@@ -212,10 +219,10 @@ axes[0, 1].imshow(attacked_img)
 axes[0, 1].set_title(f"Attacked: {ATTACK_NAME}", fontsize=14)
 axes[0, 1].axis("off")
 
-true_mask_8x8 = np.load(true_mask_path) if os.path.exists(true_mask_path) else None
-if true_mask_8x8 is not None:
-    axes[0, 2].imshow(true_mask_8x8, cmap="Reds", interpolation="nearest")
-    axes[0, 2].set_title("True Mask (8×8)", fontsize=14)
+true_mask_32x32 = np.load(true_mask_path) if os.path.exists(true_mask_path) else None
+if true_mask_32x32 is not None:
+    axes[0, 2].imshow(true_mask_32x32, cmap="Reds", interpolation="nearest")
+    axes[0, 2].set_title("True Mask (32×32)", fontsize=14)
 else:
     axes[0, 2].text(0.5, 0.5, "No Mask", ha="center", va="center", fontsize=14)
 axes[0, 2].axis("off")

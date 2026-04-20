@@ -1,0 +1,37 @@
+\begin{table}[t]
+\centering
+\caption{Global Robustness Evaluation (Copyright Verification)}
+\label{tab:robustness}
+\resizebox{0.98\columnwidth}{!}{%
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Attack Type} & \textbf{Mean Cosine} & \textbf{Retention} & \textbf{AUC} & \textbf{TPR@0.1\%FPR} \\
+\midrule
+JPEG Q=30 & 0.0096 & \\textbf{1993.58\\%} & 0.8815 & 0.0000 \\
+JPEG Q=50 & 0.0145 & \\textbf{3046.45\\%} & 0.9418 & 0.0000 \\
+JPEG Q=75 & 0.0212 & \\textbf{4521.97\\%} & \\textbf{0.9859} & 0.0000 \\
+Gaussian Blur ($\\sigma=0.5$) & 0.0412 & \\textbf{8941.12\\%} & \\textbf{1.0000} & 0.0000 \\
+Gaussian Blur ($\\sigma=1.0$) & 0.0295 & \\textbf{6384.27\\%} & \\textbf{0.9996} & 0.0000 \\
+Gaussian Blur ($\\sigma=2.0$) & 0.0150 & \\textbf{3216.81\\%} & \\textbf{0.9810} & 0.0000 \\
+Center Crop (50\\%) & -0.0010 & -259.37\\% & 0.5025 & 0.0000 \\
+Center Crop (75\\%) & -0.0010 & -267.31\\% & 0.4971 & 0.0000 \\
+Gaussian Noise ($\\sigma=0.03$) & 0.0198 & \\textbf{4216.30\\%} & \\textbf{0.9794} & 0.0000 \\
+Gaussian Noise ($\\sigma=0.05$) & 0.0156 & \\textbf{3314.82\\%} & \\textbf{0.9622} & 0.0000 \\
+Gaussian Noise ($\\sigma=0.10$) & 0.0106 & \\textbf{2253.07\\%} & 0.9144 & 0.0000 \\
+Resize (50\\%) & 0.0279 & \\textbf{6057.16\\%} & \\textbf{0.9997} & 0.0000 \\
+Resize (75\\%) & 0.0393 & \\textbf{8551.01\\%} & \\textbf{1.0000} & 0.0000 \\
+Brightness 0.8 & 0.0425 & \\textbf{9250.30\\%} & \\textbf{1.0000} & 0.0000 \\
+Brightness 1.2 & 0.0426 & \\textbf{9327.96\\%} & \\textbf{0.9999} & 0.0000 \\
+Contrast 0.8 & 0.0443 & \\textbf{9633.61\\%} & \\textbf{1.0000} & 0.0000 \\
+Contrast 1.2 & 0.0426 & \\textbf{9208.52\\%} & \\textbf{0.9999} & 0.0000 \\
+Black Block (Center) & 0.0379 & \\textbf{8248.58\\%} & \\textbf{1.0000} & 0.0000 \\
+Black Block (Random) & 0.0401 & \\textbf{8736.62\\%} & \\textbf{1.0000} & 0.0000 \\
+SDEdit ($\\sigma=0.3$) & 0.0049 & \\textbf{1014.60\\%} & 0.7892 & 0.0000 \\
+SDXL: Oil Painting & 0.0104 & \\textbf{2181.40\\%} & 0.8390 & 0.0000 \\
+SDXL: Sketch & 0.0072 & \\textbf{1509.92\\%} & 0.7890 & 0.0000 \\
+FluxFill (Center) & 0.0330 & \\textbf{7160.22\\%} & \\textbf{0.9999} & 0.0000 \\
+FluxFill (Random) & 0.0361 & \\textbf{7843.25\\%} & \\textbf{1.0000} & 0.0000 \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}

@@ -130,7 +130,7 @@ print(f"   密码本已重建并常驻GPU（全图统一提取）")
 # ==========================================
 # 4. 提取签名函数（批量版本）
 # ==========================================
-def extract_signature_batch(pil_images, prompt_embeds_list, pooled_embeds_list, text_ids_list, grid_size=8):
+def extract_signature_batch(pil_images, prompt_embeds_list, pooled_embeds_list, text_ids_list, grid_size=32):
     """批量从图像中提取签名（高性能GPU版本，支持可变网格尺寸）"""
     batch_size = len(pil_images)
     patch_size = 32 // grid_size

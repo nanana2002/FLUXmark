@@ -134,8 +134,47 @@ def compute_retention_rate(S_tamp_mean, S_orig_mean):
     return S_tamp_mean / (S_orig_mean + 1e-8) * 100
 
 
-def compute_smooth_heatmap(S_orig, S_tamp, threshold_ratio=0.8, noise_gate=0.04, img_size=(512, 512)):
-    """生成高分辨率平滑篡改热力图（全图自适应阈值）"""
+def compute_tamper_mask_32x32(heatmap, threshold_ratio=1.5, noise_gate=0.03):
+    """在 32x32 原生分辨率上计算篡改掩码（形态学空间正则化）
+
+    🌟 终极形态学三步连招（先连线，后去噪）：
+    1. Micro-Blurring: 高斯模糊扩散能量，方便后续连线
+    2. Closing (3x3):  先强制连线，把相邻亮点糊成实心块
+    3. Opening (2x2):  后消除离散噪点，抹杀孤立 1x1 假阳性
+
+    注意：32x32 向量仅 64D，噪点方差极大，阈值要放宽（mean + 1.5*std）。
+    """
+    if np.max(heatmap) < noise_gate:
+        return np.zeros((32, 32), dtype=bool), noise_gate
+
+    # 绝招 1：原生网格轻微高斯融合 (Micro-Blurring)
+    # 把“满天星”的能量稍微向周围扩散，方便后续连线
+    smooth_32 = cv2.GaussianBlur(heatmap, (3, 3), 0)
+
+    # 绝招 2：自适应阈值放宽
+    # 32x32 噪点多，先把所有疑似点抓出来
+    threshold = np.mean(smooth_32) + threshold_ratio * np.std(smooth_32)
+    threshold = max(threshold, noise_gate)
+    raw_mask = (smooth_32 > threshold).astype(np.uint8)
+
+    # 绝招 3：先闭运算 (Closing) -> 强制连线！
+    # 3x3 核把相邻点糊成实心方块，填补内部空洞
+    kernel_close = np.ones((3, 3), np.uint8)
+    mask_closed = cv2.morphologyEx(raw_mask, cv2.MORPH_CLOSE, kernel_close)
+
+    # 绝招 4：后开运算 (Opening) -> 消除离散噪点
+    # 连线完毕后，抹掉背景里孤立无援的 1x1 噪点
+    kernel_open = np.ones((2, 2), np.uint8)
+    final_pred_32 = cv2.morphologyEx(mask_closed, cv2.MORPH_OPEN, kernel_open).astype(bool)
+
+    return final_pred_32, threshold
+
+
+def compute_smooth_heatmap(S_orig, S_tamp, threshold_ratio=1.5, noise_gate=0.03, img_size=(512, 512)):
+    """生成高分辨率平滑篡改热力图（32×32 原生分辨率 + 形态学正则化）
+
+    与 compute_tamper_mask_32x32 保持一致：先 blur → 先 CLOSE(3x3) → 后 OPEN(2x2)
+    """
     diff = S_orig - S_tamp
     base_heatmap = np.abs(diff)
 
@@ -146,18 +185,28 @@ def compute_smooth_heatmap(S_orig, S_tamp, threshold_ratio=0.8, noise_gate=0.04,
     smooth_heatmap = cv2.resize(base_heatmap, img_size, interpolation=cv2.INTER_LINEAR)
     smooth_heatmap = cv2.GaussianBlur(smooth_heatmap, (15, 15), 0)
 
-    # 使用全图统计计算自适应阈值
-    base_threshold = np.mean(base_heatmap) + threshold_ratio * np.std(base_heatmap)
-    threshold = max(base_threshold, noise_gate)
+    # 绝招 1：32x32 原生网格轻微高斯融合
+    smooth_32 = cv2.GaussianBlur(base_heatmap, (3, 3), 0)
 
-    # 可视化用的平滑 mask（宽松一点，用于 aesthetic overlay）
-    smooth_mask = (smooth_heatmap > threshold).astype(np.uint8)
-    kernel = np.ones((5, 5), np.uint8)
-    cleaned_mask = cv2.morphologyEx(smooth_mask, cv2.MORPH_OPEN, kernel).astype(bool)
+    # 绝招 2：自适应阈值放宽
+    threshold = np.mean(smooth_32) + threshold_ratio * np.std(smooth_32)
+    threshold = max(threshold, noise_gate)
 
-    # 与 IoU 计算严格一致的 raw mask：先在 8x8 上二值化，再用 NEAREST 上采样
-    raw_mask_8x8 = (base_heatmap > threshold).astype(np.uint8)
-    aligned_mask = cv2.resize(raw_mask_8x8, img_size, interpolation=cv2.INTER_NEAREST).astype(bool)
+    # 绝招 3：先闭运算 (Closing) -> 强制连线
+    raw_mask = (smooth_32 > threshold).astype(np.uint8)
+    kernel_close = np.ones((3, 3), np.uint8)
+    mask_closed = cv2.morphologyEx(raw_mask, cv2.MORPH_CLOSE, kernel_close)
+
+    # 绝招 4：后开运算 (Opening) -> 消除离散噪点
+    kernel_open = np.ones((2, 2), np.uint8)
+    final_mask_32 = cv2.morphologyEx(mask_closed, cv2.MORPH_OPEN, kernel_open)
+
+    # 上采样到目标图像尺寸（与 IoU 计算严格一致）
+    aligned_mask = cv2.resize(final_mask_32, img_size, interpolation=cv2.INTER_NEAREST).astype(bool)
+
+    # 可视化用的平滑 mask（轻度膨胀，用于 aesthetic overlay）
+    kernel_vis = np.ones((3, 3), np.uint8)
+    cleaned_mask = cv2.morphologyEx(aligned_mask.astype(np.uint8), cv2.MORPH_CLOSE, kernel_vis).astype(bool)
 
     return smooth_heatmap, cleaned_mask, aligned_mask, threshold
 
@@ -172,10 +221,10 @@ def visualize_tamper_heatmap(img_orig, img_attacked, S_orig, S_tamp, true_mask,
         img_size = (512, 512)
 
     diff = S_orig - S_tamp
-    heatmap_8x8 = np.abs(diff)
+    heatmap_32x32 = np.abs(diff)
 
     smooth_heatmap, cleaned_mask, aligned_mask, threshold = compute_smooth_heatmap(
-        S_orig, S_tamp, threshold_ratio=0.8, img_size=img_size
+        S_orig, S_tamp, threshold_ratio=1.5, noise_gate=0.03, img_size=img_size
     )
 
     fig, axes = plt.subplots(2, 4, figsize=(20, 10))
@@ -188,8 +237,8 @@ def visualize_tamper_heatmap(img_orig, img_attacked, S_orig, S_tamp, true_mask,
     axes[0, 1].set_title(f'Attacked: {attack_name}')
     axes[0, 1].axis('off')
 
-    im1 = axes[0, 2].imshow(heatmap_8x8, cmap='hot', interpolation='nearest')
-    axes[0, 2].set_title('8x8 Raw Heatmap')
+    im1 = axes[0, 2].imshow(heatmap_32x32, cmap='hot', interpolation='nearest')
+    axes[0, 2].set_title('32x32 Raw Heatmap')
     axes[0, 2].axis('off')
     plt.colorbar(im1, ax=axes[0, 2], fraction=0.046, pad=0.04)
 
@@ -373,8 +422,9 @@ for attack_name in tqdm(attack_configs, desc="分析攻击"):
                 except:
                     patch_auc = 0.5
 
-                threshold = np.mean(heatmap) + 0.5 * np.std(heatmap)
-                pred_mask = (heatmap > threshold).astype(int)
+                # 32x32 形态学空间正则化篡改定位（先连线后去噪，阈值放宽）
+                pred_mask, _ = compute_tamper_mask_32x32(heatmap, threshold_ratio=1.5, noise_gate=0.03)
+                pred_mask = pred_mask.astype(int)
 
                 # 使用GPU计算
                 if USE_GPU:
@@ -396,7 +446,7 @@ for attack_name in tqdm(attack_configs, desc="分析攻击"):
                 attack_results['f1s'].append(f1)
                 attack_results['patch_aucs'].append(patch_auc)
 
-                if len(attack_results['images']) == 27:
+                if len(attack_results['images']) == 5:
                     orig_img_path = os.path.join(watermarked_dir, img_info['image_file'])
                     attacked_img_path = os.path.join(attack_dir, attack_name, f"{img_id}.png")
                     if not os.path.exists(attacked_img_path):
