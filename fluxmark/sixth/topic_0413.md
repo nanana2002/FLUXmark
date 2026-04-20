@@ -63,7 +63,13 @@ c) 差分签名定位 (Differential Signature)（保证热力图极其精准，�
   a）用secret_key重建密码本
   b）提取水印，计算S_tamp
   c）S_tamp和保存的S_orig比对
-  d）计算差分diff = S_orig - S_tamp➡️创建热力图heatmap = np.abs(diff)➡️自适应阈值：使用全图签名的统计信息（均值 + 一定倍数标准差）➡️二值化：找出显著偏离的区域，tamper_mask = heatmap > threshold➡️找出连通区域➡️计算compute_f1_score综合准确率，compute_iou，预测水印区域和真实水印区域重叠了多少？（做 Tamper Localization（像素/块级定位），标准的评价指标体系是：IoU (交并比)、F1-Score、Precision、Recall。AUC-ROC（画一条 ROC 曲线，展示不同阈值下我们定位的鲁棒性）。）
+  d）计算差分 diff = |S_orig - S_tamp|。由于 8×8 签名的每个块对应 32×32 潜空间中的 4×4 Token 区域，先将差分热力图上采样回 32×32 的“原生分辨率”。
+  e）形态学空间正则化 (Morphological Regularization)：
+     - 开运算 (Opening)：用 2×2 的核对 32×32 掩码进行预处理，抹杀背景里孤立的 1 像素小亮噪点。
+     - 闭运算 (Closing)：用 5×5 的核进行后处理，将剩余的高光核心点互相融合、连线并填满内部，形成一个坚实的整体篡改块。
+     这利用了膨胀让黄点“变胖”融合、腐蚀把多余边缘“瘦身”回去的数学特性，在 32×32 潜空间分辨率下实现了最紧致的空间正则化。
+  f）将正则化后的 32×32 Mask 用线性插值放大回 512×512，得到最终的篡改定位掩码。热力图本身则用高斯平滑增强可视化。
+  g）计算 compute_f1_score 综合准确率，compute_iou，预测水印区域和真实水印区域重叠了多少？（做 Tamper Localization（像素/块级定位），标准的评价指标体系是：IoU (交并比)、F1-Score、Precision、Recall。AUC-ROC（画一条 ROC 曲线，展示不同阈值下我们定位的鲁棒性）。）
   注：热力图精度受限于 VAE 8 倍压缩 + DiT Patch 化的物理分辨率瓶颈。512×512 像素经 VAE 压缩后潜空间仅 32×32，再聚合为 8×8 做余弦相似度是物理极限。对免训练隐空间水印而言，能框出篡改大致位置即已达到目的；若追求像素级精度，则违背免训练初衷，退化为图像分割任务。
 
 4）鲁棒性测试
