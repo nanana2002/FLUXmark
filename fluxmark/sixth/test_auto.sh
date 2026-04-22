@@ -85,7 +85,6 @@ echo ""
 
 run_python "analyze_robustness_result.py" "鲁棒性分析" "attackenv"
 run_python "analyze_invisibility_result.py" "隐蔽性分析" "attackenv"
-run_python "summarize_all_results.py" "结果汇总" "attackenv"
 
 # ==========================================
 # Phase 5: 消融实验（attackenv，可选但这里默认全跑）
@@ -102,6 +101,9 @@ run_python "ablation_sem.py" "消融实验 - 语义绑定" "attackenv"
 run_python "ablation_grid.py" "消融实验 - 网格分辨率" "attackenv"
 run_python "analyze_ablation.py" "消融实验 - 定量分析" "attackenv"
 run_python "visualize_ablation.py" "消融实验 - 可视化对比" "attackenv"
+
+# 汇总报告必须在所有分析（含消融实验）完成后运行
+run_python "summarize_all_results.py" "结果汇总" "attackenv"
 
 # ==========================================
 # 完成总结
