@@ -19,6 +19,9 @@
 
 | 攻击类型 | Mean Cosine | Retention Rate | AUC | TPR@0.1%FPR |
 |----------|-------------|----------------|-----|-------------|
+| **Tree-Ring (Baseline)** | 0.0020 | Failed | N/A | N/A |
+| **Gaussian Shading (Baseline)** | 0.1216 | Failed | N/A | N/A |
+| *(Baseline under JPEG / Blur)* | Failed | Failed | N/A | N/A |
 | blur_0.5 | 0.0548 | 89.4% | 0.9996 | 0.9980 |
 | blur_1.0 | 0.0400 | 65.3% | 0.9996 | 0.9970 |
 | blur_2.0 | 0.0215 | 35.0% | 0.9982 | 0.9720 |
@@ -57,6 +60,7 @@
 
 | 攻击类型 | Patch-AUC | F1-Score | IoU |
 |----------|-----------|----------|-----|
+| **Tree-Ring / Gaussian Shading (Baseline)** | N/A | N/A | **0.00** *(不具备 Localization 能力)* |
 | black_block_center | 0.8950 | 0.7793 | 0.6405 |
 | black_block_random | 0.8797 | 0.6945 | 0.5351 |
 | copy_move | 0.9316 | 0.6372 | 0.4699 |
