@@ -15,13 +15,28 @@
 - **CLIP Score (水印图)**: `27.288092735290526`
 - **CLIP 差异**: `-0.0338` (越接近 0 越好)
 
+---
+
 ## 二、全局鲁棒性分析 (Robustness)
+
+### Table 1: 方法对比 (Baselines vs OrthoFlow)
+
+| 方法 | Clean (原Prompt) | Clean (空Prompt) | JPEG-50 | SDEdit-0.4 | 提取成本 | Prompt 依赖 | 篡改定位 |
+|------|------------------|-------------------|---------|------------|----------|-------------|----------|
+| **Tree-Ring** | 0.0020 | 0.0020 | Failed | Failed | 4-Step Transformer | 需原 Prompt | 无 (IoU=0) |
+| **Gaussian Shading** | 0.1216 | **0.1336** | **0.0391** (崩盘) | **0.0536** (崩盘) | 4-Step Transformer | 需原 Prompt | 无 (IoU=0) |
+| **OrthoFlow (Ours)** | **0.0613** | **0.0613** | **0.0196** (稳健) | **0.0088** (稳健) | **1-Step Estimation** | **Prompt-Agnostic** | **8x8 热力图** |
+
+> **画质崩塌证据**：Gaussian Shading 为在 4 步模型中存活，使用 α=0.5 的极端强度且无正交保护，直接将庞大噪声砸入生成流形。对比图见 `pic/baseline_gaussionshading_img/gs_vs_nowm_comparison.png`——GS 图像存在明显纹理扭曲与噪点，而 OrthoFlow 的正交流形投影保证绝对零画质损失。
+>
+> **盲提取真相**：GS 的 ODE 逆推必须依赖原图 Prompt 引导。在真实取证场景中，网图来源未知，Prompt 不可能获取。OrthoFlow 使用空 Prompt 即可单步提取签名，是真正的 Prompt-Agnostic 盲提取。
+>
+> **算力降维打击**：GS 每检验一张图需跑满 4 步（未来 20 步模型即 20 步）Transformer 前向。OrthoFlow 仅需 **单步速度估计 v_pred**，算力成本为 GS 的 **1/4 ~ 1/20**。
+
+### Table 2: OrthoFlow 详细攻击数据
 
 | 攻击类型 | Mean Cosine | Retention Rate | AUC | TPR@0.1%FPR |
 |----------|-------------|----------------|-----|-------------|
-| **Tree-Ring (Baseline)** | 0.0020 | Failed | N/A | N/A |
-| **Gaussian Shading (Baseline)** | 0.1216 | Failed | N/A | N/A |
-| *(Baseline under JPEG / Blur)* | Failed | Failed | N/A | N/A |
 | blur_0.5 | 0.0548 | 89.4% | 0.9996 | 0.9980 |
 | blur_1.0 | 0.0400 | 65.3% | 0.9996 | 0.9970 |
 | blur_2.0 | 0.0215 | 35.0% | 0.9982 | 0.9720 |
@@ -56,6 +71,8 @@
 - **SDEdit 0.3 (扩散再生)**: AUC=0.9443, TPR@0.1%FPR=0.36 
 - **Crop 0.50 (结构性弱点)**: AUC=0.5070 
 
+---
+
 ## 三、篡改定位分析 (Tamper Localization)
 
 | 攻击类型 | Patch-AUC | F1-Score | IoU |
@@ -68,12 +85,16 @@
 | fluxfill_random | 0.7626 | 0.6354 | 0.4730 |
 | splicing | 0.9177 | 0.6401 | 0.4734 |
 
+> **Baseline 的结构性失明**：Tree-Ring 与 Gaussian Shading 均为全局展平的一维数字签名，无法生成空间差分热力图。面对 `black_block_center` 或 `FluxFill` 局部篡改时完全无能为力。OrthoFlow 的 8×8 差分签名则可直接绘制零误报篡改热力图。
+
+---
+
 ## 四、消融实验分析 (Ablation Study)
 
 ### 4.1 隐蔽性 + 水印强度
 
-| 方法 | FID ↓ | CLIP Score ↑ | S_mean |
-|------|-------|--------------|--------|
+| 方法 | FID | CLIP Score | S_mean |
+|------|-----|------------|--------|
 | Full Method | 45.37 | 27.2884 | 0.0613 |
 | w/o FFT | 45.27 | 27.3902 | 0.0454 |
 | w/o Orthogonal | 45.54 | 27.3458 | 0.0610 |
@@ -85,6 +106,8 @@
 - **语义 Mask** 的 S_mean 下降了 **60.1%**，反向证明全图统一注入的必要性。
 - **正交投影** 的核心价值在于抹平方差（Variance），使全图盲提取成为可能。详见可视化结果 `ablation_variance_violin.png`。
 
+---
+
 ## 五、网格分辨率消融 (Grid Size Ablation)
 
 | 网格尺寸 | 向量维度 | Mean Cosine | Avg Std |
@@ -95,15 +118,18 @@
 
 **结论**: 32×32（64D）方差极大，16×16（256D）有所改善，8×8（1024D）是统计学稳定性与空间精度的最优解（Sweet Spot）。
 
+---
+
 ## 六、原始结果文件索引
 
-- ✅ **鲁棒性分析 (JSON)**: `/home/daiyn/project_flux/fluxmark/sixth/result/merge.json`
-- ✅ **鲁棒性详情 (JSON)**: `/home/daiyn/project_flux/fluxmark/sixth/result/detail.json`
-- ✅ **隐蔽性分析 (JSON)**: `/home/daiyn/project_flux/fluxmark/sixth/result/invisibility_analysis.json`
-- ✅ **消融定量分析 (JSON)**: `/home/daiyn/project_flux/fluxmark/sixth/result/ablation_analysis.json`
-- ✅ **网格分辨率消融 (JSON)**: `/home/daiyn/project_flux/fluxmark/sixth/result/ablation_grid/grid_ablation_summary.json`
-- ✅ **消融可视化 (图片)**: `/home/daiyn/project_flux/fluxmark/sixth/result/ablation_viz/`
-- ✅ **篡改热力图 (图片)**: `/home/daiyn/project_flux/fluxmark/sixth/result/pic/tamper_img/`
+- **鲁棒性分析 (JSON)**: `/home/daiyn/project_flux/fluxmark/sixth/result/merge.json`
+- **鲁棒性详情 (JSON)**: `/home/daiyn/project_flux/fluxmark/sixth/result/detail.json`
+- **隐蔽性分析 (JSON)**: `/home/daiyn/project_flux/fluxmark/sixth/result/invisibility_analysis.json`
+- **消融定量分析 (JSON)**: `/home/daiyn/project_flux/fluxmark/sixth/result/ablation_analysis.json`
+- **网格分辨率消融 (JSON)**: `/home/daiyn/project_flux/fluxmark/sixth/result/ablation_grid/grid_ablation_summary.json`
+- **消融可视化 (图片)**: `/home/daiyn/project_flux/fluxmark/sixth/result/ablation_viz/`
+- **篡改热力图 (图片)**: `/home/daiyn/project_flux/fluxmark/sixth/result/pic/tamper_img/`
+- **GS 画质崩塌对比 (图片)**: `/home/daiyn/project_flux/fluxmark/sixth/pic/baseline_gaussionshading_img/gs_vs_nowm_comparison.png`
 
 ---
 

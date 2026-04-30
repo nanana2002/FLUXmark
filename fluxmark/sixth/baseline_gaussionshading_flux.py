@@ -21,10 +21,14 @@ pipe = FluxPipeline.from_pretrained(
     torch_dtype=torch.bfloat16
 ).to(device)
 
-prompt = "a cat holding a sign that says hello world"
+prompt = "Elderly  gray haired man in a suit scowling into the camera."
 with torch.no_grad():
     prompt_embeds, pooled_prompt_embeds, text_ids = pipe.encode_prompt(
         prompt=prompt, prompt_2=None, max_sequence_length=256
+    )
+    # 预编码空 Prompt（用于盲提取实验）
+    empty_prompt_embeds, empty_pooled_prompt_embeds, empty_text_ids = pipe.encode_prompt(
+        prompt="", prompt_2=None, max_sequence_length=256
     )
 
 pipe.text_encoder = None
@@ -107,6 +111,11 @@ orig_path = "pic/baseline_gaussionshading_img/baseline_gaussionshading_flux.png"
 image_out.save(orig_path)
 print(f"💾 生成图像已保存至: {orig_path}")
 
+# 保存 key_W（供后续攻击与提取使用）
+key_path = "pic/baseline_gaussionshading_img/baseline_gaussionshading_key_W.npy"
+np.save(key_path, key_W.cpu().numpy())
+print(f"💾 key_W 已保存至: {key_path}")
+
 # 用 PIL 压缩 JPEG Quality=50，再送进去逆推
 print("🗜️ 对生成图像施加 JPEG 压缩 (Quality=50)...")
 image_out = image_out.convert("RGB")
@@ -135,6 +144,7 @@ print("="*60 + "\n")
 # ==========================================
 print("🎨 执行 SDEdit 0.4 攻击...")
 from diffusers import FluxImg2ImgPipeline
+
 sdedit_pipe = FluxImg2ImgPipeline.from_pretrained(
     model_path,
     torch_dtype=torch.bfloat16
@@ -142,11 +152,12 @@ sdedit_pipe = FluxImg2ImgPipeline.from_pretrained(
 
 orig_img = Image.open(orig_path)
 attacked_img = sdedit_pipe(
-    prompt="",
+    prompt_embeds=prompt_embeds,                  # 必须用 embeds，因为 encoder 已被卸载
+    pooled_prompt_embeds=pooled_prompt_embeds,
     image=orig_img,
     strength=0.4,
-    num_inference_steps=28,
-    guidance_scale=1.0,
+    num_inference_steps=4,
+    guidance_scale=0.0,
     height=512,
     width=512,
     generator=torch.Generator(device=device).manual_seed(42),
@@ -156,10 +167,33 @@ sdedit_path = "pic/baseline_gaussionshading_img/baseline_gaussionshading_flux_sd
 attacked_img.save(sdedit_path)
 print(f"💾 SDEdit 0.4 攻击图像已保存至: {sdedit_path}")
 
+# 销毁被污染的 pipeline，重新加载干净的 transformer
+print("🔄 重新加载干净的 Transformer 用于提取...")
+del sdedit_pipe
+gc.collect()
+torch.cuda.empty_cache()
+
+from diffusers import FluxTransformer2DModel
+pipe.transformer = FluxTransformer2DModel.from_pretrained(
+    model_path, subfolder="transformer", torch_dtype=torch.bfloat16
+).to(device)
+
 print("⏪ 对 SDEdit 0.4 图像执行 Gaussian Shading 提取...")
-# 用 sdedit_pipe 的 transformer 做提取，避免 pipe 状态被污染
-sdedit_score = extract_gs_score(attacked_img, sdedit_pipe, device, prompt_embeds, pooled_prompt_embeds, text_ids, key_W)
+sdedit_score = extract_gs_score(attacked_img, pipe, device, prompt_embeds, pooled_prompt_embeds, text_ids, key_W)
 
 print("\n" + "="*60)
 print(f"Gaussian Shading 在 SDEdit 0.4 攻击后的提取分数: {sdedit_score:.4f}")
+print("="*60 + "\n")
+
+# ==========================================
+# 4. 致命实验：空 Prompt 盲提取 (Blind Extraction)
+# ==========================================
+print("空 Prompt 盲提取测试...")
+# 直接使用开头预编码好的空 Prompt embeddings
+# 对原始生成图像（未 JPEG/SDEdit）做空 Prompt 盲提取
+orig_img_for_blind = Image.open(orig_path)
+blind_score = extract_gs_score(orig_img_for_blind, pipe, device, empty_prompt_embeds, empty_pooled_prompt_embeds, empty_text_ids, key_W)
+
+print("\n" + "="*60)
+print(f"Gaussian Shading 空 Prompt 盲提取分数: {blind_score:.4f}")
 print("="*60 + "\n")
